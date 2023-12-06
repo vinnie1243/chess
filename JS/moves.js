@@ -13,7 +13,7 @@ async function gen(piece, pos, color) {
     }
     //console.log(s, text2, color, pos)
     var p8 = pos % 8
-    console.log(p8)
+    //console.log(p8)
     var arr = []
     switch (text2) {
         case "pawn":
@@ -228,8 +228,8 @@ async function gen(piece, pos, color) {
                 var npos = pos + 56
                 rookMove7 = [npos, color, s, takec(npos, color), "rook", "rookMove7", pos, "t"]
                 arr.push(rookMove7)
-            } else if(s == "black" && color == "black" && (pos + 56) < 65 && (pos + 56) > 0) {
-                var npos = pos + 56
+            } else if(s == "black" && color == "black" && (pos - 56) < 65 && (pos - 56) > 0) {
+                var npos = pos - 56
                 rookMove7 = [npos, color, s, takec(npos, color), "rook", "rookMove7", pos, "t"]
                 arr.push(rookMove7)
             }
@@ -444,7 +444,7 @@ async function gen(piece, pos, color) {
                 arr.push(rookMove18)
             }
             //move 5 right
-             var rookMove19
+            var rookMove19
             if(s == "white" && color == "white" && (pos + 5) < 65 && (pos + 5) > 0 && p8 < 4 && p8 != 0) {
                 var npos = pos + 5
                 rookMove19 = [npos, color, s, takec(npos, color), "rook", "rookMove19", pos, "t"]
@@ -501,7 +501,6 @@ async function gen(piece, pos, color) {
                 arr.push(rookMove21)
             }
             //move 1 left
-            console.log(pos - 1)
             var rookMove22
             if(s == "white" && color == "white" && (pos - 1) < 65 && (pos - 1) > 0 && p8 != 1) {   
                 console.log("ran")
@@ -585,12 +584,36 @@ async function gen(piece, pos, color) {
                 var npos = pos - 5
                 rookMove26 = [npos, color, s, takec(npos, color), "rook", "rookMove26", pos]
                 arr.push(rookMove26)
+            } else if(s == "white" && color == "black" && (pos - 5) < 65 && (pos - 5) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5) {
+                var npos = pos - 5
+                rookMove26 = [npos, color, s, takec(npos, color), "rook", "rookMove26", pos]
+                arr.push(rookMove26)
+            } else if(s == "black" && color == "white" && (pos - 5) < 65 && (pos - 5) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5) {
+                var npos = pos - 5
+                rookMove26 = [npos, color, s, takec(npos, color), "rook", "rookMove26", pos]
+                arr.push(rookMove26)
+            } else if(s == "black" && color == "black" && (pos - 5) < 65 && (pos - 5) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5) {
+                var npos = pos - 5
+                rookMove26 = [npos, color, s, takec(npos, color), "rook", "rookMove26", pos]
+                arr.push(rookMove26)
             }
             //move 6 left
             var rookMove27 
-             if(s == "white" && color == "white" && (pos - 6) < 65 && (pos - 6) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5 && p8 != 6) {
+            if(s == "white" && color == "white" && (pos - 6) < 65 && (pos - 6) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5 && p8 != 6) {
                 var npos = pos - 6
-                rookMove27 = [npos, color, s, takec(npos, color), "rook", "rookMove27", pos]
+                rookMove27 = [npos, color, s, takec(npos, color), "rook", "rookMove27", pos, "t"]
+                arr.push(rookMove27)
+            } else if(s == "white" && color == "black" && (pos - 6) < 65 && (pos - 6) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5 && p8 != 6) {
+                var npos = pos - 6
+                rookMove27 = [npos, color, s, takec(npos, color), "rook", "rookMove27", pos, "t"]
+                arr.push(rookMove27)
+            } else if(s == "black" && color == "white" && (pos - 6) < 65 && (pos - 6) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5 && p8 != 6) {
+                var npos = pos - 6
+                rookMove27 = [npos, color, s, takec(npos, color), "rook", "rookMove27", pos, "t"]
+                arr.push(rookMove27)
+            } else if(s == "black" && color == "black" && (pos - 6) < 65 && (pos - 6) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5 && p8 != 6) {
+                var npos = pos - 6
+                rookMove27 = [npos, color, s, takec(npos, color), "rook", "rookMove27", pos, "t"]
                 arr.push(rookMove27)
             }
             //move 7 left       ,
@@ -599,7 +622,20 @@ async function gen(piece, pos, color) {
                 var npos = pos - 7
                 rookMove28 = [npos, color, s, takec(npos, color), "rook", "rookMove28", pos]
                 arr.push(rookMove28)
+            } else if(s == "white" && color == "black" && (pos - 7) < 65 && (pos - 7) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5 && p8 != 6 && p8 != 7) {
+                var npos = pos - 7
+                rookMove28 = [npos, color, s, takec(npos, color), "rook", "rookMove28", pos]
+                arr.push(rookMove28)
+            } else if(s == "black" && color == "white" && (pos - 7) < 65 && (pos - 7) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5 && p8 != 6 && p8 != 7) {
+                var npos = pos - 7
+                rookMove28 = [npos, color, s, takec(npos, color), "rook", "rookMove28", pos]
+                arr.push(rookMove28)
+            } else if(s == "black" && color == "black" && (pos - 7) < 65 && (pos - 7) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5 && p8 != 6 && p8 != 7) {
+                var npos = pos - 7
+                rookMove28 = [npos, color, s, takec(npos, color), "rook", "rookMove28", pos]
+                arr.push(rookMove28)
             }
+
             //castle
             var rookMove29
         break;
@@ -1066,9 +1102,9 @@ async function gen(piece, pos, color) {
         break;
     }
     //var arr2 = await validate(arr, pos) 
-    console.log(arr)
+    //console.log(arr)
     var arr3 = isValid(arr)
-    console.log(arr3)
+    //console.log(arr3)
     draw(arr3, arr)
     window.sessionStorage.setItem("arr", JSON.stringify(arr3))
     return arr3
@@ -1087,7 +1123,7 @@ function isValid(arr) {
         var sw = arr[j][2]
         //checks if move goes over piece of same color or is blocked by another piece of the same color or if other color piece blocks it
         var c1 = cmove(pos, npos, move, type, color, sw)
-        console.log(c1)
+        //console.log(c1)
         if(c1 == "") {
 
         } else {
@@ -1102,7 +1138,7 @@ function isValid(arr) {
     for(var i = 0; i < arr2.length; i++) {
         arr3.push(arr2[i])
     }
-    console.log(arr3)
+    //console.log(arr3)
     return arr3
 }
 
@@ -1150,7 +1186,7 @@ function draw(arr, arr2) {
                 var len2 = e.length
                 for(var i = 0; i < len2; i++) {
                     var num = e[i].id
-                    console.log(num)
+                    //console.log(num)
                     var elem = document.getElementById(num)
                     elem.style.backgroundColor = sqc(num)
                     elem.classList.remove("red")
@@ -2811,8 +2847,214 @@ function cmove(pos, npos, move, type, color, sw) {
                 }
             } else if(move == "rookMove20") {
                 //rookMove20 is move 6 right
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos + 2) 
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos + 3) 
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos + 2) 
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos + 3) 
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos + 2) 
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos + 3) 
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos + 2) 
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos + 3) 
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             } else if(move == "rookMove21") {
                 //rookMove21 is move 7 right
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById(pos + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById(pos + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById(pos + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById(pos + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             } else if(move == "rookMove22") {
                 //rookMove22 is move 1 left
                 if(sw == "white" && color == "white") {
@@ -3044,10 +3286,300 @@ function cmove(pos, npos, move, type, color, sw) {
                 }
             } else if(move == "rookMove26") {
                 //rookMove26 is move 5 left
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) == color) {} else {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) == color) {} else {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) == color) {} else {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) == color) {} else {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             } else if(move == "rookMove27") {
                 //rookMove27 is move 6 left
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             } else if(move == "rookMove28") {
-                //rookMove28 is move 7 left
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById(pos - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById(pos - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById(pos - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById(pos - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             } else if(move == "rookMove29") { 
                 //rookMove29 is castle
             }
