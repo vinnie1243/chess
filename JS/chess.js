@@ -5,28 +5,31 @@ function make() {
     off = window.innerWidth - off
     off = off / 2
     var s2 = window.localStorage.getItem("switch")
+    if(s2 == undefined) {
+        white()
+    }
     var pieces = []
     if(s2 == "white") {
         pieces = [
+            ["rookBlack", "knightBlack", "bishopBlack", "queenBlack", "kingBlack", "bishopBlack", "knightBlack", "rookBlack"], 
+            ["pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack"], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
-            ["", "", "knightWhite", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
-            ["", "", "", "", "", "knightBlack", "", ""], 
-            ["", "", "", "", "", "", "", ""], 
-            ["", "", "", "", "", "", "", ""], 
+            ["pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite"], 
+            ["rookWhite", "knightWhite", "bishopWhite", "queenWhite", "kingWhite", "bishopWhite", "knightWhite", "rookWhite"], 
         ]
     } else if(s2 == "black") {
         pieces = [
+            ["rookWhite", "knightWhite", "bishopWhite", "queenWhite", "kingWhite", "bishopWhite", "knightWhite", "rookWhite"], 
+            ["pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite"], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
-            ["", "", "", "knightWhite", "", "", "", ""], 
-            ["", "", "", "", "", "", "", ""], 
-            ["", "", "knightBlack", "", "", "", "", ""],
-            ["", "", "", "", "", "", "", ""], 
-            ["", "", "", "", "", "", "", ""],    
+            ["", "", "", "", "", "", "", ""],
+            ["pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack"], 
+            ["rookBlack", "knightBlack", "bishopBlack", "queenBlack", "kingBlack", "bishopBlack", "knightBlack", "rookBlack"],    
         ]
     }
     window.sessionStorage.setItem("parr", JSON.stringify(pieces))
@@ -80,24 +83,28 @@ function make() {
 }  
 
 function kingchck() {
-    var black = 0
-    var white = 0
-    for(var i = 1; i < 65; i++) {
-        var e = document.getElementById(i)
-        if(e.children.length == 1) {
-            if(e.children[0].src == "http://localhost:5500/Chess/Media/Images/kingBlack.png") {
-                black = 1
-            } else if(e.children[0].src == "http://localhost:5500/Chess/Media/Images/kingWhite.png") {
-                white = 1
+    var pieces = JSON.parse(window.sessionStorage.getItem("parr"))
+    console.log(pieces)
+    var k1 = 0
+    var k2 = 0
+    for(var l = 0; l < pieces.length; l++) {
+        for(var i = 0; i < pieces[l].length; i++) {
+            if(pieces[l][i] == "kingWhite") {
+                k1 = 1
+            }
+            if(pieces[l][i] == "kingBlack") {
+                k2 = 1
             }
         }
     }
-    if(white == 0) {        
+    if(k1 == 1 && k2 == 1) {
+
+    }
+    if(k1 == 0) {
         window.alert("Black Wins")
-        location.reload()
-    } else if(black == 0) {
+    }
+    if(k2 == 0) {
         window.alert("White Wins")
-        location.reload()
     }
 }
 
@@ -133,7 +140,7 @@ function clic(e) {
 
 }
 
-function move(e) {
+async function move(e) {
     var ele = e.target.parentElement
     //console.log(ele, ele.parentElement)
     var c = 0
@@ -152,12 +159,288 @@ function move(e) {
         ele.children[0].remove()
     }
     ele.appendChild(sp)
+    uparr()
+    kingchck()
 }
 
 function uparr() {
-    var pieces = window.sessionStorage.getItem("pieces")
+    var arr = JSON.parse(window.sessionStorage.getItem("arr2"))
+    var pieces = JSON.parse(window.sessionStorage.getItem("parr"))
+    //console.log(pieces)
+    //console.log(arr)
+    var opos = arr[0][6]
+    var npa = []
+    for(var i = 0; i < arr.length; i++) {
+        var np = arr[i][0]
+        npa.push(np)
+    }
+    //console.log(opos)
+    //console.log(npa)
+    var npos 
+    var piece = arr[0][4]
+    var color = arr[0][1]
+    //console.log(color, piece)
+    var color2
+    if(color == "white") {
+        color2 = "White"
+    } else {
+        color2 = "Black"
+    }
+    //get move used
+    for(var i = 0; i < npa.length; i++) {
+        var t = document.getElementById(npa[i])
+        //console.log(t)
+        if(t.children.length == 1) {
+            //console.log(t.id)
+            if(cchck(t.children[0].src) == color) {
+                var npi = pichck(t.children[0].src, piece)
+                //console.log(piece, npi)
+                if(npi == piece) {
+                    npos = t.id
+                }
+            }
+        }
+    }
+    //console.log(npos)
+    //console.log(opos)
+    var old = fig(opos)
+    npos = Number.parseInt(npos)
+    //console.log(npos)
+    var ne = fig(npos)
+    //console.log(ne, old)
+    var o = []
+    o.push(old.substring(0, 1))
+    o.push(old.substring(2))
+    var n = []
+    n.push(ne.substring(0, 1))
+    n.push(ne.substring(2))
+    var o1 = o[0]
+    o1 = Number.parseInt(o1)
+    var o2 = o[1]
+    o2 = Number.parseInt(o2)
+    var n1 = n[0]
+    n1 = Number.parseInt(n1)
+    var n2 = n[1]
+    n2 = Number.parseInt(n2)  
+    pieces[o1][o2] = ""
+    pieces[n1][n2] = piece + color2
+    //console.log(pieces)
+    window.sessionStorage.setItem("parr", JSON.stringify(pieces))
 }
 
 function r() {
     location.reload()
+}
+
+function fig(pos) {
+    switch(pos) {
+        case 1:
+            return "0&0"
+        break;
+        case 2:
+            return "0&1"
+        break;
+        case 3:
+            return "0&2"
+        break;
+        case 4:
+            return "0&3"
+        break;
+        case 5:
+            return "0&4"
+        break;  
+        case 6:
+            return "0&5"
+        break
+        case 7:
+            return "0&6"
+        break;
+        case 8:
+            return "0&7"
+        break
+        case 9:
+            return "1&0"
+        break
+        case 10:
+            return "1&1"
+        break;
+        case 11:
+            return "1&2"
+        break
+        case 12:
+            return "1&3"
+        break;
+        case 13:
+            return "1&4"
+        break
+        case 14:
+            return "1&5"
+        break
+        case 15:
+            return "1&6"
+        break;
+        case 16:
+            return "1&7"
+        break;
+        case 17:
+            return "2&0"
+        break;
+        case 18:
+            return "2&1"
+        break
+        case 19:
+            return "2&2"
+        break
+        case 20:
+            return "2&3"
+        break
+        case 21:
+            return "2&4"
+        break
+        case 22:
+            return "2&5"
+        break
+        case 23:
+            return "2&6"
+        break
+        case 24:
+            return "2&7"
+        break
+        case 25:
+            return "3&0"
+        break
+        case 26:
+            return "3&1"
+        break
+        case 27:
+            return "3&2"
+        break
+        case 28:
+            return "3&3"
+        break
+        case 29:
+            return "3&4"
+        break
+        case 30:
+            return "3&5"
+        break
+        case 31:
+            return "3&6"
+        break
+        case 32:
+            return "3&7"
+        break
+        case 33:
+            return "4&0"
+        break
+        case 34:
+            return "4&1"
+        break
+        case 35:
+            return "4&2"
+        break
+        case 36:
+            return "4&3"
+        break
+        case 37:
+            return "4&4"
+        break
+        case 38:
+            return "4&5"
+        break
+        case 39:
+            return "4&6"
+        break
+        case 40:
+            return "4&7"
+        break
+        case 41:
+            return "5&0"
+        break
+        case 42:
+            return "5&1"
+        break
+        case 43:
+            return "5&2"
+        break
+        case 44:
+            return "5&3"
+        break
+        case 45:
+            return "5&4"
+        break
+        case 46:
+            return "5&5"
+        break
+        case 47:
+            return "5&6"
+        break
+        case 48:
+            return "5&7"
+        break
+        case 49:
+            return "6&0"
+        break
+        case 50:
+            return "6&1"
+        break 
+        case 51:
+            return "6&2"
+        break
+        case 52:
+            return "6&3"
+        break
+        case 53:
+            return "6&4"
+        break
+        case 54:
+            return "6&5"
+        break
+        case 55:
+            return "6&6"
+        break
+        case 56:
+            return "6&7"
+        break
+        case 57:
+            return "7&0"
+        break
+        case 58:
+            return "7&1"
+        break
+        case 59:
+            return "7&2"
+        break
+        case 60:
+            return "7&3"
+        break
+        case 61:
+            return "7&4"
+        break
+        case 62:
+            return "7&5"
+        break
+        case 63:
+            return "7&6"
+        break
+        case 64:
+            return "7&7"
+        break
+    }
+}
+
+function pichck(src) {
+    if(src.includes("knight") == true) {
+        return "knight"
+    } else if(src.includes("queen") == true) {
+        return "queen"
+    } else if(src.includes("rook") == true) {
+        return "rook"
+    } else if(src.includes("pawn") == true) {
+        return "pawn"
+    } else if(src.includes("king") == true) {
+        return "king"
+    } else if(src.includes("bishop") == true) {
+        return "bishop"
+    }
 }

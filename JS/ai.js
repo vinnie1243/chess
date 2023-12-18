@@ -1,3 +1,7 @@
-function genmove() {
+function genMove() {
     
+}
+
+function pickMove() {
+
 }

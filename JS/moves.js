@@ -13,7 +13,8 @@ async function gen(piece, pos, color) {
     }
     //console.log(s, text2, color, pos)
     var p8 = pos % 8
-    //console.log(p8)
+    var pd8 = Math.floor(pos / 8)
+    console.log(p8, pd8)
     var arr = []
     switch (text2) {
         case "pawn":
@@ -273,7 +274,7 @@ async function gen(piece, pos, color) {
             }
             //move 3 down
             var rookMove10
-            if(s == "white" && color == "white" && (pos + 24) < 65 && (pos + 24) > 0) {
+            if(s == "white" && color == "white" && (pos + 24) < 65 && (pos + 24) > 0 && p8 != 5) {
                 var npos = pos + 24
                 rookMove10 = [npos, color, s, takec(npos, color), "rook", "rookMove10", pos, "t"]
                 arr.push(rookMove10)
@@ -281,11 +282,11 @@ async function gen(piece, pos, color) {
                 var npos = pos - 24
                 rookMove10 = [npos, color, s, takec(npos, color), "rook", "rookMove10", pos, "t"]
                 arr.push(rookMove10)
-            } else if(s == "black" && color == "white" && (pos - 24) < 65 && (pos - 24) > 0) {
+            } else if(s == "black" && color == "white" && (pos - 24) < 65 && (pos - 24) > 0 && p8 != 5) {
                 var npos = pos - 24
                 rookMove10 = [npos, color, s, takec(npos, color), "rook", "rookMove10", pos, "t"]
                 arr.push(rookMove10)
-            } else if(s == "black" && color == "black" && (pos + 24) < 65 && (pos + 24) > 0) {
+            } else if(s == "black" && color == "black" && (pos + 24) < 65 && (pos + 24) > 0 && p8 != 5) {
                 var npos = pos + 24
                 rookMove10 = [npos, color, s, takec(npos, color), "rook", "rookMove10", pos, "t"]
                 arr.push(rookMove10)
@@ -407,19 +408,19 @@ async function gen(piece, pos, color) {
             }
             //move 3 right
             var rookMove17
-            if(s == "white" && color == "white" && (pos + 3) < 65 && (pos + 3) > 0 && p8 < 6 && p8 != 0) {
+            if(s == "white" && color == "white" && (pos + 3) < 65 && (pos + 3) > 0 && p8 != 0) {
                 var npos = pos + 3
                 rookMove17 = [npos, color, s, takec(npos, color), "rook", "rookMove17", pos, "t"]
                 arr.push(rookMove17)
-            } else if(s == "white" && color == "black" && (pos + 3) < 65 && (pos + 3) > 0 && p8 < 6 && p8 != 0) {
+            } else if(s == "white" && color == "black" && (pos + 3) < 65 && (pos + 3) > 0 && p8 != 0) {
                 var npos = pos + 3
                 rookMove17 = [npos, color, s, takec(npos, color), "rook", "rookMove17", pos, "t"]
                 arr.push(rookMove17)
-            } else if(s == "black" && color == "white" && (pos + 3) < 65 && (pos + 3) > 0 && p8 < 6 && p8 != 0) {
+            } else if(s == "black" && color == "white" && (pos + 3) < 65 && (pos + 3) > 0 && p8 != 0) {
                 var npos = pos + 3
                 rookMove17 = [npos, color, s, takec(npos, color), "rook", "rookMove17", pos, "t"]
                 arr.push(rookMove17)
-            } else if(s == "black" && color == "black" && (pos + 3) < 65 && (pos + 3) > 0 && p8 < 6 && p8 != 0) {
+            } else if(s == "black" && color == "black" && (pos + 3) < 65 && (pos + 3) > 0 && p8 != 0) {
                 var npos = pos + 3
                 rookMove17 = [npos, color, s, takec(npos, color), "rook", "rookMove17", pos, "t"] 
                 arr.push(rookMove17)
@@ -582,19 +583,19 @@ async function gen(piece, pos, color) {
             var rookMove26
             if(s == "white" && color == "white" && (pos - 5) < 65 && (pos - 5) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5) {
                 var npos = pos - 5
-                rookMove26 = [npos, color, s, takec(npos, color), "rook", "rookMove26", pos]
+                rookMove26 = [npos, color, s, takec(npos, color), "rook", "rookMove26", pos, "t"]
                 arr.push(rookMove26)
             } else if(s == "white" && color == "black" && (pos - 5) < 65 && (pos - 5) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5) {
                 var npos = pos - 5
-                rookMove26 = [npos, color, s, takec(npos, color), "rook", "rookMove26", pos]
+                rookMove26 = [npos, color, s, takec(npos, color), "rook", "rookMove26", pos, "t"]
                 arr.push(rookMove26)
             } else if(s == "black" && color == "white" && (pos - 5) < 65 && (pos - 5) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5) {
                 var npos = pos - 5
-                rookMove26 = [npos, color, s, takec(npos, color), "rook", "rookMove26", pos]
+                rookMove26 = [npos, color, s, takec(npos, color), "rook", "rookMove26", pos, "t"]
                 arr.push(rookMove26)
             } else if(s == "black" && color == "black" && (pos - 5) < 65 && (pos - 5) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4 && p8 != 5) {
                 var npos = pos - 5
-                rookMove26 = [npos, color, s, takec(npos, color), "rook", "rookMove26", pos]
+                rookMove26 = [npos, color, s, takec(npos, color), "rook", "rookMove26", pos, "t"]
                 arr.push(rookMove26)
             }
             //move 6 left
@@ -756,19 +757,19 @@ async function gen(piece, pos, color) {
             }
             //move down 1 left 1
             var kingMove7  
-            if(s == "white" && color == "white" && (pos + 7) < 65 && (pos + 7) > 0) {
+            if(s == "white" && color == "white" && (pos + 7) < 65 && (pos + 7) > 0 && pd8 != 0) {
                 var npos = pos + 7
                 kingMove7 = [npos, color, s, takec(npos, color), "king", "kingMove7", pos]
                 arr.push(kingMove7)
-            } else if(s == "white" && color == "black" && (pos + 7) < 65 && (pos + 7) > 0) {
+            } else if(s == "white" && color == "black" && (pos + 7) < 65 && (pos + 7) > 0 && pd8 != 0) {
                 var npos = pos + 7
                 kingMove7 = [npos, color, s, takec(npos, color), "king", "kingMove7", pos]
                 arr.push(kingMove7)
-            } else if(s == "black" && color == "white" && (pos + 7) < 65 && (pos + 7) > 0) {
+            } else if(s == "black" && color == "white" && (pos + 7) < 65 && (pos + 7) > 0 && pd8 != 0) {
                 var npos = pos + 7
                 kingMove7 = [npos, color, s, takec(npos, color), "king", "kingMove7", pos]
                 arr.push(kingMove7)
-            } else if(s == "black" && color == "black" && (pos + 7) < 65 && (pos + 7) > 0) {
+            } else if(s == "black" && color == "black" && (pos + 7) < 65 && (pos + 7) > 0 && pd8 != 0) {
                 var npos = pos + 7
                 kingMove7 = [npos, color, s, takec(npos, color), "king", "kingMove7", pos]
                 arr.push(kingMove7)
@@ -933,19 +934,19 @@ async function gen(piece, pos, color) {
             var knightMove8
             if(s == "white" && color == "white" && ((pos - 8) - 2) < 65 && ((pos - 8) - 2) > 0) {
                 var npos = (pos - 8) - 2
-                knightMove8 = [npos, color, s, takec(npos, color), "knight", "knightMove8", pos]
+                knightMove8 = [npos, color, s, takec(npos, color), "knight", "knightMove8", pos, "t"]
                 arr.push(knightMove8)
             } else if(s == "white" && color == "black" && ((pos - 8) - 2) < 65 && ((pos - 8) - 2) > 0) {
                 var npos = (pos - 8) - 2
-                knightMove8 = [npos, color, s, takec(npos, color), "knight", "knightMove8", pos]
+                knightMove8 = [npos, color, s, takec(npos, color), "knight", "knightMove8", pos, "t"]
                 arr.push(knightMove8)
             } else if(s == "black" && color == "white" && ((pos - 8) - 2) < 65 && ((pos - 8) - 2) > 0) {
                 var npos = (pos - 8) - 2
-                knightMove8 = [npos, color, s, takec(npos, color), "knight", "knightMove8", pos]
+                knightMove8 = [npos, color, s, takec(npos, color), "knight", "knightMove8", pos, "t"]
                 arr.push(knightMove8)
             } else if(s == "black" && color == "black" && ((pos - 8) - 2) < 65 && ((pos - 8) - 2) > 0) {
                 var npos = (pos - 8) - 2
-                knightMove8 = [npos, color, s, takec(npos, color), "knight", "knightMove8", pos]
+                knightMove8 = [npos, color, s, takec(npos, color), "knight", "knightMove8", pos, "t"]
                 arr.push(knightMove8)
             }
         break;
@@ -953,51 +954,135 @@ async function gen(piece, pos, color) {
             //Down Left//
             //move left 1 down 1
             var bishopMove1
-            if(s == "white" && color == "white" && ((pos + 8) - 1) < 65 && ((pos + 8) - 2) > 0) {
+            if(s == "white" && color == "white" && ((pos + 8) - 1) < 65 && ((pos + 8) - 1) > 0 && p8 != 1) {
                 var npos = (pos + 8) - 1
-                bishopMove1 = [npos, color, s, takec(), "bishop", "bishopMove1", pos]
+                bishopMove1 = [npos, color, s, takec(npos, color), "bishop", "bishopMove1", pos, "t"]
+                arr.push(bishopMove1)
+            } else if(s == "white" && color == "black" && ((pos + 8) - 1) < 65 && ((pos + 8) - 1) > 0 && p8 != 1) {
+                var npos = (pos + 8) - 1
+                bishopMove1 = [npos, color, s, takec(npos, color), "bishop", "bishopMove1", pos, "t"]
+                arr.push(bishopMove1)
+            } else if(s == "black" && color == "white" && ((pos + 8) - 1) < 65 && ((pos + 8) - 1) > 0 && p8 != 1) {
+                var npos = (pos + 8) - 1
+                bishopMove1 = [npos, color, s, takec(npos, color), "bishop", "bishopMove1", pos, "t"]
+                arr.push(bishopMove1)
+            } else if(s == "black" && color == "black" && ((pos + 8) - 1) < 65 && ((pos + 8) - 1) > 0 && p8 != 1) {
+                var npos = (pos + 8) - 1
+                bishopMove1 = [npos, color, s, takec(npos, color), "bishop", "bishopMove1", pos, "t"]
                 arr.push(bishopMove1)
             }
             //move left 2 down 2
             var bishopMove2 
-            if(s == "white" && color == "white" && ((pos + 16) - 2) < 65 && ((pos + 16) - 2) > 0) {
+            if(s == "white" && color == "white" && ((pos + 16) - 2) < 65 && ((pos + 16) - 2) > 0 && p8 != 1 && p8 != 2) {
                 var npos = (pos + 16) - 2
-                bishopMove2 = [npos, color, s, takec(), "bishop", "bishopMove2", pos]
+                bishopMove2 = [npos, color, s, takec(npos, color), "bishop", "bishopMove2", pos, "t"]
+                arr.push(bishopMove2)
+            } else if(s == "white" && color == "black" && ((pos + 16) - 2) < 65 && ((pos + 16) - 2) > 0 && p8 != 1 && p8 != 2) {
+                var npos = (pos + 16) - 2
+                bishopMove2 = [npos, color, s, takec(npos, color), "bishop", "bishopMove2", pos, "t"]
+                arr.push(bishopMove2)
+            } else if(s == "black" && color == "white" && ((pos + 16) - 2) < 65 && ((pos + 16) - 2) > 0 && p8 != 1 && p8 != 2) {
+                var npos = (pos + 16) - 2
+                bishopMove2 = [npos, color, s, takec(npos, color), "bishop", "bishopMove2", pos, "t"]
+                arr.push(bishopMove2)
+            } else if(s == "black" && color == "black" && ((pos + 16) - 2) < 65 && ((pos + 16) - 2) > 0 && p8 != 1 && p8 != 2) {
+                var npos = (pos + 16) - 2
+                bishopMove2 = [npos, color, s, takec(npos, color), "bishop", "bishopMove2", pos, "t"]
                 arr.push(bishopMove2)
             }
             //move left 3 down 3
             var bishopMove3
-            if(s == "white" && color == "white" && ((pos + 24) - 3) < 65 && ((pos + 24) - 3) > 0) {
+            if(s == "white" && color == "white" && ((pos + 24) - 3) < 65 && ((pos + 24) - 3) > 0 && p8 != 2 && p8 != 3) {
                 var npos = (pos + 24) - 3
-                bishopMove3 = [npos, color, s, takec(), "bishop", "bishopMove3", pos]
+                bishopMove3 = [npos, color, s, takec(npos, color), "bishop", "bishopMove3", pos, "t"]
+                arr.push(bishopMove3)
+            } else if(s == "white" && color == "black" && ((pos + 24) - 3) < 65 && ((pos + 24) - 3) > 0 && p8 != 1 && p8 != 2 && p8 != 3) {
+                var npos = (pos + 24) - 3
+                bishopMove3 = [npos, color, s, takec(npos, color), "bishop", "bishopMove3", pos, "t"]
+                arr.push(bishopMove3)
+            } else if(s == "black" && color == "white" && ((pos + 24) - 3) < 65 && ((pos + 24) - 3) > 0 && p8 != 1 && p8 != 2 && p8 != 3) {
+                var npos = (pos + 24) - 3
+                bishopMove3 = [npos, color, s, takec(npos, color), "bishop", "bishopMove3", pos, "t"]
+                arr.push(bishopMove3)
+            } else if(s == "black" && color == "black" && ((pos + 24) - 3) < 65 && ((pos + 24) - 3) > 0 && p8 != 1 && p8 != 2 && p8 != 3) {
+                var npos = (pos + 24) - 3
+                bishopMove3 = [npos, color, s, takec(npos, color), "bishop", "bishopMove3", pos, "t"]
                 arr.push(bishopMove3)
             }
             //move left 4 down 4
             var bishopMove4
-            if(s == "white" && color == "white" && ((pos + 32) - 4) < 65 && ((pos + 32) - 3) > 0) {
+            if(s == "white" && color == "white" && ((pos + 32) - 4) < 65 && ((pos + 32) - 4) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
                 var npos = (pos + 32) - 4
-                bishopMove4 = [npos, color, s, takec(), "bishop", "bishopMove4", pos]
+                bishopMove4 = [npos, color, s, takec(npos, color), "bishop", "bishopMove4", pos, "t"]
+                arr.push(bishopMove4)
+            } else if(s == "white" && color == "black" && ((pos + 32) - 4) < 65 && ((pos + 32) - 4) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
+                var npos = (pos + 32) - 4
+                bishopMove4 = [npos, color, s, takec(npos, color), "bishop", "bishopMove4", pos, "t"]
+                arr.push(bishopMove4)
+            } else if(s == "black" && color == "white" && ((pos + 32) - 4) < 65 && ((pos + 32) - 4) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
+                var npos = (pos + 32) - 4
+                bishopMove4 = [npos, color, s, takec(npos, color), "bishop", "bishopMove4", pos, "t"]
+                arr.push(bishopMove4)
+            } else if(s == "black" && color == "black" && ((pos + 32) - 4) < 65 && ((pos + 32) - 4) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
+                var npos = (pos + 32) - 4
+                bishopMove4 = [npos, color, s, takec(npos, color), "bishop", "bishopMove4", pos, "t"]
                 arr.push(bishopMove4)
             }
             //move left 5 down 5
             var bishopMove5
-            if(s == "white" && color == "white" && ((pos + 40) - 5) < 65 && ((pos + 40) - 5) > 0) {
+            if(s == "white" && color == "white" && ((pos + 40) - 5) < 65 && ((pos + 40) - 5) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
+                var npos = (pos + 40) - 5 
+                bishopMove5 = [npos, color, s, takec(npos, color), "bishop", "bishopMove5", pos, "t"]
+                arr.push(bishopMove5)
+            } else if(s == "white" && color == "black" && ((pos + 40) - 5) < 65 && ((pos + 40) - 5) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
                 var npos = (pos + 40) - 5
-                bishopMove5 = [npos, color, s, takec(), "bishop", "bishopMove5", pos]
+                bishopMove5 = [npos, color, s, takec(npos, color), "bishop", "bishopMove5", pos, "t"]
+                arr.push(bishopMove5)
+            } else if(s == "black" && color == "white" && ((pos + 40) - 5) < 65 && ((pos + 40) - 5) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
+                var npos = (pos + 40) - 5
+                bishopMove5 = [npos, color, s, takec(npos, color), "bishop", "bishopMove5", pos, "t"]
+                arr.push(bishopMove5)
+            } else if(s == "black" && color == "black" && ((pos + 40) - 5) < 65 && ((pos + 40) - 5) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
+                var npos = (pos + 40) - 5
+                bishopMove5 = [npos, color, s, takec(npos, color), "bishop", "bishopMove5", pos, "t"]
                 arr.push(bishopMove5)
             }
             //move left 6 down 6
             var bishopMove6
-            if(s == "white" && color == "white" && ((pos + 48) - 6) < 65 && ((pos + 48) - 6) > 0) {
+            if(s == "white" && color == "white" && ((pos + 48) - 6) < 65 && ((pos + 48) - 6) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
                 var npos = (pos + 48) - 6
-                bishopMove6 = [npos, color, s, takec(), "bishop", "bishopMove6", pos]
+                bishopMove6 = [npos, color, s, takec(npos, color), "bishop", "bishopMove6", pos, "t"]
+                arr.push(bishopMove6)
+            } else if(s == "white" && color == "black" && ((pos + 48) - 6) < 65 && ((pos + 48) - 6) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
+                var npos = (pos + 48) - 6
+                bishopMove6 = [npos, color, s, takec(npos, color), "bishop", "bishopMove6", pos, "t"]
+                arr.push(bishopMove6)
+            } else if(s == "black" && color == "white" && ((pos + 48) - 6) < 65 && ((pos + 48) - 6) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
+                var npos = (pos + 48) - 6
+                bishopMove6 = [npos, color, s, takec(npos, color), "bishop", "bishopMove6", pos, "t"]
+                arr.push(bishopMove6)
+            } else if(s == "black" && color == "black" && ((pos + 48) - 6) < 65 && ((pos + 48) - 6) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
+                var npos = (pos + 48) - 6
+                bishopMove6 = [npos, color, s, takec(npos, color), "bishop", "bishopMove6", pos, "t"]
                 arr.push(bishopMove6)
             }
             //move left 7 down 7
             var bishopMove7
-            if(s == "white" && color == "white" && ((pos + 56) - 7) < 65 && ((pos + 56) - 6) > 0) {
+            if(s == "white" && color == "white" && ((pos + 56) - 7) < 65 && ((pos + 56) - 7) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
                 var npos = (pos + 56) - 7
-                bishopMove7 = [npos, color, s, takec(), "bishop", "bishopMove7", pos]
+                bishopMove7 = [npos, color, s, takec(npos, color), "bishop", "bishopMove7", pos, "t"]
+                arr.push(bishopMove7)
+            } else if(s == "white" && color == "black" && ((pos + 56) - 7) < 65 && ((pos + 56) - 7) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
+                var npos = (pos + 56) - 7
+                bishopMove7 = [npos, color, s, takec(npos, color), "bishop", "bishopMove7", pos, "t"]
+                arr.push(bishopMove7)
+            } else if(s == "black" && color == "white" && ((pos + 56) - 7) < 65 && ((pos + 56) - 7) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
+                var npos = (pos + 56) - 7
+                bishopMove7 = [npos, color, s, takec(npos, color), "bishop", "bishopMove7", pos, "t"]
+                arr.push(bishopMove7)
+            } else if(s == "black" && color == "black" && ((pos + 56) - 7) < 65 && ((pos + 56) - 7) > 0 && p8 != 1 && p8 != 2 && p8 != 3 && p8 != 4) {
+                var npos = (pos + 56) - 7
+                bishopMove7 = [npos, color, s, takec(npos, color), "bishop", "bishopMove7", pos, "t"]
                 arr.push(bishopMove7)
             }
             //Down Right//
@@ -1005,149 +1090,401 @@ async function gen(piece, pos, color) {
             var bishopMove8
             if(s == "white" && color == "white" && ((pos + 8) + 1) < 65 && ((pos + 8) + 1) > 0) {
                 var npos = (pos + 8) + 1
-                bishopMove8 = [npos, color, s, takec(), "bishop", "bishopMove8", pos]
+                bishopMove8 = [npos, color, s, takec(npos, color), "bishop", "bishopMove8", pos]
+                arr.push(bishopMove8)
+            } else if(s == "white" && color == "black" && ((pos + 8) + 1) < 65 && ((pos + 8) + 1) > 0) {
+                var npos = (pos + 8) + 1
+                bishopMove8 = [npos, color, s, takec(npos, color), "bishop", "bishopMove8", pos]
+                arr.push(bishopMove8)
+            } else if(s == "black" && color == "white" && ((pos + 8) + 1) < 65 && ((pos + 8) + 1) > 0) {
+                var npos = (pos + 8) + 1
+                bishopMove8 = [npos, color, s, takec(npos, color), "bishop", "bishopMove8", pos]
+                arr.push(bishopMove8)
+            } else if(s == "black" && color == "black" && ((pos + 8) + 1) < 65 && ((pos + 8) + 1) > 0) {
+                var npos = (pos + 8) + 1
+                bishopMove8 = [npos, color, s, takec(npos, color), "bishop", "bishopMove8", pos]
                 arr.push(bishopMove8)
             }
             //move right 2 down 2
             var bishopMove9
             if(s == "white" && color == "white" && ((pos + 16) + 2) < 65 && ((pos + 16) + 2) > 0) {
                 var npos = (pos + 16) + 2
-                bishopMove9 = [npos, color, s, takec(), "bishop", "bishopMove9", pos]
+                bishopMove9 = [npos, color, s, takec(npos, color), "bishop", "bishopMove9", pos, "t"]
+                arr.push(bishopMove9)
+            } else if(s == "white" && color == "black" && ((pos + 16) + 2) < 65 && ((pos + 16) + 2) > 0) {
+                var npos = (pos + 16) + 2
+                bishopMove9 = [npos, color, s, takec(npos, color), "bishop", "bishopMove9", pos, "t"]
+                arr.push(bishopMove9)
+            } else if(s == "black" && color == "white" && ((pos + 16) + 2) < 65 && ((pos + 16) + 2) > 0) {
+                var npos = (pos + 16) + 2
+                bishopMove9 = [npos, color, s, takec(npos, color), "bishop", "bishopMove9", pos, "t"]
+                arr.push(bishopMove9)
+            } else if(s == "black" && color == "black" && ((pos + 16) + 2) < 65 && ((pos + 16) + 2) > 0) {
+                var npos = (pos + 16) + 2
+                bishopMove9 = [npos, color, s, takec(npos, color), "bishop", "bishopMove9", pos, "t"]
                 arr.push(bishopMove9)
             }
             //move right 3 down 3
             var bishopMove10
             if(s == "white" && color == "white" && ((pos + 24) + 3) < 65 && ((pos + 24) + 3) > 0) {
                 var npos = (pos + 24) + 3
-                bishopMove10 = [npos, color, s, takec(), "bishop", "bishopMove10", pos]
+                bishopMove10 = [npos, color, s, takec(npos, color), "bishop", "bishopMove10", pos]
+                arr.push(bishopMove10)
+            } else if(s == "white" && color == "black" && ((pos + 24) + 3) < 65 && ((pos + 24) + 3) > 0) {
+                var npos = (pos + 24) + 3
+                bishopMove10 = [npos, color, s, takec(npos, color), "bishop", "bishopMove10", pos]
+                arr.push(bishopMove10)
+            } else if(s == "black" && color == "white" && ((pos + 24) + 3) < 65 && ((pos + 24) + 3) > 0) {
+                var npos = (pos + 24) + 3
+                bishopMove10 = [npos, color, s, takec(npos, color), "bishop", "bishopMove10", pos]
+                arr.push(bishopMove10)
+            } else if(s == "black" && color == "black" && ((pos + 24) + 3) < 65 && ((pos + 24) + 3) > 0) {
+                var npos = (pos + 24) + 3
+                bishopMove10 = [npos, color, s, takec(npos, color), "bishop", "bishopMove10", pos]
                 arr.push(bishopMove10)
             }
             //move right 4 down 4
             var bishopMove11
             if(s == "white" && color == "white" && ((pos + 32) + 4) < 65 && ((pos + 32) + 4) > 0) {
                 var npos = (pos + 32) + 4
-                bishopMove11 = [npos, color, s, takec(), "bishop", "bishopMove11", pos]
+                bishopMove11 = [npos, color, s, takec(npos, color), "bishop", "bishopMove11", pos, "t"]
+                arr.push(bishopMove11)
+            } else if(s == "white" && color == "black" && ((pos + 32) + 4) < 65 && ((pos + 32) + 4) > 0) {
+                var npos = (pos + 32) + 4
+                bishopMove11 = [npos, color, s, takec(npos, color), "bishop", "bishopMove11", pos, "t"]
+                arr.push(bishopMove11)
+            } else if(s == "black" && color == "white" && ((pos + 32) + 4) < 65 && ((pos + 32) + 4) > 0) {
+                var npos = (pos + 32) + 4
+                bishopMove11 = [npos, color, s, takec(npos, color), "bishop", "bishopMove11", pos, "t"]
+                arr.push(bishopMove11)
+            } else if(s == "black" && color == "black" && ((pos + 32) + 4) < 65 && ((pos + 32) + 4) > 0) {
+                var npos = (pos + 32) + 4
+                bishopMove11 = [npos, color, s, takec(npos, color), "bishop", "bishopMove11", pos, "t"]
                 arr.push(bishopMove11)
             }
             //move right 5 down 5
             var bishopMove12 
             if(s == "white" && color == "white" && ((pos + 40) + 5) < 65 && ((pos + 40) + 5) > 0) {
                 var npos = (pos + 40) + 5
-                bishopMove12 = [npos, color, s, takec(), "bishop", "bishopMove12", pos]
+                bishopMove12 = [npos, color, s, takec(npos, color), "bishop", "bishopMove12", pos, "t"]
+                arr.push(bishopMove12)
+            } else if(s == "white" && color == "black" && ((pos + 40) + 5) < 65 && ((pos + 40) + 5) > 0) {
+                var npos = (pos + 40) + 5
+                bishopMove12 = [npos, color, s, takec(npos, color), "bishop", "bishopMove12", pos, "t"]
+                arr.push(bishopMove12)
+            } else if(s == "black" && color == "white" && ((pos + 40) + 5) < 65 && ((pos + 40) + 5) > 0) {
+                var npos = (pos + 40) + 5
+                bishopMove12 = [npos, color, s, takec(npos, color), "bishop", "bishopMove12", pos, "t"]
+                arr.push(bishopMove12)
+            } else if(s == "black" && color == "black" && ((pos + 40) + 5) < 65 && ((pos + 40) + 5) > 0) {
+                var npos = (pos + 40) + 5
+                bishopMove12 = [npos, color, s, takec(npos, color), "bishop", "bishopMove12", pos, "t"]
                 arr.push(bishopMove12)
             }
             //move right 6 down 6
             var bishopMove13
             if(s == "white" && color == "white" && ((pos + 48) + 6) < 65 && ((pos + 48) + 6) > 0) {
                 var npos = (pos + 48) + 6
-                bishopMove13 = [npos, color, s, takec(), "bishop", "bishopMove13", pos]
+                bishopMove13 = [npos, color, s, takec(npos, color), "bishop", "bishopMove13", pos, "t"]
+                arr.push(bishopMove13)
+            } else if(s == "white" && color == "black" && ((pos + 48) + 6) < 65 && ((pos + 48) + 6) > 0) {
+                var npos = (pos + 48) + 6
+                bishopMove13 = [npos, color, s, takec(npos, color), "bishop", "bishopMove13", pos, "t"]
+                arr.push(bishopMove13)
+            } else if(s == "black" && color == "white" && ((pos + 48) + 6) < 65 && ((pos + 48) + 6) > 0) {
+                var npos = (pos + 48) + 6
+                bishopMove13 = [npos, color, s, takec(npos, color), "bishop", "bishopMove13", pos, "t"]
+                arr.push(bishopMove13)
+            } else if(s == "black" && color == "black" && ((pos + 48) + 6) < 65 && ((pos + 48) + 6) > 0) {
+                var npos = (pos + 48) + 6
+                bishopMove13 = [npos, color, s, takec(npos, color), "bishop", "bishopMove13", pos, "t"]
                 arr.push(bishopMove13)
             }
             //move right 7 down 7
-            var bishopMove14
+            var bishopMove14   
             if(s == "white" && color == "white" && ((pos + 56) + 7) < 65 && ((pos + 56) + 7) > 0) {
                 var npos = (pos + 56) + 7
-                bishopMove14 = [npos, color, s, takec(), "bishop", "bishopMove14", pos]
+                bishopMove14 = [npos, color, s, takec(npos, color), "bishop", "bishopMove14", pos, "t"]
                 arr.push(bishopMove14)
-            } 
+            } else if(s == "white" && color == "black" && ((pos + 56) + 7) < 65 && ((pos + 56) + 7) > 0) {
+                var npos = (pos + 56) + 7
+                bishopMove14 = [npos, color, s, takec(npos, color), "bishop", "bishopMove14", pos, "t"]
+                arr.push(bishopMove14)
+            } else if(s == "black" && color == "white" && ((pos + 56) + 7) < 65 && ((pos + 56) + 7) > 0) {
+                var npos = (pos + 56) + 7
+                bishopMove14 = [npos, color, s, takec(npos, color), "bishop", "bishopMove14", pos, "t"]
+                arr.push(bishopMove14)
+            } else if(s == "black" && color == "black" && ((pos + 56) + 7) < 65 && ((pos + 56) + 7) > 0) {
+                var npos = (pos + 56) + 7
+                bishopMove14 = [npos, color, s, takec(npos, color), "bishop", "bishopMove14", pos, "t"]
+                arr.push(bishopMove14)
+            }
             //Up Right//
-            //move right 1 up 1
+            //move right 1 up 1 
             var bishopMove15
             if(s == "white" && color == "white" && ((pos - 8) + 1) < 65 && ((pos - 8) + 1) > 0) {
                 var npos = (pos - 8) + 1
-                bishopMove15 = [npos, color, s, takec(), "bishop", "bishopMove15", pos]
+                bishopMove15 = [npos, color, s, takec(npos, color), "bishop", "bishopMove15", pos, "t"]
+                arr.push(bishopMove15)
+            } else if(s == "white" && color == "black" && ((pos - 8) + 1) < 65 && ((pos - 8) + 1) > 0) {
+                var npos = (pos - 8) + 1
+                bishopMove15 = [npos, color, s, takec(npos, color), "bishop", "bishopMove15", pos, "t"]
+                arr.push(bishopMove15)
+            } else if(s == "black" && color == "white" && ((pos - 8) + 1) < 65 && ((pos - 8) + 1) > 0) {
+                var npos = (pos - 8) + 1
+                bishopMove15 = [npos, color, s, takec(npos, color), "bishop", "bishopMove15", pos, "t"]
+                arr.push(bishopMove15)
+            } else if(s == "black" && color == "black" && ((pos - 8) + 1) < 65 && ((pos - 8) + 1) > 0) {
+                var npos = (pos - 8) + 1
+                bishopMove15 = [npos, color, s, takec(npos, color), "bishop", "bishopMove15", pos, "t"]
                 arr.push(bishopMove15)
             }
             //move right 2 up 2
             var bishopMove16
             if(s == "white" && color == "white" && ((pos - 16) + 2) < 65 && ((pos - 16) + 2) > 0) {
                 var npos = (pos - 16) + 2
-                bishopMove16 = [npos, color, s, takec(), "bishop", "bishopMove16", pos]
+                bishopMove16 = [npos, color, s, takec(npos, color), "bishop", "bishopMove16", pos, "t"]
+                arr.push(bishopMove16)
+            } else if(s == "white" && color == "black" && ((pos - 16) + 2) < 65 && ((pos - 16) + 2) > 0) {
+                var npos = (pos - 16) + 2
+                bishopMove16 = [npos, color, s, takec(npos, color), "bishop", "bishopMove16", pos, "t"]
+                arr.push(bishopMove16)
+            } else if(s == "black" && color == "white" && ((pos - 16) + 2) < 65 && ((pos - 16) + 2) > 0) {
+                var npos = (pos - 16) + 2
+                bishopMove16 = [npos, color, s, takec(npos, color), "bishop", "bishopMove16", pos, "t"]
+                arr.push(bishopMove16)
+            } else if(s == "black" && color == "black" && ((pos - 16) + 2) < 65 && ((pos - 16) + 2) > 0) {
+                var npos = (pos - 16) + 2
+                bishopMove16 = [npos, color, s, takec(npos, color), "bishop", "bishopMove16", pos, "t"]
                 arr.push(bishopMove16)
             }
              //move right 3 up 3
             var bishopMove17
             if(s == "white" && color == "white" && ((pos - 24) + 3) < 65 && ((pos - 24) + 3) > 0) {
                 var npos = (pos - 24) + 3
-                bishopMove17 = [npos, color, s, takec(), "bishop", "bishopMove17", pos]
+                bishopMove17 = [npos, color, s, takec(npos, color), "bishop", "bishopMove17", pos, "t"]
+                arr.push(bishopMove17)
+            } else if(s == "white" && color == "black" && ((pos - 24) + 3) < 65 && ((pos - 24) + 3) > 0) {
+                var npos = (pos - 24) + 3
+                bishopMove17 = [npos, color, s, takec(npos, color), "bishop", "bishopMove17", pos, "t"]
+                arr.push(bishopMove17)
+            } else if(s == "black" && color == "white" && ((pos - 24) + 3) < 65 && ((pos - 24) + 3) > 0) {
+                var npos = (pos - 24) + 3
+                bishopMove17 = [npos, color, s, takec(npos, color), "bishop", "bishopMove17", pos, "t"]
+                arr.push(bishopMove17)
+            } else if(s == "black" && color == "black" && ((pos - 24) + 3) < 65 && ((pos - 24) + 3) > 0) {
+                var npos = (pos - 24) + 3
+                bishopMove17 = [npos, color, s, takec(npos, color), "bishop", "bishopMove17", pos, "t"]
                 arr.push(bishopMove17)
             }
             //move right 4 up 4
             var bishopMove18
             if(s == "white" && color == "white" && ((pos - 32) + 4) < 65 && ((pos - 32) + 4) > 0) {
                 var npos = (pos - 32) + 4
-                bishopMove18 = [npos, color, s, takec(), "bishop", "bishopMove18", pos]
+                bishopMove18 = [npos, color, s, takec(npos, color), "bishop", "bishopMove18", pos, "t"]
+                arr.push(bishopMove18)
+            } else if(s == "white" && color == "black" && ((pos - 32) + 4) < 65 && ((pos - 32) + 4) > 0) {
+                var npos = (pos - 32) + 4
+                bishopMove18 = [npos, color, s, takec(npos, color), "bishop", "bishopMove18", pos, "t"]
+                arr.push(bishopMove18)
+            } else if(s == "black" && color == "white" && ((pos - 32) + 4) < 65 && ((pos - 32) + 4) > 0) {
+                var npos = (pos - 32) + 4
+                bishopMove18 = [npos, color, s, takec(npos, color), "bishop", "bishopMove18", pos, "t"]
+                arr.push(bishopMove18)
+            } else if(s == "black" && color == "black" && ((pos - 32) + 4) < 65 && ((pos - 32) + 4) > 0) {
+                var npos = (pos - 32) + 4
+                bishopMove18 = [npos, color, s, takec(npos, color), "bishop", "bishopMove18", pos, "t"]
                 arr.push(bishopMove18)
             }
             //move right 5 up 5
             var bishopMove19
             if(s == "white" && color == "white" && ((pos - 40) + 5) < 65 && ((pos - 40) + 5) > 0) {
                 var npos = (pos - 40) + 5
-                bishopMove19 = [npos, color, s, takec(), "bishop", "bishopMove19", pos]
+                bishopMove19 = [npos, color, s, takec(npos, color), "bishop", "bishopMove19", pos, "t"]
+                arr.push(bishopMove19)
+            } else if(s == "white" && color == "black" && ((pos - 40) + 5) < 65 && ((pos - 40) + 5) > 0) {
+                var npos = (pos - 40) + 5
+                bishopMove19 = [npos, color, s, takec(npos, color), "bishop", "bishopMove19", pos, "t"]
+                arr.push(bishopMove19)
+            } else if(s == "black" && color == "white" && ((pos - 40) + 5) < 65 && ((pos - 40) + 5) > 0) {
+                var npos = (pos - 40) + 5
+                bishopMove19 = [npos, color, s, takec(npos, color), "bishop", "bishopMove19", pos, "t"]
+                arr.push(bishopMove19)
+            } else if(s == "black" && color == "black" && ((pos - 40) + 5) < 65 && ((pos - 40) + 5) > 0) {
+                var npos = (pos - 40) + 5
+                bishopMove19 = [npos, color, s, takec(npos, color), "bishop", "bishopMove19", pos, "t"]
                 arr.push(bishopMove19)
             }
             //move right 6 up 6
             var bishopMove20
             if(s == "white" && color == "white" && ((pos - 48) + 6) < 65 && ((pos - 48) + 6) > 0) {
                 var npos = (pos - 48) + 6
-                bishopMove20 = [npos, color, s, takec(), "bishop", "bishopMove20", pos]
+                bishopMove20 = [npos, color, s, takec(npos, color), "bishop", "bishopMove20", pos, "t"]
+                arr.push(bishopMove20)
+            } else if(s == "white" && color == "black" && ((pos - 48) + 6) < 65 && ((pos - 48) + 6) > 0) {
+                var npos = (pos - 48) + 6
+                bishopMove20 = [npos, color, s, takec(npos, color), "bishop", "bishopMove20", pos, "t"]
+                arr.push(bishopMove20)
+            } else if(s == "black" && color == "white" && ((pos - 48) + 6) < 65 && ((pos - 48) + 6) > 0) {
+                var npos = (pos - 48) + 6
+                bishopMove20 = [npos, color, s, takec(npos, color), "bishop", "bishopMove20", pos, "t"]
+                arr.push(bishopMove20)
+            } else if(s == "black" && color == "black" && ((pos - 48) + 6) < 65 && ((pos - 48) + 6) > 0) {
+                var npos = (pos - 48) + 6
+                bishopMove20 = [npos, color, s, takec(npos, color), "bishop", "bishopMove20", pos, "t"]
                 arr.push(bishopMove20)
             }
             //move right 7 up 7
             var bishopMove21
             if(s == "white" && color == "white" && ((pos - 56) + 7) < 65 && ((pos - 56) + 7) > 0) {
                 var npos = (pos - 56) + 7
-                bishopMove21 = [npos, color, s, takec(), "bishop", "bishopMove21", pos]
+                bishopMove21 = [npos, color, s, takec(npos, color), "bishop", "bishopMove21", pos, "t"]
+                arr.push(bishopMove21)
+            } else if(s == "white" && color == "black" && ((pos - 56) + 7) < 65 && ((pos - 56) + 7) > 0) {
+                var npos = (pos - 56) + 7
+                bishopMove21 = [npos, color, s, takec(npos, color), "bishop", "bishopMove21", pos, "t"]
+                arr.push(bishopMove21)
+            } else if(s == "black" && color == "white" && ((pos - 56) + 7) < 65 && ((pos - 56) + 7) > 0) {
+                var npos = (pos - 56) + 7
+                bishopMove21 = [npos, color, s, takec(npos, color), "bishop", "bishopMove21", pos, "t"]
+                arr.push(bishopMove21)  
+            } else if(s == "black" && color == "black" && ((pos - 56) + 7) < 65 && ((pos - 56) + 7) > 0) {
+                var npos = (pos - 56) + 7
+                bishopMove21 = [npos, color, s, takec(npos, color), "bishop", "bishopMove21", pos, "t"]
                 arr.push(bishopMove21)
             }
-            //Up Left//
+             //Up Left//
             //move left 1 up 1
             var bishopMove22 
             if(s == "white" && color == "white" && ((pos - 8) - 1) < 65 && ((pos - 8) - 1) > 0) {
                 var npos = (pos - 8) - 1
-                bishopMove22 = [npos, color, s, takec(), "bishop", "bishopMove22", pos]
+                bishopMove22 = [npos, color, s, takec(npos, color), "bishop", "bishopMove22", pos, "t"]
+                arr.push(bishopMove22)
+            } else if(s == "white" && color == "black" && ((pos - 8) - 1) < 65 && ((pos - 8) - 1) > 0) {
+                var npos = (pos - 8) - 1
+                bishopMove22 = [npos, color, s, takec(npos, color), "bishop", "bishopMove22", pos, "t"]
+                arr.push(bishopMove22)
+            } else if(s == "black" && color == "white" && ((pos - 8) - 1) < 65 && ((pos - 8) - 1) > 0) {
+                var npos = (pos - 8) - 1
+                bishopMove22 = [npos, color, s, takec(npos, color), "bishop", "bishopMove22", pos, "t"]
+                arr.push(bishopMove22)
+            } else if(s == "black" && color == "black" && ((pos - 8) - 1) < 65 && ((pos - 8) - 1) > 0) {
+                var npos = (pos - 8) - 1
+                bishopMove22 = [npos, color, s, takec(npos, color), "bishop", "bishopMove22", pos, "t"]
                 arr.push(bishopMove22)
             }
             //move left 2 up 2
             var bishopMove23
             if(s == "white" && color == "white" && ((pos - 16) - 2) < 65 && ((pos - 16) - 2) > 0) {
                 var npos = (pos - 16) - 2
-                bishopMove23 = [npos, color, s, takec(), "bishop", "bishopMove23", pos]
+                bishopMove23 = [npos, color, s, takec(npos, color), "bishop", "bishopMove23", pos, "t"]
+                arr.push(bishopMove23)
+            } else if(s == "white" && color == "black" && ((pos - 16) - 2) < 65 && ((pos - 16) - 2) > 0) {
+                var npos = (pos - 16) - 2
+                bishopMove23 = [npos, color, s, takec(npos, color), "bishop", "bishopMove23", pos, "t"]
+                arr.push(bishopMove23)
+            } else if(s == "black" && color == "white" && ((pos - 16) - 2) < 65 && ((pos - 16) - 2) > 0) {
+                var npos = (pos - 16) - 2
+                bishopMove23 = [npos, color, s, takec(npos, color), "bishop", "bishopMove23", pos, "t"]
+                arr.push(bishopMove23)
+            } else if(s == "black" && color == "black" && ((pos - 16) - 2) < 65 && ((pos - 16) - 2) > 0) {
+                var npos = (pos - 16) - 2
+                bishopMove23 = [npos, color, s, takec(npos, color), "bishop", "bishopMove23", pos, "t"]
                 arr.push(bishopMove23)
             }
             //move left 3 up 3
             var bishopMove24
             if(s == "white" && color == "white" && ((pos - 24) - 3) < 65 && ((pos - 24) - 3) > 0) {
                 var npos = (pos - 24) - 3
-                bishopMove24 = [npos, color, s, takec(), "bishop", "bishopMove24", pos]
+                bishopMove24 = [npos, color, s, takec(npos, color), "bishop", "bishopMove24", pos, "t"]
+                arr.push(bishopMove24)
+            } else if(s == "white" && color == "black" && ((pos - 24) - 3) < 65 && ((pos - 24) - 3) > 0) {
+                var npos = (pos - 24) - 3
+                bishopMove24 = [npos, color, s, takec(npos, color), "bishop", "bishopMove24", pos, "t"]
+                arr.push(bishopMove24)
+            } else if(s == "black" && color == "white" && ((pos - 24) - 3) < 65 && ((pos - 24) - 3) > 0) {
+                var npos = (pos - 24) - 3
+                bishopMove24 = [npos, color, s, takec(npos, color), "bishop", "bishopMove24", pos, "t"]
+                arr.push(bishopMove24)
+            } else if(s == "black" && color == "black" && ((pos - 24) - 3) < 65 && ((pos - 24) - 3) > 0) {
+                var npos = (pos - 24) - 3
+                bishopMove24 = [npos, color, s, takec(npos, color), "bishop", "bishopMove24", pos, "t"]
                 arr.push(bishopMove24)
             }
-            //move left 4 up 4
+            //move left 4 up 4  
             var bishopMove25
             if(s == "white" && color == "white" && ((pos - 32) - 4) < 65 && ((pos - 32) - 4) > 0) {
                 var npos = (pos - 32) - 4
-                bishopMove25 = [npos, color, s, takec(), "bishop", "bishopMove25", pos]
+                bishopMove25 = [npos, color, s, takec(npos, color), "bishop", "bishopMove25", pos, "t"]
+                arr.push(bishopMove25)
+            } else if(s == "white" && color == "black" && ((pos - 32) - 4) < 65 && ((pos - 32) - 4) > 0) {
+                var npos = (pos - 32) - 4
+                bishopMove25 = [npos, color, s, takec(npos, color), "bishop", "bishopMove25", pos, "t"]
+                arr.push(bishopMove25)
+            } else if(s == "black" && color == "white" && ((pos - 32) - 4) < 65 && ((pos - 32) - 4) > 0) {
+                var npos = (pos - 32) - 4
+                bishopMove25 = [npos, color, s, takec(npos, color), "bishop", "bishopMove25", pos, "t"]
+                arr.push(bishopMove25)
+            } else if(s == "black" && color == "black" && ((pos - 32) - 4) < 65 && ((pos - 32) - 4) > 0) {
+                var npos = (pos - 32) - 4
+                bishopMove25 = [npos, color, s, takec(npos, color), "bishop", "bishopMove25", pos, "t"]
                 arr.push(bishopMove25)
             }
             //move left 5 up 5
             var bishopMove26
             if(s == "white" && color == "white" && ((pos - 40) - 5) < 65 && ((pos - 40) - 5) > 0) {
                 var npos = (pos - 40) - 5
-                bishopMove26 = [npos, color, s, takec(), "bishop", "bishopMove26", pos]
+                bishopMove26 = [npos, color, s, takec(npos, color), "bishop", "bishopMove26", pos, "t"]
                 arr.push(bishopMove26)
-            } 
+            } else if(s == "white" && color == "black" && ((pos - 40) - 5) < 65 && ((pos - 40) - 5) > 0) {
+                var npos = (pos - 40) - 5
+                bishopMove26 = [npos, color, s, takec(npos, color), "bishop", "bishopMove26", pos, "t"]
+                arr.push(bishopMove26)
+            } else if(s == "black" && color == "white" && ((pos - 40) - 5) < 65 && ((pos - 40) - 5) > 0) {
+                var npos = (pos - 40) - 5
+                bishopMove26 = [npos, color, s, takec(npos, color), "bishop", "bishopMove26", pos, "t"]
+                arr.push(bishopMove26)
+            } else if(s == "black" && color == "black" && ((pos - 40) - 5) < 65 && ((pos - 40) - 5) > 0) {
+                var npos = (pos - 40) - 5
+                bishopMove26 = [npos, color, s, takec(npos, color), "bishop", "bishopMove26", pos, "t"]
+                arr.push(bishopMove26)
+            }
             //move left 6 up 6
             var bishopMove27
             if(s == "white" && color == "white" && ((pos - 48) - 6) < 65 && ((pos - 48) - 6) > 0) {
                 var npos = (pos - 48) - 6
-                bishopMove27 = [npos, color, s, takec(), "bishop", "bishopMove27", pos]
+                bishopMove27 = [npos, color, s, takec(npos, color), "bishop", "bishopMove27", pos, "t"]
+                arr.push(bishopMove27)
+            } else if(s == "white" && color == "black" && ((pos - 48) - 6) < 65 && ((pos - 48) - 6) > 0) {
+                var npos = (pos - 48) - 6
+                bishopMove27 = [npos, color, s, takec(npos, color), "bishop", "bishopMove27", pos, "t"]
+                arr.push(bishopMove27)
+            } else if(s == "black" && color == "white" && ((pos - 48) - 6) < 65 && ((pos - 48) - 6) > 0) {
+                var npos = (pos - 48) - 6
+                bishopMove27 = [npos, color, s, takec(npos, color), "bishop", "bishopMove27", pos, "t"]
+                arr.push(bishopMove27)
+            } else if(s == "black" && color == "black" && ((pos - 48) - 6) < 65 && ((pos - 48) - 6) > 0) {
+                var npos = (pos - 48) - 6
+                bishopMove27 = [npos, color, s, takec(npos, color), "bishop", "bishopMove27", pos, "t"]
                 arr.push(bishopMove27)
             }
             //move left 7 up 7
-            var bishopMove28
+            var bishopMove28 
             if(s == "white" && color == "white" && ((pos - 56) - 7) < 65 && ((pos - 56) - 7) > 0) {
                 var npos = (pos - 56) - 7
-                bishopMove28 = [npos, color, s, takec(), "bishop", "bishopMove28", pos]
+                bishopMove28 = [npos, color, s, takec(npos, color), "bishop", "bishopMove28", pos, "t"]
+                arr.push(bishopMove28)
+            } else if(s == "white" && color == "black" && ((pos - 56) - 7) < 65 && ((pos - 56) - 7) > 0) {
+                var npos = (pos - 56) - 7
+                bishopMove28 = [npos, color, s, takec(npos, color), "bishop", "bishopMove28", pos, "t"]
+                arr.push(bishopMove28)
+            } else if(s == "black" && color == "white" && ((pos - 56) - 7) < 65 && ((pos - 56) - 7) > 0) {
+                var npos = (pos - 56) - 7
+                bishopMove28 = [npos, color, s, takec(npos, color), "bishop", "bishopMove28", pos, "t"]
+                arr.push(bishopMove28)
+            } else if(s == "black" && color == "black" && ((pos - 56) - 7) < 65 && ((pos - 56) - 7) > 0) {
+                var npos = (pos - 56) - 7
+                bishopMove28 = [npos, color, s, takec(npos, color), "bishop", "bishopMove28", pos, "t"]
                 arr.push(bishopMove28)
             }
         break;
@@ -1157,31 +1494,134 @@ async function gen(piece, pos, color) {
             var queenMove1 
             if(s == "white" && color == "white" && (pos - 1) < 65 && (pos - 1) > 0) {
                 var npos = pos - 1
-                queenMove1 = [npos, color, s, takec(), "queen", "queenMove1", pos]
+                queenMove1 = [npos, color, s, takec(npos, color), "queen", "queenMove1", pos, "t"]
                 arr.push(queenMove1)
-            } 
+            } else if(s == "white" && color == "black" && (pos - 1) < 65 && (pos - 1) > 0) {
+                var npos = pos - 1
+                queenMove1 = [npos, color, s, takec(npos, color), "queen", "queenMove1", pos, "t"]
+                arr.push(queenMove1)
+            } else if(s == "black" && color == "white" && (pos - 1) < 65 && (pos - 1) > 0) {
+                var npos = pos - 1
+                queenMove1 = [npos, color, s, takec(npos, color), "queen", "queenMove1", pos, "t"]
+                arr.push(queenMove1)
+            } else if(s == "black" && color == "black" && (pos - 1) < 65 && (pos - 1) > 0) {
+                var npos = pos - 1
+                queenMove1 = [npos, color, s, takec(npos, color), "queen", "queenMove1", pos, "t"]
+                arr.push(queenMove1)
+            }
             //move 2 left
             var queenMove2 
             if(s == "white" && color == "white" && (pos - 2) < 65 && (pos - 2) > 0) {
                 var npos = pos - 2
-                queenMove2 = [npos, color, s, takec(), "queen", "queenMove2", pos]
+                queenMove2 = [npos, color, s, takec(npos, color), "queen", "queenMove2", pos, "t"]
+                arr.push(queenMove2)
+            } else if(s == "white" && color == "black" && (pos - 2) < 65 && (pos - 2) > 0) {
+                var npos = pos - 2
+                queenMove2 = [npos, color, s, takec(npos, color), "queen", "queenMove2", pos, "t"]
+                arr.push(queenMove2)
+            } else if(s == "black" && color == "white" && (pos - 2) < 65 && (pos - 2) > 0) {
+                var npos = pos - 2
+                queenMove2 = [npos, color, s, takec(npos, color), "queen", "queenMove2", pos, "t"]
+                arr.push(queenMove2)
+            } else if(s == "black" && color == "black" && (pos - 2) < 65 && (pos - 2) > 0) {
+                var npos = pos - 2
+                queenMove2 = [npos, color, s, takec(npos, color), "queen", "queenMove2", pos, "t"]
                 arr.push(queenMove2)
             }
             //move 3 left
             var queenMove3
             if(s == "white" && color == "white" && (pos - 3) < 65 && (pos - 3) > 0) {
                 var npos = pos - 3
-                queenMove3 = [npos, color, s, takec(), "queen", "queenMove3", pos]
+                queenMove3 = [npos, color, s, takec(npos, color), "queen", "queenMove3", pos, "t"]
+                arr.push(queenMove3)
+            } else if(s == "white" && color == "black" && (pos - 3) < 65 && (pos - 3) > 0) {
+                var npos = pos - 3
+                queenMove3 = [npos, color, s, takec(npos, color), "queen", "queenMove3", pos, "t"]
+                arr.push(queenMove3)
+            } else if(s == "black" && color == "white" && (pos - 3) < 65 && (pos - 3) > 0) {
+                var npos = pos - 3
+                queenMove3 = [npos, color, s, takec(npos, color), "queen", "queenMove3", pos, "t"]
+                arr.push(queenMove3) 
+            } else if(s == "black" && color == "black" && (pos - 3) < 65 && (pos - 3) > 0) {
+                var npos = pos - 3
+                queenMove3 = [npos, color, s, takec(npos, color), "queen", "queenMove3", pos, "t"]
+                arr.push(queenMove3)
             }
             //move 4 left 
-            var move4
-            //move 5 left 
-            var move5
+            var queenMove4
+            if(s == "white" && color == "white" && (pos - 4) < 65 && (pos - 4) > 0) {
+                var npos = pos - 4
+                queenMove4 = [npos, color, s, takec(npos, color), "queen", "queenMove4", pos, "t"]
+                arr.push(queenMove4)
+            } else if(s == "white" && color == "black" && (pos - 4) < 65 && (pos - 4) > 0) {
+                var npos = pos - 4
+                queenMove4 = [npos, color, s, takec(npos, color), "queen", "queenMove4", pos, "t"]
+                arr.push(queenMove4)
+            } else if(s == "black" && color == "white" && (pos - 4) < 65 && (pos - 4) > 0 ) {
+                var npos = pos - 4
+                queenMove4 = [npos, color, s, takec(npos, color), "queen", "queenMove4", pos, "t"]
+                arr.push(queenMove4)
+            } else if(s == "black" && color == "black" && (pos - 4) < 65 && (pos - 4) > 0) {
+                var npos = pos - 4
+                queenMove4 = [npos, color, s, takec(npos, color), "queen", "queenMove4", pos, "t"]
+                arr.push(queenMove4)
+            }
+             //move 5 left 
+            var queenMove5
+            if(s == "white" && color == "white" && (pos - 5) < 65 && (pos - 5) > 0) {
+                var npos = pos - 5
+                queenMove5 = [npos, color, s, takec(npos, color), "queen", "queenMove5", pos, "t"]
+                arr.push(queenMove5)
+            } else if(s == "white" && color == "black" && (pos - 5) < 65 && (pos - 5) > 0) {
+                var npos = pos - 5
+                queenMove5 = [npos, color, s, takec(npos, color), "queen", "queenMove5", pos, "t"]
+                arr.push(queenMove5)
+            } else if(s == "black" && color == "white" && (pos - 5) < 65 && (pos - 5) > 0) {
+                var npos = pos - 5
+                queenMove5 = [npos, color, s, takec(npos, color), "queen", "queenMove5", pos, "t"]
+                arr.push(queenMove5)
+            } else if(s == "black" && color == "black" && (pos - 5) < 65 && (pos - 5) > 0) {
+                var npos = pos - 5
+                queenMove5 = [npos, color, s, takec(npos, color), "queen", "queenMove5", pos, "t"]
+                arr.push(queenMove5)                
+            }
             //move 6 left
-            var move6
+            var queenMove6
+            if(s == "white" && color == "white" && (pos - 6) < 65 && (pos - 6) > 0) {
+                var npos = pos - 6
+                queenMove6 = [npos, color, s, takec(npos, color), "queen", "queenMove6", pos, "t"]
+                arr.push(queenMove6)
+            } else if(s == "white" && color == "black" && (pos - 6) < 65 && (pos - 6) > 0) {
+                var npos = pos - 6
+                queenMove6 = [npos, color, s, takec(npos, color), "queen", "queenMove6", pos, "t"]
+                arr.push(queenMove6)
+            } else if(s == "black" && color == "white" && (pos - 6) < 65 && (pos - 6) > 0) {
+                var npos = pos - 6
+                queenMove6 = [npos, color, s, takec(npos, color), "queen", "queenMove6", pos, "t"]
+                arr.push(queenMove6)
+            } else if(s == "black" && color == "black" && (pos - 6) < 65 && (pos - 6) > 0) {
+                var npos = pos - 6
+                queenMove6 = [npos, color, s, takec(npos, color), "queen", "queenMove6", pos, "t"]
+                arr.push(queenMove6)
+            }
             //move 7 left
-            var move7
-            //Horizontal Right//
+            var queenMove7
+            if(s == "white" && color == "white" && (pos - 7) < 65 && (pos - 7) > 0) {
+                var npos = pos - 7
+                queenMove7 = [npos, color, s, takec(npos, color), "queen", "queenMove7", pos, "t"]
+                arr.push(queenMove7)
+            } else if(s == "white" && color == "black" && (pos - 7) < 65 && (pos - 7) > 0) {
+                var npos = pos - 7
+                queenMove7 = [npos, color, s, takec(npos, color), "queen", "queenMove7", pos, "t"]
+                arr.push(queenMove7)
+            } else if(s == "black" && color == "white" && (pos - 7) < 65 && (pos - 7) > 0) {
+                var npos = pos - 7
+                queenMove7 = [npos, color, s, takec(npos, color), "queen", "queenMove7", pos, "t"]
+                arr.push(queenMove7)
+            } else if(s == "black" && color == "black" && (pos - 7) < 65 && (pos - 7) > 0) {
+                
+            }
+            //Horizontal Right/
             //move 1 right
             var move8
             //move 2 right
@@ -1196,7 +1636,7 @@ async function gen(piece, pos, color) {
             var move13
             //move 7 right
             var move14
-            //Vertical Down//
+            //Vertical Down// 
             //move 1 down
             var move15
             //move 2 down
@@ -1304,6 +1744,7 @@ async function gen(piece, pos, color) {
 
 function isValid(arr) {
     //console.log(arr)
+    window.sessionStorage.setItem("arr2", JSON.stringify(arr))
     var arr2 = []
     var arr3 = []
     for(var j = 0; j < arr.length; j++) {
@@ -1313,7 +1754,7 @@ function isValid(arr) {
         var type = arr[j][4]
         var color = arr[j][1]
         var sw = arr[j][2]
-        //checks if move goes over piece of same color or is blocked by another piece of the same color or if other color piece blocks it
+        //checks if move goes over piece or is blocked by another piece of the same color or if other color piece blocks it
         var c1 = cmove(pos, npos, move, type, color, sw)
         //console.log(c1)
         if(c1 == "") {
@@ -1322,7 +1763,7 @@ function isValid(arr) {
             arr2.push(c1)
         }
         //checks if piece can take another piece
-        var c2 = takec(pos, npos, type, color, sw)
+        var c2 = tchck(pos, npos, type, color, sw)
         //checks if piece is pinned to king by another piece
         //arr3.push(pchck(pos, color, sw))
         //checks if piece can take another piece
@@ -1421,7 +1862,7 @@ function  ptchckL(pos, color, s) {
     if(s == "white" && color == "white" && document.getElementById(pos - 7) != undefined) {
         var npos = pos - 7
         var e = document.getElementById(npos)
-        console.log(npos)
+        //console.log(npos)
         if(e.children.length > 0) {
             var el = e.children[0].src
             var nc = cchck(el)
@@ -1436,7 +1877,7 @@ function  ptchckL(pos, color, s) {
     } else if(s == "white" && color == "black" && document.getElementById(pos + 7) != undefined) {
         var npos = pos + 7
         var e = document.getElementById(npos)
-        console.log(npos)
+        //console.log(npos)
         if(e.children.length > 0) {
             var el = e.children[0].src
             var nc = cchck(el)
@@ -1451,7 +1892,7 @@ function  ptchckL(pos, color, s) {
     } else if(s == "black" && color == "white" && document.getElementById(pos + 7) != undefined) {
         var npos = pos + 7
         var e = document.getElementById(npos)
-        console.log(npos)
+        //console.log(npos)
         if(e.children.length > 0) {
             var el = e.children[0].src
             var nc = cchck(el)
@@ -1466,7 +1907,7 @@ function  ptchckL(pos, color, s) {
     } else if(s == "black" && color == "black" && document.getElementById(pos - 7) != undefined) {
         var npos = pos - 7
         var e = document.getElementById(npos)
-        console.log(npos)
+        //console.log(npos)
         if(e.children.length > 0) {
             var el = e.children[0].src
             var nc = cchck(el)
@@ -1485,7 +1926,7 @@ function  ptchckR(pos, color, s) {
     if(s == "white" && color == "white" && document.getElementById(pos - 9) != undefined) {
         var npos = pos - 9
         var e = document.getElementById(npos)
-        console.log(npos)
+        //console.log(npos)
         if(e.children.length > 0) {
             var el = e.children[0].src
             var nc = cchck(el)
@@ -1500,7 +1941,7 @@ function  ptchckR(pos, color, s) {
     } else if(s == "white" && color == "black" && document.getElementById(pos + 9) != undefined) {
         var npos = pos + 9
         var e = document.getElementById(npos)
-        console.log(npos)
+        //console.log(npos)
         if(e.children.length > 0) {
             var el = e.children[0].src
             var nc = cchck(el)
@@ -1515,7 +1956,7 @@ function  ptchckR(pos, color, s) {
     } else if(s == "black" && color == "white" && document.getElementById(pos + 9) != undefined) {
         var npos = pos + 9
         var e = document.getElementById(npos)
-        console.log(npos)
+        //console.log(npos)
         if(e.children.length > 0) {
             var el = e.children[0].src
             var nc = cchck(el)
@@ -1530,7 +1971,7 @@ function  ptchckR(pos, color, s) {
     } else if(s == "black" && color == "black" && document.getElementById(pos - 9) != undefined) {
         var npos = pos - 9
         var e = document.getElementById(npos)
-        console.log(npos)
+        //console.log(npos)
         if(e.children.length > 0) {
             var el = e.children[0].src
             var nc = cchck(el)
@@ -1573,7 +2014,6 @@ function cmove(pos, npos, move, type, color, sw) {
     var arr = []
     switch(type) {
         case "pawn":
-            //pawnMove1 is move 1 foward
             if(move == "pawnMove1") {
                 if(sw == "white" && color == "white") {
                     var sq = document.getElementById(pos - 8)
@@ -1581,34 +2021,110 @@ function cmove(pos, npos, move, type, color, sw) {
                         //piece is in the way dont push to arr becuase pawn cant take foward
                     } else {
                         //no piece is blocking 
-                        if((pos - 8) == npos) {
-                            //position - 8 is equal to new position push to arr
-                            arr.push(npos)
-                        }
+                        arr.push(npos)
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq = document.getElementById(pos + 8)
+                    if(sq.children.length == 1) {
+                        //piece is in the way dont push to arr becuase pawn cant take foward
+                    } else {
+                        //no piece is blocking 
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq = document.getElementById(pos + 8)
+                    if(sq.children.length == 1) {
+                        //piece is in the way dont push to arr becuase pawn cant take foward
+                    } else {
+                        //no piece is blocking 
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq = document.getElementById(pos - 8)
+                    if(sq.children.length == 1) {
+                        //piece is in the way dont push to arr becuase pawn cant take foward
+                    } else {
+                        //no piece is blocking 
+                        arr.push(npos)
                     }
                 }
             } else if(move == "pawnMove2") {
-                //pawnMove2 is move 2 foward
                 if(sw == "white" && color == "white") {
-                    //check square in front 
                     var sq1 = document.getElementById(npos + 8)
-                    if(sq1.children.length == 1) {
-                        //square in front has child
-                    } else {
-                        //square in front has no child so check target square
+                    if(sq1.children.length == 1) {} else {
                         var sq2 = document.getElementById(npos)
-                        if(sq2.children.length == 1) {
-                            //target square has children dont push
-                        } else {
-                            //target square has no children push
+                        if(sq2.children.length == 1) {} else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(npos - 8)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(npos)
+                        if(sq2.children.length == 1) {} else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(npos - 8)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(npos)
+                        if(sq2.children.length == 1) {} else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(npos + 8)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById(npos)
+                        if(sq2.children.length == 1) {} else {
                             arr.push(npos)
                         }
                     }
                 }
             } else if(move == "pawnMove3") {
-
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 9)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) == color) {} else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 9)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) == color) {} else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 9)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) == color) {} else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 9)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) == color) {} else {
+                            arr.push(npos)
+                        }
+                    }
+                }
             } else if(move == "pawnMove4") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 7)
+                    if(sq1.children.length == 1) {
 
+                    }
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+
+                } else if(sw == "black" && color == "black") {
+
+                }
             } else if(move == "pawnMove5") {
 
             } else if(move == "pawnMove6") {
@@ -1793,29 +2309,15 @@ function cmove(pos, npos, move, type, color, sw) {
             } else if(move == "rookMove4") {
                 //rookMove4 is move up 4
                 if(sw == "white" && color == "white") {
-                    //check squares for piece
                     var sq1 = document.getElementById(pos - 8)
-                    if(sq1.children.length == 1) {
-                        //piece is in way stop
-                    } else {
-                        //no piece continue
+                    if(sq1.children.length == 1) {} else {
                         var sq2 = document.getElementById(pos - 16)
-                        if(sq2.children.length == 1) {
-                            //piece in way stop
-                        } else {
-                            //no piece in way continue
+                        if(sq2.children.length == 1) {} else {
                             var sq3 = document.getElementById(pos - 24)
-                            if(sq3.children.length == 1) {
-                                //piece in way stop
-                            } else {
-                                //no piece in way check if final square is empty or has enemy piece
+                            if(sq3.children.length == 1) {} else {
                                 var sq4 = document.getElementById(pos - 32)
                                 if(sq4.children.length == 1) {
-                                    //piece is there check color of piece
-                                    if(cchck(sq4.children[0].src) == color) {
-                                        //piece is same color cant move dont push
-                                    } else {
-                                        //enemy piece we can take push
+                                    if(cchck(sq4.children[0].src) == color) {} else {
                                         arr.push(npos)
                                     }
                                 } else { 
@@ -4391,8 +4893,1110 @@ function cmove(pos, npos, move, type, color, sw) {
             }
         break;
         case "bishop":
+            if(move == "bishopMove1") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) == color) {} else {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) == color) {} else {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) == color) {} else {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) == color) {} else {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                }
+            } else if(move == "bishopMove2") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children.length == 1)) {} else {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children.length == 1)) {} else {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children.length == 1)) {} else {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children.length == 1)) {} else {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                }
+            } else if(move == "bishopMove3") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 2) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 3) {
+                                if(cchck(sq3.children[0].src) == color) {} else {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    } 
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 2) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 3) {
+                                if(cchck(sq3.children[0].src) == color) {} else {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    } 
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 2) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 3) {
+                                if(cchck(sq3.children[0].src) == color) {} else {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    } 
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 2) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 3) {
+                                if(cchck(sq3.children[0].src) == color) {} else {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    } 
+                }
+            } else if(move == "bishopMove4") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)    
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children.length == 1)) {} else {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)    
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children.length == 1)) {} else {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)    
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children.length == 1)) {} else {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)    
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children.length == 1)) {} else {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "bishopMove5") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) == color) {} else {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) == color) {} else {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) == color) {} else {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) == color) {} else {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "bishopMove6") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3) 
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3) 
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3) 
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3) 
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "bishopMove7") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) - 2) 
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) - 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById((pos + 56) - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
 
-        break;
+                } else if(sw == "black" && color == "white") {
+
+                } else if(sw == "black" && color == "black") {
+
+                }
+            } else if(move == "bishopMove8") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) == color) {} else {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) == color) {} else {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) == color) {} else {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) == color) {} else {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                }
+            } else if(move == "bishopMove9") {
+                if(sw == "white" && color == "white") {
+                    console.log("test")
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) == color) {} else {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) == color) {} else {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) == color) {} else {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) == color) {} else {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                }
+            } else if(move == "bishopMove10") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) == color) {} else {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    } 
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) == color) {} else {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    } 
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) == color) {} else {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    } 
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) == color) {} else {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    } 
+                }
+            } else if(move == "bishopMove11") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) == color) {} else {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) == color) {} else {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) == color) {} else {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) == color) {} else {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "bishopMove12") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) == color) {} else {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) == color) {} else {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) == color) {} else {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) == color) {} else {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "bishopMove13") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "bishopMove14") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById((pos + 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                } 
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById((pos + 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                } 
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById((pos + 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                } 
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {} else {
+                        var sq2 = document.getElementById((pos + 16) + 2)
+                        if(sq2.children.length == 1) {} else {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {} else {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {} else {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {} else {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length == 1) {} else {
+                                            var sq7 = document.getElementById((pos + 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) == color) {} else {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                } 
+                            }
+                        }
+                    }
+                }
+            } else if(move == "bishopMove15") {
+                if(sw == "white" && color == "white") {
+                
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove16") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove17") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove18") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove19") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove20") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove21") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove22") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove23") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove24") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove25") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove26") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove27") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            } else if(move == "bishopMove28") {
+                if(sw == "white" && color == "white") {
+
+                } else if(sw == "white" && color == "black") {
+
+                } else if(sw == "black" && color == "white") {
+                     
+                } else if(sw == "black" && color == "black") {
+                    
+                }
+            }
+        break; 
         case "queen":
 
         break;
@@ -4407,7 +6011,7 @@ function pchck(pos, color, sw) {
 
 function takec(npos, color) { 
     //check if there is a piece there
-    console.log(npos)
+    //xconsole.log(npos)
     var sq = document.getElementById(npos)
     if(sq.children.length == 1) {
         //check if piece is freindly
@@ -4622,4 +6226,4 @@ function sqc(id) {
         break;
     }       
 
-}   
+}    
