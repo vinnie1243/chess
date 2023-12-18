@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="JS/chess.js"></script>
+        <script src="JS/moves.js"></script>
+        <link rel="stylesheet" href="chess.css">
+        <link rel="icon" type="image/x-icon" href="Media\Images\chess.jfif">
+        <title>Chess</title>
+    </head>
+    <body onload="make()">
+        <main>
+            <nav>
+                <br>
+                <h1 class="gold">Navigation</h1>
+                <hr>
+                <a href="../index.html" class="gold">Home Page</a>
+            </nav>
+            <div id="con">
+
+            </div>
+            <aside>
+                <button onclick="white()">Play As White</button>
+                <button onclick="black()">Play As Black</button>
+                <button onclick="r()">reset</button>
+            </aside>
+        </main>
+        <div class="invis">
+            <!--white-->
+            <img src="Media/Images/kingWhite.png" id="kingWhite">
+            <img src="Media/Images/queenWhite.png" id="queenWhite">
+            <img src="Media/Images/bishopWhite.png" id="bishopWhite">
+            <img src="Media/Images/knightWhite.png" id="knightWhite">
+            <img src="Media/Images/rookWhite.png" id="rookWhite">
+            <img src="Media/Images/pawnWhite.png" id="pawnWhite">
+            <!--black-->
+            <img src="Media/Images/kingBlack.png" id="kingBlack">
+            <img src="Media/Images/queenBlack.png" id="queenBlack">
+            <img src="Media/Images/bishopBlack.png" id="bishopBlack">
+            <img src="Media/Images/knightBlack.png" id="knightBlack">
+            <img src="Media/Images/rookBlack.png" id="rookBlack">
+            <img src="Media/Images/pawnBlack.png" id="pawnBlack">
+            <!--dot-->
+            <img src="Media/Images/greenDot.png" id="greenDot">
+            <img src="Media/Images/redDot.png" id="redDot">
+            <!--bug fix-->
+            <div id="|"></div>
+        </div>
+    </body>
+</html>
