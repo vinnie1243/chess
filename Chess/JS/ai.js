@@ -1,7 +1,0 @@
-function genMove() {
-    
-}
-
-function pickMove() {
-
-}
