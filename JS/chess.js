@@ -84,7 +84,7 @@ function make() {
 
 function kingchck() {
     var pieces = JSON.parse(window.sessionStorage.getItem("parr"))
-    console.log(pieces)
+    //console.log(pieces)
     var k1 = 0
     var k2 = 0
     for(var l = 0; l < pieces.length; l++) {
@@ -161,6 +161,7 @@ async function move(e) {
     ele.appendChild(sp)
     uparr()
     kingchck()
+    fix()
 }
 
 function uparr() {
@@ -443,4 +444,13 @@ function pichck(src) {
     } else if(src.includes("bishop") == true) {
         return "bishop"
     }
+}
+
+function fix() {
+    var arr = document.getElementsByClassName("take")
+    for(var i = 0; i < arr.length; i++) {
+        arr[i].removeEventListener("click", addeve, true)
+        arr[i].classList.remove("take")
+    }
+    //console.log(arr)
 }
