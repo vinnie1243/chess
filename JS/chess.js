@@ -11,14 +11,14 @@ function make() {
     var pieces = []
     if(s2 == "white") {
         pieces = [
-            ["rookBlack", "knightBlack", "bishopBlack", "queenBlack", "kingBlack", "bishopBlack", "knightBlack", "rookBlack"], 
-            ["pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack"], 
             ["", "", "", "", "", "", "", ""], 
+            ["", "", "", "", "", "", "", ""],  
+            ["", "", "", "", "", "pawnBlack", "", "pawnBlack"], 
+            ["", "", "", "", "", "", "pawnWhite", ""], 
             ["", "", "", "", "", "", "", ""], 
+            ["", "", "", "pawnWhite", "", "", "", ""], 
+            ["pawnWhite", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
-            ["", "", "", "", "", "", "", ""], 
-            ["pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite"], 
-            ["rookWhite", "knightWhite", "bishopWhite", "queenWhite", "kingWhite", "bishopWhite", "knightWhite", "rookWhite"], 
         ]
     } else if(s2 == "black") {
         pieces = [

@@ -14,7 +14,7 @@ async function gen(piece, pos, color) {
     //console.log(s, text2, color, pos)
     var p8 = pos % 8
     var pd8 = Math.floor(pos / 8)
-    //console.log(p8, pd8)
+    console.log(p8)
     var arr = []
     switch (text2) {
         case "pawn":
@@ -395,38 +395,38 @@ async function gen(piece, pos, color) {
             }
             //move 2 right
             var rookMove16
-            if(s == "white" && color == "white" && (pos + 2) < 65 && (pos + 2) > 0 && p8 < 7 && p8 != 0) {
+            if(s == "white" && color == "white" && (pos + 2) < 65 && (pos + 2) > 0 && p8 != 7) {
                 var npos = pos + 2
                 rookMove16 = [npos, color, s, takec(npos, color), "rook", "rookMove16", pos, "t"]
                 arr.push(rookMove16)
-            } else if(s == "white" && color == "black" && (pos + 2) < 65 && (pos + 2) > 0 && p8 < 7 && p8 != 0) {
+            } else if(s == "white" && color == "black" && (pos + 2) < 65 && (pos + 2) > 0 && p8 != 7) {
                 var npos = pos + 2
                 rookMove16 = [npos, color, s, takec(npos, color), "rook", "rookMove16", pos, "t"]
                 arr.push(rookMove16)
-            } else if(s == "black" && color == "white" && (pos + 2) < 65 && (pos + 2) > 0 && p8 < 7 && p8 != 0) {
+            } else if(s == "black" && color == "white" && (pos + 2) < 65 && (pos + 2) > 0 && p8 != 7) {
                 var npos = pos + 2
                 rookMove16 = [npos, color, s, takec(npos, color), "rook", "rookMove16", pos, "t"]
                 arr.push(rookMove16)
-            } else if(s == "black" && color == "black" && (pos + 2) < 65 && (pos + 2) > 0 && p8 < 7 && p8 != 0) {
+            } else if(s == "black" && color == "black" && (pos + 2) < 65 && (pos + 2) > 0 && p8 != 7) {
                 var npos = pos + 2
                 rookMove16 = [npos, color, s, takec(npos, color), "rook", "rookMove16", pos, "t"]
                 arr.push(rookMove16)
             }
             //move 3 right
             var rookMove17
-            if(s == "white" && color == "white" && (pos + 3) < 65 && (pos + 3) > 0 && p8 != 0) {
+            if(s == "white" && color == "white" && (pos + 3) < 65 && (pos + 3) > 0 && p8 != 6) {
                 var npos = pos + 3
                 rookMove17 = [npos, color, s, takec(npos, color), "rook", "rookMove17", pos, "t"]
                 arr.push(rookMove17)
-            } else if(s == "white" && color == "black" && (pos + 3) < 65 && (pos + 3) > 0 && p8 != 0) {
+            } else if(s == "white" && color == "black" && (pos + 3) < 65 && (pos + 3) > 0 && p8 != 6) {
                 var npos = pos + 3
                 rookMove17 = [npos, color, s, takec(npos, color), "rook", "rookMove17", pos, "t"]
                 arr.push(rookMove17)
-            } else if(s == "black" && color == "white" && (pos + 3) < 65 && (pos + 3) > 0 && p8 != 0) {
+            } else if(s == "black" && color == "white" && (pos + 3) < 65 && (pos + 3) > 0 && p8 != 6) {
                 var npos = pos + 3
                 rookMove17 = [npos, color, s, takec(npos, color), "rook", "rookMove17", pos, "t"]
                 arr.push(rookMove17)
-            } else if(s == "black" && color == "black" && (pos + 3) < 65 && (pos + 3) > 0 && p8 != 0) {
+            } else if(s == "black" && color == "black" && (pos + 3) < 65 && (pos + 3) > 0 && p8 != 6) {
                 var npos = pos + 3
                 rookMove17 = [npos, color, s, takec(npos, color), "rook", "rookMove17", pos, "t"] 
                 arr.push(rookMove17)
@@ -471,19 +471,19 @@ async function gen(piece, pos, color) {
             }
             //move 6 right
             var rookMove20
-            if(s == "white" && color == "white" && (pos + 6) < 65 && (pos + 6) > 0 && p8 < 3 && p8 != 0) {
+            if(s == "white" && color == "white" && (pos + 6) < 65 && (pos + 6) > 0 && p8 != 3) {
                 var npos = pos + 6 
                 rookMove20 = [npos, color, s, takec(npos, color), "rook", "rookMove20", pos, "t"]
                 arr.push(rookMove20)
-            } else if(s == "white" && color == "black" && (pos + 6) < 65 && (pos + 6) > 0 && p8 < 3 && p8 != 0) {
+            } else if(s == "white" && color == "black" && (pos + 6) < 65 && (pos + 6) > 0 && p8 != 3) {
                 var npos = pos + 6
                 rookMove20 = [npos, color, s, takec(npos, color), "rook", "rookMove20", pos, "t"]
                 arr.push(rookMove20)
-            } else if(s == "black" && color == "white" && (pos + 6) < 65 && (pos + 6) > 0 && p8 < 3 && p8 != 0) {
+            } else if(s == "black" && color == "white" && (pos + 6) < 65 && (pos + 6) > 0 && p8 != 3) {
                 var npos = pos + 6
                 rookMove20 = [npos, color, s, takec(npos, color), "rook", "rookMove20", pos, "t"]
                 arr.push(rookMove20)
-            } else if(s == "black" && color == "black" && (pos + 6) < 65 && (pos + 6) > 0 && p8 < 3 && p8 != 0) {
+            } else if(s == "black" && color == "black" && (pos + 6) < 65 && (pos + 6) > 0 && p8 != 3) {
                 var npos = pos + 6
                 rookMove20 = [npos, color, s, takec(npos, color), "rook", "rookMove20", pos, "t"]
                 arr.push(rookMove20)
@@ -510,9 +510,7 @@ async function gen(piece, pos, color) {
             //move 1 left
             var rookMove22
             if(s == "white" && color == "white" && (pos - 1) < 65 && (pos - 1) > 0 && p8 != 1) {   
-                console.log("ran")
                 var npos = pos - 1
-                console.log(npos)
                 rookMove22 = [npos, color, s, takec(npos, color), "rook", "rookMove22", pos, "t"]
                 arr.push(rookMove22)
             } else if(s == "white" && color == "black" && (pos - 1) < 65 && (pos - 1) > 0 && p8 != 1) { 
@@ -1709,131 +1707,864 @@ async function gen(piece, pos, color) {
             //move 5 right
             var queenMove12
             if(s == "white" && color == "white" && (pos + 5) < 65 && (pos + 5) > 0) {
-
+                var npos = pos + 5
+                queenMove12 = [npos, color, s, takec(npos, color), "queen", "queenMove12", pos, "t"]
+                arr.push(queenMove12)
             } else if(s == "white" && color == "black" && (pos + 5) < 65 && (pos + 5) > 0) {
-
+                var npos = pos + 5
+                queenMove12 = [npos, color, s, takec(npos, color), "queen", "queenMove12", pos, "t"]
+                arr.push(queenMove12)
             } else if(s == "black" && color == "white" && (pos + 5) < 65 && (pos + 5) > 0) {
-
+                var npos = pos + 5
+                queenMove12 = [npos, color, s, takec(npos, color), "queen", "queenMove12", pos, "t"]
+                arr.push(queenMove12)
             } else if(s == "black" && color == "black" && (pos + 5) < 65 && (pos + 5) > 0) {
-
+                var npos = pos + 5
+                queenMove12 = [npos, color, s, takec(npos, color), "queen", "queenMove12", pos, "t"]
+                arr.push(queenMove12)
             }
             //move 6 right
             var queenMove13
             if(s == "white" && color == "white" && (pos + 6) < 65 && (pos + 6) > 0) {
-
+                var npos = pos + 6
+                queenMove13 = [npos, color, s, takec(npos, color), "queen", "queenMove13", pos, "t"]
+                arr.push(queenMove13)
             } else if(s == "white" && color == "black" && (pos + 6) < 65 && (pos + 6) > 0) {
-
+                var npos = pos + 6
+                queenMove13 = [npos, color, s, takec(npos, color), "queen", "queenMove13", pos, "t"]
+                arr.push(queenMove13)
             } else if(s == "black" && color == "white" && (pos + 6) < 65 && (pos + 6) > 0) {
-
+                var npos = pos + 6
+                queenMove13 = [npos, color, s, takec(npos, color), "queen", "queenMove13", pos, "t"]
+                arr.push(queenMove13)
             } else if(s == "black" && color == "black" && (pos + 6) < 65 && (pos + 6) > 0) {
-
+                var npos = pos + 6
+                queenMove13 = [npos, color, s, takec(npos, color), "queen", "queenMove13", pos, "t"]
+                arr.push(queenMove13)
             }
             //move 7 right
             var queenMove14
             if(s == "white" && color == "white" && (pos + 7) < 65 && (pos + 7) > 0) {
-
+                var npos = pos + 7
+                queenMove14 = [npos, color, s, takec(npos, color), "queen", "queenMove14", pos, "t"]
+                arr.push(queenMove14)
             } else if(s == "white" && color == "black" && (pos + 7) < 65 && (pos + 7) > 0) {
-
+                var npos = pos + 7
+                queenMove14 = [npos, color, s, takec(npos, color), "queen", "queenMove14", pos, "t"]
+                arr.push(queenMove14)
             } else if(s == "black" && color == "white" && (pos + 7) < 65 && (pos + 7) > 0) {
-
+                var npos = pos + 7
+                queenMove14 = [npos, color, s, takec(npos, color), "queen", "queenMove14", pos, "t"]
+                arr.push(queenMove14)
             } else if(s == "black" && color == "black" && (pos + 7) < 65 && (pos + 7) > 0) {
-                
+                var npos = pos + 7
+                queenMove14 = [npos, color, s, takec(npos, color), "queen", "queenMove14", pos, "t"]
+                arr.push(queenMove14)
             }
             //Vertical Down// 
             //move 1 down
-            var move15
+            var queenMove15
+            if(s == "white" && color == "white" && (pos + 8) < 65 && (pos + 8) > 0) {
+                var npos = pos + 8
+                queenMove15 = [npos, color, s, takec(npos, color), "queen", "queenMove15", pos, "t"]
+                arr.push(queenMove15)
+            } else if(s == "white" && color == "black" && (pos + 8) < 65 && (pos + 8) > 0) {
+                var npos = pos + 8
+                queenMove15 = [npos, color, s, takec(npos, color), "queen", "queenMove15", pos, "t"]
+                arr.push(queenMove15)
+            } else if(s == "black" && color == "white" && (pos + 8) < 65 && (pos + 8) > 0) {
+                var npos = pos + 8
+                queenMove15 = [npos, color, s, takec(npos, color), "queen", "queenMove15", pos, "t"]
+                arr.push(queenMove15)
+            } else if(s == "black" && color == "black" && (pos + 8) < 65 && (pos + 8) > 0) {
+                var npos = pos + 8
+                queenMove15 = [npos, color, s, takec(npos, color), "queen", "queenMove15", pos, "t"]
+                arr.push(queenMove15)
+            }
             //move 2 down
-            var move16
+            var queenMove16
+            if(s == "white" && color == "white" && (pos + 16) < 65 && (pos + 16) > 0) {
+                var npos = pos + 16
+                queenMove16 = [npos, color, s, takec(npos, color), "queen", "queenMove16", pos, "t"]
+                arr.push(queenMove16)
+            } else if(s == "white" && color == "black" && (pos + 16) < 65 && (pos + 16) > 0) {
+                var npos = pos + 16
+                queenMove16 = [npos, color, s, takec(npos, color), "queen", "queenMove16", pos, "t"]
+                arr.push(queenMove16)
+            } else if(s == "black" && color == "white" && (pos + 16) < 65 && (pos + 16) > 0) {
+                var npos = pos + 16
+                queenMove16 = [npos, color, s, takec(npos, color), "queen", "queenMove16", pos, "t"]
+                arr.push(queenMove16)
+            } else if(s == "black" && color == "black" && (pos + 16) < 65 && (pos + 16) > 0) {
+                var npos = pos + 16
+                queenMove16 = [npos, color, s, takec(npos, color), "queen", "queenMove16", pos, "t"]
+                arr.push(queenMove16)
+            }
             //move 3 down
-            var move17
+            var queenMove17
+            if(s == "white" && color == "white" && (pos + 24) < 65 && (pos + 24) > 0) {
+                var npos = pos + 24
+                queenMove17 = [npos, color, s, takec(npos, color), "queen", "queenMove17", pos, "t"]
+                arr.push(queenMove17)
+            } else if(s == "white" && color == "black" && (pos + 24) < 65 && (pos + 24) > 0) {
+                var npos = pos + 24
+                queenMove17 = [npos, color, s, takec(npos, color), "queen", "queenMove17", pos, "t"]
+                arr.push(queenMove17)
+            } else if(s == "black" && color == "white" && (pos + 24) < 65 && (pos + 24) > 0) {
+                var npos = pos + 24
+                queenMove17 = [npos, color, s, takec(npos, color), "queen", "queenMove17", pos, "t"]
+                arr.push(queenMove17)
+            } else if(s == "black" && color == "black" && (pos + 24) < 65 && (pos + 24) > 0) {
+                var npos = pos + 24
+                queenMove17 = [npos, color, s, takec(npos, color), "queen", "queenMove17", pos, "t"]
+                arr.push(queenMove17)
+            }
             //move 4 down
-            var move18
+            var queenMove18
+            if(s == "white" && color == "white" && (pos + 32) < 65 && (pos + 32) > 0) {
+                var npos = pos + 32
+                queenMove18 = [npos, color, s, takec(npos, color), "queen", "queenMove18", pos, "t"]
+                arr.push(queenMove18)
+            } else if(s == "white" && color == "black" && (pos + 32) < 65 && (pos + 32) > 0) {
+                var npos = pos + 32
+                queenMove18 = [npos, color, s, takec(npos, color), "queen", "queenMove18", pos, "t"]
+                arr.push(queenMove18)
+            } else if(s == "black" && color == "white" && (pos + 32) < 65 && (pos + 32) > 0) {
+                var npos = pos + 32
+                queenMove18 = [npos, color, s, takec(npos, color), "queen", "queenMove18", pos, "t"]
+                arr.push(queenMove18)
+            } else if(s == "black" && color == "black" && (pos + 32) < 65 && (pos + 32) > 0) {
+                var npos = pos + 32
+                queenMove18 = [npos, color, s, takec(npos, color), "queen", "queenMove18", pos, "t"]
+                arr.push(queenMove18) 
+            }
             //move 5 down
-            var move19
+            var queenMove19
+            if(s == "white" && color == "white" && (pos + 40) < 65 && (pos + 40) > 0) {
+                var npos = pos + 40
+                queenMove19 = [npos, color, s, takec(npos, color), "queen", "queenMove19", pos, "t"]
+                arr.push(queenMove19)
+            } else if(s == "white" && color == "black" && (pos + 40) < 65 && (pos + 40) > 0) {
+                var npos = pos + 40
+                queenMove19 = [npos, color, s, takec(npos, color), "queen", "queenMove19", pos, "t"]
+                arr.push(queenMove19)
+            } else if(s == "black" && color == "white" && (pos + 40) < 65 && (pos + 40) > 0) {
+                var npos = pos + 40
+                queenMove19 = [npos, color, s, takec(npos, color), "queen", "queenMove19", pos, "t"]
+                arr.push(queenMove19)
+            } else if(s == "black" && color == "black" && (pos + 40) < 65 && (pos + 40) > 0) {
+                var npos = pos + 40
+                queenMove19 = [npos, color, s, takec(npos, color), "queen", "queenMove19", pos, "t"]
+                arr.push(queenMove19)
+            }
             //move 6 down
-            var move20
+            var queenMove20
+            if(s == "white" && color == "white" && (pos + 48) < 65 && (pos + 48) > 0) {
+                var npos = pos + 48
+                queenMove20 = [npos, color, s, takec(npos, color), "queen", "queenMove20", pos, "t"]
+                arr.push(queenMove20)
+            } else if(s == "white" && color == "black" && (pos + 48) < 65 && (pos + 48) > 0) {
+                var npos = pos + 48
+                queenMove20 = [npos, color, s, takec(npos, color), "queen", "queenMove20", pos, "t"]
+                arr.push(queenMove20)
+            } else if(s == "black" && color == "white" && (pos + 48) < 65 && (pos + 48) > 0) {
+                var npos = pos + 48
+                queenMove20 = [npos, color, s, takec(npos, color), "queen", "queenMove20", pos, "t"]
+                arr.push(queenMove20)
+            } else if(s == "black" && color == "black" && (pos + 48) < 65 && (pos + 48) > 0) {
+                var npos = pos + 48
+                queenMove20 = [npos, color, s, takec(npos, color), "queen", "queenMove20", pos, "t"]
+                arr.push(queenMove20)
+            }
             //move 7 down
-            var move21
+            var queenMove21
+            if(s == "white" && color == "white" && (pos + 56) < 65 && (pos + 56) > 0) {
+                var npos = pos + 56
+                queenMove21 = [npos, color, s, takec(npos, color), "queen", "queenMove21", pos, "t"]
+                arr.push(queenMove21)
+            } else if(s == "white" && color == "black" && (pos + 56) < 65 && (pos + 56) > 0) {
+                var npos = pos + 56
+                queenMove21 = [npos, color, s, takec(npos, color), "queen", "queenMove21", pos, "t"]
+                arr.push(queenMove21)
+            } else if(s == "black" && color == "white" && (pos + 56) < 65 && (pos + 56) > 0) {
+                var npos = pos + 56
+                queenMove21 = [npos, color, s, takec(npos, color), "queen", "queenMove21", pos, "t"]
+                arr.push(queenMove21)
+            } else if(s == "black" && color == "black" && (pos + 56) < 65 && (pos + 56) > 0) {
+                var npos = pos + 56
+                queenMove21 = [npos, color, s, takec(npos, color), "queen", "queenMove21", pos, "t"]
+                arr.push(queenMove21)
+            }
             //Vertical Up//
             //move 1 up 
             var queenMove22
             if(s == "white" && color == "white" && (pos - 8) < 65 && (pos - 8) > 0) {
                 var npos = pos - 8 
-                queenMove22 = [npos, color, s, takec(), "queen", "queenMove22", pos]
+                queenMove22 = [npos, color, s, takec(npos , color), "queen", "queenMove22", pos, "t"]
+                arr.push(queenMove22)   
+            } else if(s == "white" && color == "black" && (pos - 8) < 65 && (pos - 8) > 0) {
+                var npos = pos - 8 
+                queenMove22 = [npos, color, s, takec(npos, color), "queen", "queenMove22", pos]
+                arr.push(queenMove22)   
+            } else if(s == "black" && color == "white" && (pos - 8) < 65 && (pos - 8) > 0) {
+                var npos = pos - 8 
+                queenMove22 = [npos, color, s, takec(npos, color), "queen", "queenMove22", pos]
+                arr.push(queenMove22)   
+            } else if(s == "black" && color == "black" && (pos - 8) < 65 && (pos - 8) > 0) {
+                var npos = pos - 8 
+                queenMove22 = [npos, color, s, takec(npos, color), "queen", "queenMove22", pos]
                 arr.push(queenMove22)   
             }
             //move 2 up
-            var move23
+            var queenMove23
+            if(s == "white" && color == "white" && (pos - 16) < 65 && (pos - 16) > 0) {
+                var npos = pos - 16
+                queenMove23 = [npos, color, s, takec(npos, color), "queen", "queenMove23", pos, "t"]
+                arr.push(queenMove23)   
+            } else if(s == "white" && color == "black" && (pos - 16) < 65 && (pos - 16) > 0) {
+                var npos = pos - 16
+                queenMove23 = [npos, color, s, takec(npos, color), "queen", "queenMove23", pos, "t"]
+                arr.push(queenMove23)   
+            } else if(s == "black" && color == "white" && (pos - 16) < 65 && (pos - 16) > 0) {
+                var npos = pos - 16
+                queenMove23 = [npos, color, s, takec(npos, color), "queen", "queenMove23", pos, "t"]
+                arr.push(queenMove23)   
+            } else if(s == "black" && color == "black" && (pos - 16) < 65 && (pos - 16) > 0) {
+                var npos = pos - 16
+                queenMove23 = [npos, color, s, takec(npos, color), "queen", "queenMove23", pos, "t"]
+                arr.push(queenMove23)   
+            }
             //move 3 up 
-            var move24
+            var queenMove24
+            if(s == "white" && color == "white" && (pos - 24) < 65 && (pos - 24) > 0) {
+                var npos = pos - 24
+                queenMove24 = [npos, color, s, takec(npos, color), "queen", "queenMove24", pos, "t"]
+                arr.push(queenMove24)   
+            } else if(s == "white" && color == "black" && (pos - 24) < 65 && (pos - 24) > 0) {
+                var npos = pos - 24
+                queenMove24 = [npos, color, s, takec(npos, color), "queen", "queenMove24", pos, "t"]
+                arr.push(queenMove24)
+            } else if(s == "black" && color == "white" && (pos - 24) < 65 && (pos - 24) > 0) {
+                var npos = pos - 24
+                queenMove24 = [npos, color, s, takec(npos, color), "queen", "queenMove24", pos, "t"]
+                arr.push(queenMove24)
+            } else if(s == "black" && color == "black" && (pos - 24) < 65 && (pos - 24) > 0) {
+                var npos = pos - 24
+                queenMove24 = [npos, color, s, takec(npos, color), "queen", "queenMove24", pos]
+                arr.push(queenMove24)
+            }
             //move 4 up 
-            var move25
+            var queenMove25
+            if(s == "white" && color == "white" && (pos - 32) < 65 && (pos - 32) > 0) {
+                var npos = pos - 32
+                queenMove25 = [npos, color, s, takec(npos, color), "queen", "queenMove25", pos]
+                arr.push(queenMove25)
+            } else if(s == "white" && color == "black" && (pos - 32) < 65 && (pos - 32) > 0) {
+                var npos = pos - 32
+                queenMove25 = [npos, color, s, takec(npos, color), "queen", "queenMove25", pos]
+                arr.push(queenMove25)
+            } else if(s == "black" && color == "white" && (pos - 32) < 65 && (pos - 32) > 0) {
+                var npos = pos - 32
+                queenMove25 = [npos, color, s, takec(npos, color), "queen", "queenMove25", pos]
+                arr.push(queenMove25)
+            } else if(s == "black" && color == "black" && (pos - 32) < 65 && (pos - 32) > 0) {
+                var npos = pos - 32
+                queenMove25 = [npos, color, s, takec(npos, color), "queen", "queenMove25", pos]
+                arr.push(queenMove25)
+            }
             //move 5 up  
-            var move26
+            var queenMove26
+            if(s == "white" && color == "white" && (pos - 40) < 65 && (pos - 40) > 0) {
+                var npos = pos - 40
+                queenMove26 = [npos, color, s, takec(npos, color), "queen", "queenMove26", pos]
+                arr.push(queenMove26)
+            } else if(s == "white" && color == "black" && (pos - 40) < 65 && (pos - 40) > 0) {
+                var npos = pos - 40
+                queenMove26 = [npos, color, s, takec(npos, color), "queen", "queenMove26", pos]
+                arr.push(queenMove26)
+            } else if(s == "black" && color == "white" && (pos - 40) < 65 && (pos - 40) > 0) {
+                var npos = pos - 40
+                queenMove26 = [npos, color, s, takec(npos, color), "queen", "queenMove26", pos]
+                arr.push(queenMove26)
+            } else if(s == "black" && color == "black" && (pos - 40) < 65 && (pos - 40) > 0) {
+                var npos = pos - 40
+                queenMove26 = [npos, color, s, takec(npos, color), "queen", "queenMove26", pos]
+                arr.push(queenMove26)
+            }
             //move 6 up
-            var move27
+            var queenMove27
+            if(s == "white" && color == "white" && (pos - 48) < 65 && (pos - 48) > 0) {
+                var npos = pos - 48
+                queenMove27 = [npos, color, s, takec(npos, color), "queen", "queenMove27", pos]
+                arr.push(queenMove27)
+            } else if(s == "white" && color == "black" && (pos - 48) < 65 && (pos - 48) > 0) {
+                var npos = pos - 48
+                queenMove27 = [npos, color, s, takec(npos, color), "queen", "queenMove27", pos]
+                arr.push(queenMove27)
+            } else if(s == "black" && color == "white" && (pos - 48) < 65 && (pos - 48) > 0) {
+                var npos = pos - 48
+                queenMove27 = [npos, color, s, takec(npos, color), "queen", "queenMove27", pos]
+                arr.push(queenMove27)
+            } else if(s == "black" && color == "black" && (pos - 48) < 65 && (pos - 48) > 0) {
+                var npos = pos - 48
+                queenMove27 = [npos, color, s, takec(npos, color), "queen", "queenMove27", pos]
+                arr.push(queenMove27)
+            }
             //move 7 up
-            var move28
+            var queenMove28
+            if(s == "white" && color == "white" && (pos - 56) < 65 && (pos - 56) > 0) {
+                var npos = pos - 56
+                queenMove28 = [npos, color, s, takec(npos, color), "queen", "queenMove28", pos]
+                arr.push(queenMove28)
+            } else if(s == "white" && color == "black" && (pos - 56) < 65 && (pos - 56) > 0) {
+                var npos = pos - 56
+                queenMove28 = [npos, color, s, takec(npos, color), "queen", "queenMove28", pos]
+                arr.push(queenMove28)
+            } else if(s == "black" && color == "white" && (pos - 56) < 65 && (pos - 56) > 0) {
+                var npos = pos - 56
+                queenMove28 = [npos, color, s, takec(npos, color), "queen", "queenMove28", pos]
+                arr.push(queenMove28)
+            } else if(s == "black" && color == "black" && (pos - 56) < 65 && (pos - 56) > 0) {
+                var npos = pos - 56
+                queenMove28 = [npos, color, s, takec(npos, color), "queen", "queenMove28", pos]
+                arr.push(queenMove28)
+            }
             //Diagonal Up Right//
             //move right 1 up 1
-            var move29
+            var queenMove29
+            if(s == "white" && color == "white" && ((pos - 8) + 1) < 65 && ((pos - 8) + 1) > 0) {
+                var npos = (pos - 8) + 1
+                queenMove29 = [npos, color, s, takec(npos, color), "queen", "queenMove29", pos]
+                arr.push(queenMove29)
+            } else if(s == "white" && color == "black" && ((pos - 8) + 1) < 65 && ((pos - 8) + 1) > 0) {
+                var npos = (pos - 8) + 1
+                queenMove29 = [npos, color, s, takec(npos, color), "queen", "queenMove29", pos]
+                arr.push(queenMove29)
+            } else if(s == "black" && color == "white" && ((pos - 8) + 1) < 65 && ((pos - 8) + 1) > 0) {
+                var npos = (pos - 8) + 1
+                queenMove29 = [npos, color, s, takec(npos, color), "queen", "queenMove29", pos]
+                arr.push(queenMove29)
+            } else if(s == "black" && color == "black" && ((pos - 8) + 1) < 65 && ((pos - 8) + 1) > 0) {
+                var npos = (pos - 8) + 1
+                queenMove29 = [npos, color, s, takec(npos, color), "queen", "queenMove29", pos]
+                arr.push(queenMove29)
+            }
             //move right 2 up 2
-            var move30
+            var queenMove30
+            if(s == "white" && color == "white" && ((pos - 16) + 2) < 65 && ((pos - 16) + 2) > 0) {
+                var npos = (pos - 16) + 2
+                queenMove30 = [npos, color, s, takec(npos, color), "queen", "queenMove30", pos]
+                arr.push(queenMove30)
+            } else if(s == "white" && color == "black" && ((pos - 16) + 2) < 65 && ((pos - 16) + 2) > 0) {
+                var npos = (pos - 16) + 2
+                queenMove30 = [npos, color, s, takec(npos, color), "queen", "queenMove30", pos]
+                arr.push(queenMove30)
+            } else if(s == "black" && color == "white" && ((pos - 16) + 2) < 65 && ((pos - 16) + 2) > 0) {
+                var npos = (pos - 16) + 2
+                queenMove30 = [npos, color, s, takec(npos, color), "queen", "queenMove30", pos]
+                arr.push(queenMove30)
+            } else if(s == "black" && color == "black" && ((pos - 16) + 2) < 65 && ((pos - 16) + 2) > 0) {
+                var npos = (pos - 16) + 2
+                queenMove30 = [npos, color, s, takec(npos, color), "queen", "queenMove30", pos]
+                arr.push(queenMove30)
+            }
             //move right 3 up 3
-            var move31
+            var queenMove31
+            if(s == "white" && color == "white" && ((pos - 24) + 3) < 65 && ((pos - 24) + 3) > 0) {
+                var npos = (pos - 24) + 3
+                queenMove31 = [npos, color, s, takec(npos, color), "queen", "queenMove31", pos]
+                arr.push(queenMove31)
+            } else if(s == "white" && color == "black" && ((pos - 24) + 3) < 65 && ((pos - 24) + 3) > 0) {
+                var npos = (pos - 24) + 3
+                queenMove31 = [npos, color, s, takec(npos, color), "queen", "queenMove31", pos]
+                arr.push(queenMove31)
+            } else if(s == "black" && color == "white" && ((pos - 24) + 3) < 65 && ((pos - 24) + 3) > 0) {
+                var npos = (pos - 24) + 3
+                queenMove31 = [npos, color, s, takec(npos, color), "queen", "queenMove31", pos]
+                arr.push(queenMove31)
+            } else if(s == "black" && color == "black" && ((pos - 24) + 3) < 65 && ((pos - 24) + 3) > 0) {
+                var npos = (pos - 24) + 3
+                queenMove31 = [npos, color, s, takec(npos, color), "queen", "queenMove31", pos]
+                arr.push(queenMove31)
+            }
             //move right 4 up 4
-            var move32
+            var queenMove32 
+            if(s == "white" && color == "white" && ((pos - 32) + 4) < 65 && ((pos - 32) + 4) > 0) {
+                var npos = (pos - 32) + 4
+                queenMove32 = [npos, color, s, takec(npos, color), "queen", "queenMove32", pos]
+                arr.push(queenMove32)
+            } else if(s == "white" && color == "black" && ((pos - 32) + 4) < 65 && ((pos - 32) + 4) > 0) {
+                var npos = (pos - 32) + 4
+                queenMove32 = [npos, color, s, takec(npos, color), "queen", "queenMove32", pos]
+                arr.push(queenMove32)
+            } else if(s == "black" && color == "white" && ((pos - 32) + 4) < 65 && ((pos - 32) + 4) > 0) {
+                var npos = (pos - 32) + 4
+                queenMove32 = [npos, color, s, takec(npos, color), "queen", "queenMove32", pos]
+                arr.push(queenMove32)
+            } else if(s == "black" && color == "black" && ((pos - 32) + 4) < 65 && ((pos - 32) + 4) > 0) {
+                var npos = (pos - 32) + 4
+                queenMove32 = [npos, color, s, takec(npos, color), "queen", "queenMove32", pos]
+                arr.push(queenMove32)
+            }
             //move right 5 up 5
-            var move33
+            var queenMove33
+            if(s == "white" && color == "white" && ((pos - 40) + 5) < 65 && ((pos - 40) + 5) > 0) {
+                var npos = (pos - 40) + 5
+                queenMove33 = [npos, color, s, takec(npos, color), "queen", "queenMove33", pos]
+                arr.push(queenMove33)
+            } else if(s == "white" && color == "black" && ((pos - 40) + 5) < 65 && ((pos - 40) + 5) > 0) {
+                var npos = (pos - 40) + 5
+                queenMove33 = [npos, color, s, takec(npos, color), "queen", "queenMove33", pos]
+                arr.push(queenMove33)
+            } else if(s == "black" && color == "white" && ((pos - 40) + 5) < 65 && ((pos - 40) + 5) > 0) {
+                var npos = (pos - 40) + 5
+                queenMove33 = [npos, color, s, takec(npos, color), "queen", "queenMove33", pos]
+                arr.push(queenMove33)
+            } else if(s == "black" && color == "black" && ((pos - 40) + 5) < 65 && ((pos - 40) + 5) > 0) {
+                var npos = (pos - 40) + 5
+                queenMove33 = [npos, color, s, takec(npos, color), "queen", "queenMove33", pos]
+                arr.push(queenMove33)
+            }
             //move right 6 up 6
-            var move34
+            var queenMove34
+            if(s == "white" && color == "white" && ((pos - 48) + 6) < 65 && ((pos - 48) + 6) > 0) {
+                var npos = (pos - 48) + 6
+                queenMove34 = [npos, color, s, takec(npos, color), "queen", "queenMove34", pos]
+                arr.push(queenMove34)
+            } else if(s == "white" && color == "black" && ((pos - 48) + 6) < 65 && ((pos - 48) + 6) > 0) {
+                var npos = (pos - 48) + 6
+                queenMove34 = [npos, color, s, takec(npos, color), "queen", "queenMove34", pos]
+                arr.push(queenMove34)
+            } else if(s == "black" && color == "white" && ((pos - 48) + 6) < 65 && ((pos - 48) + 6) > 0) {
+                var npos = (pos - 48) + 6
+                queenMove34 = [npos, color, s, takec(npos, color), "queen", "queenMove34", pos]
+                arr.push(queenMove34)
+            } else if(s == "black" && color == "black" && ((pos - 48) + 6) < 65 && ((pos - 48) + 6) > 0) {
+                var npos = (pos - 48) + 6
+                queenMove34 = [npos, color, s, takec(npos, color), "queen", "queenMove34", pos]
+                arr.push(queenMove34)
+            }
             //move right 7 up 7
-            var move35
+            var queenMove35
+            if(s == "white" && color == "white" && ((pos - 56) + 7) < 65 && ((pos - 56) + 7) > 0) {
+                var npos = (pos - 56) + 7
+                queenMove35 = [npos, color, s, takec(npos, color), "queen", "queenMove35", pos]
+                arr.push(queenMove35)
+            } else if(s == "white" && color == "black" && ((pos - 56) + 7) < 65 && ((pos - 56) + 7) > 0) {
+                var npos = (pos - 56) + 7
+                queenMove35 = [npos, color, s, takec(npos, color), "queen", "queenMove35", pos]
+                arr.push(queenMove35)
+            } else if(s == "black" && color == "white" && ((pos - 56) + 7) < 65 && ((pos - 56) + 7) > 0) {
+                var npos = (pos - 56) + 7
+                queenMove35 = [npos, color, s, takec(npos, color), "queen", "queenMove35", pos]
+                arr.push(queenMove35)
+            } else if(s == "black" && color == "black" && ((pos - 56) + 7) < 65 && ((pos - 56) + 7) > 0) {
+                var npos = (pos - 56) + 7
+                queenMove35 = [npos, color, s, takec(npos, color), "queen", "queenMove35", pos]
+                arr.push(queenMove35)
+            }
             //Diagonal Down Right//
             //move right 1 down 1
-            var move36 
+            var queenMove36
+            if(s == "white" && color == "white" && ((pos + 8) + 1) < 65 && ((pos + 8) + 1) > 0) {
+                var npos = (pos + 8) + 1
+                queenMove36 = [npos, color, s, takec(npos, color), "queen", "queenMove36", pos]
+                arr.push(queenMove36)
+            } else if(s == "white" && color == "black" && ((pos + 8) + 1) < 65 && ((pos + 56) + 1) > 0) {
+                var npos = (pos + 8) + 1
+                queenMove36 = [npos, color, s, takec(npos, color), "queen", "queenMove36", pos]
+                arr.push(queenMove36)
+            } else if(s == "black" && color == "white" && ((pos + 8) + 1) < 65 && ((pos + 56) + 1) > 0) {
+                var npos = (pos + 8) + 1
+                queenMove36 = [npos, color, s, takec(npos, color), "queen", "queenMove36", pos]
+                arr.push(queenMove36)
+            } else if(s == "black" && color == "black" && ((pos + 8) + 1) < 65 && ((pos + 56) + 1) > 0) {
+                var npos = (pos + 8) + 1
+                queenMove36 = [npos, color, s, takec(npos, color), "queen", "queenMove36", pos]
+                arr.push(queenMove36)
+            }
             //move right 2 down 2
-            var move37
+            var queenMove37
+            if(s == "white" && color == "white" && ((pos + 16) + 2) < 65 && ((pos + 16) + 2) > 0) {
+                var npos = (pos + 16) + 2
+                queenMove37 = [npos, color, s, takec(npos, color), "queen", "queenMove37", pos]
+                arr.push(queenMove37)
+            } else if(s == "white" && color == "black" && ((pos + 16) + 2) < 65 && ((pos + 16) + 2) > 0) {
+                var npos = (pos + 16) + 2
+                queenMove37 = [npos, color, s, takec(npos, color), "queen", "queenMove37", pos]
+                arr.push(queenMove37)
+            } else if(s == "black" && color == "white" && ((pos + 16) + 2) < 65 && ((pos + 16) + 2) > 0) {
+                var npos = (pos + 16) + 2
+                queenMove37 = [npos, color, s, takec(npos, color), "queen", "queenMove37", pos]
+                arr.push(queenMove37)
+            } else if(s == "black" && color == "black" && ((pos + 16) + 2) < 65 && ((pos + 16) + 2) > 0) {
+                var npos = (pos + 16) + 2
+                queenMove37 = [npos, color, s, takec(npos, color), "queen", "queenMove37", pos]
+                arr.push(queenMove37)
+            }
             //move right 3 down 3
-            var move38
+            var queenMove38
+            if(s == "white" && color == "white" && ((pos + 24) + 3) < 65 && ((pos + 24) + 3) > 0) {
+                var npos = (pos + 24) + 3
+                queenMove38 = [npos, color, s, takec(npos, color), "queen", "queenMove38", pos]
+                arr.push(queenMove38)
+            } else if(s == "white" && color == "black" && ((pos + 24) + 3) < 65 && ((pos + 24) + 3) > 0) {
+                var npos = (pos + 24) + 3
+                queenMove38 = [npos, color, s, takec(npos, color), "queen", "queenMove38", pos]
+                arr.push(queenMove38)
+            } else if(s == "black" && color == "white" && ((pos + 24) + 3) < 65 && ((pos + 24) + 3) > 0) {
+                var npos = (pos + 24) + 3
+                queenMove38 = [npos, color, s, takec(npos, color), "queen", "queenMove38", pos]
+                arr.push(queenMove38)
+            } else if(s == "black" && color == "black" && ((pos + 24) + 3) < 65 && ((pos + 24) + 3) > 0) {
+                var npos = (pos + 24) + 3
+                queenMove38 = [npos, color, s, takec(npos, color), "queen", "queenMove38", pos]
+                arr.push(queenMove38)
+            }
             //move right 4 down 4
-            var move39
+            var queenMove39
+            if(s == "white" && color == "white" && ((pos + 32) + 4) < 65 && ((pos + 32) + 4) > 0) {
+                var npos = (pos + 32) + 4
+                queenMove39 = [npos, color, s, takec(npos, color), "queen", "queenMove39", pos]
+                arr.push(queenMove39)
+            } else if(s == "white" && color == "black" && ((pos + 32) + 4) < 65 && ((pos + 32) + 4) > 0) {
+                var npos = (pos + 32) + 4
+                queenMove39 = [npos, color, s, takec(npos, color), "queen", "queenMove39", pos]
+                arr.push(queenMove39)
+            } else if(s == "black" && color == "white" && ((pos + 32) + 4) < 65 && ((pos + 32) + 4) > 0) {
+                var npos = (pos + 32) + 4
+                queenMove39 = [npos, color, s, takec(npos, color), "queen", "queenMove39", pos]
+                arr.push(queenMove39)
+            } else if(s == "black" && color == "black" && ((pos + 32) + 4) < 65 && ((pos + 32) + 4) > 0) {
+                var npos = (pos + 32) + 4
+                queenMove39 = [npos, color, s, takec(npos, color), "queen", "queenMove39", pos]
+                arr.push(queenMove39)
+            }
             //move right 5 down 5
-            var move40
+            var queenMove40
+            if(s == "white" && color == "white" && ((pos + 40) + 5) < 65 && ((pos + 40) + 5) > 0) {
+                var npos = (pos + 40) + 5
+                queenMove40 = [npos, color, s, takec(npos, color), "queen", "queenMove40", pos]
+                arr.push(queenMove40)
+            } else if(s == "white" && color == "black" && ((pos + 40) + 5) < 65 && ((pos + 40) + 5) > 0) {
+                var npos = (pos + 40) + 5
+                queenMove40 = [npos, color, s, takec(npos, color), "queen", "queenMove40", pos]
+                arr.push(queenMove40)
+            } else if(s == "black" && color == "white" && ((pos + 40) + 5) < 65 && ((pos + 40) + 5) > 0) {
+                var npos = (pos + 40) + 5
+                queenMove40 = [npos, color, s, takec(npos, color), "queen", "queenMove40", pos]
+                arr.push(queenMove40)
+            } else if(s == "black" && color == "black" && ((pos + 40) + 5) < 65 && ((pos + 40) + 5) > 0) {
+                var npos = (pos + 40) + 5
+                queenMove40 = [npos, color, s, takec(npos, color), "queen", "queenMove40", pos]
+                arr.push(queenMove40)
+            }
             //move right 6 down 6
-            var move41
+            var queenMove41
+            if(s == "white" && color == "white" && ((pos + 48) + 6) < 65 && ((pos + 48) + 6) > 0) {
+                var npos = (pos + 48) + 6
+                queenMove41 = [npos, color, s, takec(npos, color), "queen", "queenMove41", pos]
+                arr.push(queenMove41)
+            } else if(s == "white" && color == "black" && ((pos + 48) + 6) < 65 && ((pos + 48) + 6) > 0) {
+                var npos = (pos + 48) + 6
+                queenMove41 = [npos, color, s, takec(npos, color), "queen", "queenMove41", pos]
+                arr.push(queenMove41)
+            } else if(s == "black" && color == "white" && ((pos + 48) + 6) < 65 && ((pos + 48) + 6) > 0) {
+                var npos = (pos + 48) + 6
+                queenMove41 = [npos, color, s, takec(npos, color), "queen", "queenMove41", pos]
+                arr.push(queenMove41)
+            } else if(s == "black" && color == "black" && ((pos + 48) + 6) < 65 && ((pos + 48) + 6) > 0) {
+                var npos = (pos + 48) + 6
+                queenMove41 = [npos, color, s, takec(npos, color), "queen", "queenMove41", pos]
+                arr.push(queenMove41)
+            }
             //move right 7 down 7
-            var move42
+            var queenMove42
+            if(s == "white" && color == "white" && ((pos + 56) + 7) < 65 && ((pos + 56) + 7) > 0) {
+                var npos = (pos + 56) + 7
+                queenMove42 = [npos, color, s, takec(npos, color), "queen", "queenMove42", pos]
+                arr.push(queenMove42)
+            } else if(s == "white" && color == "black" && ((pos + 56) + 7) < 65 && ((pos + 56) + 7) > 0) {
+                var npos = (pos + 56) + 7
+                queenMove42 = [npos, color, s, takec(npos, color), "queen", "queenMove42", pos]
+                arr.push(queenMove42)
+            } else if(s == "black" && color == "white" && ((pos + 56) + 7) < 65 && ((pos + 56) + 7) > 0) {
+                var npos = (pos + 56) + 7
+                queenMove42 = [npos, color, s, takec(npos, color), "queen", "queenMove42", pos]
+                arr.push(queenMove42)
+            } else if(s == "black" && color == "black" && ((pos + 56) + 7) < 65 && ((pos + 56) + 7) > 0) {
+                var npos = (pos + 56) + 7
+                queenMove42 = [npos, color, s, takec(npos, color), "queen", "queenMove42", pos]
+                arr.push(queenMove42)
+            }
             //Diagonal Down Left//
             //move left 1 down 1
-            var move43
+            var queenMove43
+            if(s == "white" && color == "white" && ((pos + 8) - 1) < 65 && ((pos + 8) - 1) > 0) {
+                var npos = (pos + 8) - 1
+                queenMove43 = [npos, color, s, takec(npos, color), "queen", "queenMove43", pos]
+                arr.push(queenMove43)
+            } else if(s == "white" && color == "black" && ((pos + 8) - 1) < 65 && ((pos + 8) - 1) > 0) {
+                var npos = (pos + 8) - 1
+                queenMove43 = [npos, color, s, takec(npos, color), "queen", "queenMove43", pos]
+                arr.push(queenMove43)
+            } else if(s == "black" && color == "white" && ((pos + 8) - 1) < 65 && ((pos + 8) - 1) > 0) {
+                var npos = (pos + 8) - 1
+                queenMove43 = [npos, color, s, takec(npos, color), "queen", "queenMove43", pos]
+                arr.push(queenMove43)
+            } else if(s == "black" && color == "black" && ((pos + 8) - 1) < 65 && ((pos + 8) - 1) > 0) {
+                var npos = (pos + 8) - 1
+                queenMove43 = [npos, color, s, takec(npos, color), "queen", "queenMove43", pos]
+                arr.push(queenMove43)
+            }
             //move left 2 down 2
-            var move44
+            var queenMove44
+            if(s == "white" && color == "white" && ((pos + 16) - 2) < 65 && ((pos + 16) - 2) > 0) {
+                var npos = (pos + 16) - 2
+                queenMove44 = [npos, color, s, takec(npos, color), "queen", "queenMove44", pos]
+                arr.push(queenMove44)
+            } else if(s == "white" && color == "black" && ((pos + 16) - 2) < 65 && ((pos + 16) - 2) > 0) {
+                var npos = (pos + 16) - 2
+                queenMove44 = [npos, color, s, takec(npos, color), "queen", "queenMove44", pos]
+                arr.push(queenMove44)
+            } else if(s == "black" && color == "white" && ((pos + 16) - 2) < 65 && ((pos + 16) - 2) > 0) {
+                var npos = (pos + 16) - 2
+                queenMove44 = [npos, color, s, takec(npos, color), "queen", "queenMove44", pos]
+                arr.push(queenMove44)
+            } else if(s == "black" && color == "black" && ((pos + 16) - 2) < 65 && ((pos + 16) - 2) > 0) {
+                var npos = (pos + 16) - 2
+                queenMove44 = [npos, color, s, takec(npos, color), "queen", "queenMove44", pos]
+                arr.push(queenMove44)
+            }
             //move left 3 down 3 
-            var move45
+            var queenMove45
+            if(s == "white" && color == "white" && ((pos + 24) - 3) < 65 && ((pos + 24) - 3) > 0) {
+                var npos = (pos + 24) - 3
+                queenMove45 = [npos, color, s, takec(npos, color), "queen", "queenMove45", pos]
+                arr.push(queenMove45)
+            } else if(s == "white" && color == "black" && ((pos + 24) - 3) < 65 && ((pos + 24) - 3) > 0) {
+                var npos = (pos + 24) - 3
+                queenMove45 = [npos, color, s, takec(npos, color), "queen", "queenMove45", pos]
+                arr.push(queenMove45)
+            } else if(s == "black" && color == "white" && ((pos + 24) - 3) < 65 && ((pos + 24) - 3) > 0) {
+                var npos = (pos + 24) - 3
+                queenMove45 = [npos, color, s, takec(npos, color), "queen", "queenMove45", pos]
+                arr.push(queenMove45)
+            } else if(s == "black" && color == "black" && ((pos + 24) - 3) < 65 && ((pos + 24) - 3) > 0) {
+                var npos = (pos + 24) - 3
+                queenMove45 = [npos, color, s, takec(npos, color), "queen", "queenMove45", pos]
+                arr.push(queenMove45)
+            }
             //move left 4 down 4
-            var move46
+            var queenMove46
+            if(s == "white" && color == "white" && ((pos + 32) - 4) < 65 && ((pos + 32) - 4) > 0) {
+                var npos = (pos + 32) - 4
+                queenMove46 = [npos, color, s, takec(npos, color), "queen", "queenMove46", pos]
+                arr.push(queenMove46)
+            } else if(s == "white" && color == "black" && ((pos + 32) - 4) < 65 && ((pos + 32) - 4) > 0) {
+                var npos = (pos + 32) - 4
+                queenMove46 = [npos, color, s, takec(npos, color), "queen", "queenMove46", pos]
+                arr.push(queenMove46)
+            } else if(s == "black" && color == "white" && ((pos + 32) - 4) < 65 && ((pos + 32) - 4) > 0) {
+                var npos = (pos + 32) - 4
+                queenMove46 = [npos, color, s, takec(npos, color), "queen", "queenMove46", pos]
+                arr.push(queenMove46) 
+            } else if(s == "black" && color == "black" && ((pos + 32) - 4) < 65 && ((pos + 32) - 4) > 0) {
+                var npos = (pos + 32) - 4
+                queenMove46 = [npos, color, s, takec(npos, color), "queen", "queenMove46", pos]
+                arr.push(queenMove46)   
+            }
             //move left 5 down 5
-            var move47
+            var queenMove47
+            if(s == "white" && color == "white" && ((pos + 40) - 5) < 65 && ((pos + 40) - 5) > 0) {
+                var npos = (pos + 40) - 5
+                queenMove47 = [npos, color, s, takec(npos, color), "queen", "queenMove47", pos]
+                arr.push(queenMove47)
+            } else if(s == "white" && color == "black" && ((pos + 40) - 5) < 65 && ((pos + 40) - 5) > 0) {
+                var npos = (pos + 40) - 5
+                queenMove47 = [npos, color, s, takec(npos, color), "queen", "queenMove47", pos]
+                arr.push(queenMove47)
+            } else if(s == "black" && color == "white" && ((pos + 40) - 5) < 65 && ((pos + 40) - 5) > 0) {
+                var npos = (pos + 40) - 5
+                queenMove47 = [npos, color, s, takec(npos, color), "queen", "queenMove47", pos]
+                arr.push(queenMove47)
+            } else if(s == "black" && color == "black" && ((pos + 40) - 5) < 65 && ((pos + 40) - 5) > 0) {
+                var npos = (pos + 40) - 5
+                queenMove47 = [npos, color, s, takec(npos, color), "queen", "queenMove47", pos]
+                arr.push(queenMove47)
+            }
             //move left 6 down 6
-            var move48
+            var queenMove48
+            if(s == "white" && color == "white" && ((pos + 48) - 6) < 65 && ((pos + 48) - 6) > 0) {
+                var npos = (pos + 48) - 6
+                queenMove48 = [npos, color, s, takec(npos, color), "queen", "queenMove48", pos]
+                arr.push(queenMove48)
+            } else if(s == "white" && color == "black" && ((pos + 48) - 6) < 65 && ((pos + 48) - 6) > 0) {
+                var npos = (pos + 48) - 6
+                queenMove48 = [npos, color, s, takec(npos, color), "queen", "queenMove48", pos]
+                arr.push(queenMove48)
+            } else if(s == "black" && color == "white" && ((pos + 48) - 6) < 65 && ((pos + 48) - 6) > 0) {
+                var npos = (pos + 48) - 6
+                queenMove48 = [npos, color, s, takec(npos, color), "queen", "queenMove48", pos]
+                arr.push(queenMove48)
+            } else if(s == "black" && color == "black" && ((pos + 48) - 6) < 65 && ((pos + 48) - 6) > 0) {
+                var npos = (pos + 48) - 6
+                queenMove48 = [npos, color, s, takec(npos, color), "queen", "queenMove48", pos]
+                arr.push(queenMove48)
+            }
             //move left 7 down 7
-            var move49
+            var queenMove49
+            if(s == "white" && color == "white" && ((pos + 56) - 7) < 65 && ((pos + 56) - 7) > 0) {
+                var npos = (pos + 56) - 7
+                queenMove49 = [npos, color, s, takec(npos, color), "queen", "queenMove49", pos]
+                arr.push(queenMove49)
+            } else if(s == "white" && color == "black" && ((pos + 56) - 7) < 65 && ((pos + 56) - 7) > 0) {
+                var npos = (pos + 56) - 7
+                queenMove49 = [npos, color, s, takec(npos, color), "queen", "queenMove49", pos]
+                arr.push(queenMove49)
+            } else if(s == "black" && color == "white" && ((pos + 56) - 7) < 65 && ((pos + 56) - 7) > 0) {
+                var npos = (pos + 56) - 7
+                queenMove49 = [npos, color, s, takec(npos, color), "queen", "queenMove49", pos]
+                arr.push(queenMove49)
+            } else if(s == "black" && color == "black" && ((pos + 56) - 7) < 65 && ((pos + 56) - 7) > 0) {
+                var npos = (pos + 56) - 7
+                queenMove49 = [npos, color, s, takec(npos, color), "queen", "queenMove49", pos]
+                arr.push(queenMove49)
+            }
             //Diagonal Up Left//
             //move left 1 up 1
-            var move50
+            var queenMove50
+            if(s == "white" && color == "white" && ((pos - 8) - 1) < 65 && ((pos - 8) - 1) > 0) {
+                var npos = (pos - 8) - 1
+                queenMove50 = [npos, color, s, takec(npos, color), "queen", "queenMove50", pos, "t"]
+                arr.push(queenMove50)
+            } else if(s == "white" && color == "black" && ((pos - 8) - 1) < 65 && ((pos - 8) - 1) > 0) {
+                var npos = (pos - 8) - 1
+                queenMove50 = [npos, color, s, takec(npos, color), "queen", "queenMove50", pos, "t"]
+                arr.push(queenMove50)
+            } else if(s == "black" && color == "white" && ((pos - 8) - 1) < 65 && ((pos - 8) - 1) > 0) {
+                var npos = (pos - 8) - 1
+                queenMove50 = [npos, color, s, takec(npos, color), "queen", "queenMove50", pos, "t"]
+                arr.push(queenMove50)
+            } else if(s == "black" && color == "black" && ((pos - 8) - 1) < 65 && ((pos - 8) - 1) > 0) {
+                var npos = (pos - 8) - 1
+                queenMove50 = [npos, color, s, takec(npos, color), "queen", "queenMove50", pos, "t"]
+                arr.push(queenMove50)  
+            }
             //move left 2 up 2
-            var move51
+            var queenMove51
+            if(s == "white" && color == "white" && ((pos - 16) - 2) < 65 && ((pos - 16) - 2) > 0) {
+                var npos = (pos - 16) - 2
+                queenMove51 = [npos, color, s, takec(npos, color), "queen", "queenMove51", pos, "t"]
+                arr.push(queenMove51)
+            } else if(s == "white" && color == "black" && ((pos - 16) - 2) < 65 && ((pos - 16) - 2) > 0) {
+                var npos = (pos - 16) - 2
+                queenMove51 = [npos, color, s, takec(npos, color), "queen", "queenMove51", pos, "t"]
+                arr.push(queenMove51)
+            } else if(s == "black" && color == "white" && ((pos - 16) - 2) < 65 && ((pos - 16) - 2) > 0) {
+                var npos = (pos - 16) - 2
+                queenMove51 = [npos, color, s, takec(npos, color), "queen", "queenMove51", pos, "t"]
+                arr.push(queenMove51)
+            } else if(s == "black" && color == "black" && ((pos - 16) - 2) < 65 && ((pos - 16) - 2) > 0) {
+                var npos = (pos - 16) - 2
+                queenMove51 = [npos, color, s, takec(npos, color), "queen", "queenMove51", pos, "t"]
+                arr.push(queenMove51)
+            }
             //move left 3 up 3
-            var move52
+            var queenMove52
+            if(s == "white" && color == "white" && ((pos - 24) - 3) < 65 && ((pos - 24) - 3) > 0) {
+                var npos = (pos - 24) - 3
+                queenMove52 = [npos, color, s, takec(npos, color), "queen", "queenMove52", pos, "t"]
+                arr.push(queenMove52)
+            } else if(s == "white" && color == "black" && ((pos - 24) - 3) < 65 && ((pos - 24) - 3) > 0) {
+                var npos = (pos - 24) - 3
+                queenMove52 = [npos, color, s, takec(npos, color), "queen", "queenMove52", pos, "t"]
+                arr.push(queenMove52)
+            } else if(s == "black" && color == "white" && ((pos - 24) - 3) < 65 && ((pos - 24) - 3) > 0) {
+                var npos = (pos - 24) - 3
+                queenMove52 = [npos, color, s, takec(npos, color), "queen", "queenMove52", pos, "t"]
+                arr.push(queenMove52)
+            } else if(s == "black" && color == "black" && ((pos - 24) - 3) < 65 && ((pos - 24) - 3) > 0) {
+                var npos = (pos - 24) - 3
+                queenMove52 = [npos, color, s, takec(npos, color), "queen", "queenMove52", pos, "t"]
+                arr.push(queenMove52)
+            }
             //move left 4 up 4
-            var move53
+            var queenMove53
+            if(s == "white" && color == "white" && ((pos - 32) - 4) && ((pos - 32) - 4) > 0) {
+                var npos = (pos - 32) - 4
+                queenMove53 = [npos, color, s, takec(npos, color), "queen", "queenMove53", pos, "t"]
+                arr.push(queenMove53)
+            } else if(s == "white" && color == "black" && ((pos - 32) - 4) < 65 && ((pos - 32) - 4) > 0) {
+                var npos = (pos - 32) - 4
+                queenMove53 = [npos, color, s, takec(npos, color), "queen", "queenMove53", pos, "t"]
+                arr.push(queenMove53)
+            } else if(s == "black" && color == "white" && ((pos - 32) - 4) < 65 && ((pos - 32) - 4) > 0) {
+                var npos = (pos - 32) - 4
+                queenMove53 = [npos, color, s, takec(npos, color), "queen", "queenMove53", pos, "t"]
+                arr.push(queenMove53)
+            } else if(s == "black" && color == "black" && ((pos - 32) - 4) < 65 && ((pos - 32) - 4) > 0) {
+                var npos = (pos - 32) - 4
+                queenMove53 = [npos, color, s, takec(npos, color), "queen", "queenMove53", pos, "t"]
+                arr.push(queenMove53)
+            }
             //move left 5 up 5
-            var move54
+            var queenMove54
+            if(s == "white" && color == "white" && ((pos - 40) - 5) && ((pos - 40) - 5) > 0) {
+                var npos = (pos - 40) - 5
+                queenMove54 = [npos, color, s, takec(npos, color), "queen", "queenMove54", pos, "t"]
+                arr.push(queenMove54)
+            } else if(s == "white" && color == "black" && ((pos - 40) - 5) < 65 && ((pos - 40) - 5) > 0) {
+                var npos = (pos - 40) - 5
+                queenMove54 = [npos, color, s, takec(npos, color), "queen", "queenMove54", pos, "t"]
+                arr.push(queenMove54)
+            } else if(s == "black" && color == "white" && ((pos - 40) - 5) < 65 && ((pos - 40) - 5) > 0) {
+                var npos = (pos - 40) - 5
+                queenMove54 = [npos, color, s, takec(npos, color), "queen", "queenMove54", pos, "t"]
+                arr.push(queenMove54) 
+            } else if(s == "black" && color == "black" && ((pos - 40) - 5) < 65 && ((pos - 40) - 5) > 0) {
+                var npos = (pos - 40) - 5
+                queenMove54 = [npos, color, s, takec(npos, color), "queen", "queenMove54", pos, "t"]
+                arr.push(queenMove54) 
+            }
             //move left 6 up 6
-            var move55
+            var queenMove55
+            if(s == "white" && color == "white" && ((pos - 48) - 6) && ((pos - 48) - 6) > 0) {
+                var npos = (pos - 48) - 6
+                queenMove55 = [npos, color, s, takec(npos, color), "queen", "queenMove55", pos, "t"]
+                arr.push(queenMove55)
+            } else if(s == "white" && color == "black" && ((pos - 48) - 6) < 65 && ((pos - 48) - 6) > 0) {
+                var npos = (pos - 48) - 6
+                queenMove55 = [npos, color, s, takec(npos, color), "queen", "queenMove55", pos, "t"]
+                arr.push(queenMove55)
+            } else if(s == "black" && color == "white" && ((pos - 48) - 6) < 65 && ((pos - 48) - 6) > 0) {
+                var npos = (pos - 48) - 6
+                queenMove55 = [npos, color, s, takec(npos, color), "queen", "queenMove55", pos, "t"]
+                arr.push(queenMove55)
+            } else if(s == "black" && color == "black" && ((pos - 48) - 6) < 65 && ((pos - 48) - 6) > 0) {
+                var npos = (pos - 48) - 6
+                queenMove55 = [npos, color, s, takec(npos, color), "queen", "queenMove55", pos, "t"]
+                arr.push(queenMove55)
+            }
             //move left 7 up 7
-            var move56
+            var queenMove56
+            if(s == "white" && color == "white" && ((pos - 56) - 7) && ((pos - 56) - 7) > 0) {
+                var npos = (pos - 56) - 7
+                queenMove56 = [npos, color, s, takec(npos, color), "queen", "queenMove56", pos, "t"]
+                arr.push(queenMove56)
+            } else if(s == "white" && color == "black" && ((pos - 56) - 7) < 65 && ((pos - 56) - 7) > 0) {
+                var npos = (pos - 56) - 7
+                queenMove56 = [npos, color, s, takec(npos, color), "queen", "queenMove56", pos, "t"]
+                arr.push(queenMove56)
+            } else if(s == "black" && color == "white" && ((pos - 56) - 7) < 65 && ((pos - 56) - 7) > 0) {
+                var npos = (pos - 56) - 7
+                queenMove56 = [npos, color, s, takec(npos, color), "queen", "queenMove56", pos, "t"]
+                arr.push(queenMove56)
+            } else if(s == "black" && color == "black" && ((pos - 56) - 7) < 65 && ((pos - 56) - 7) > 0) {
+                var npos = (pos - 56) - 7
+                queenMove56 = [npos, color, s, takec(npos, color), "queen", "queenMove56", pos, "t"]
+                arr.push(queenMove56) 
+            }
         break;
     }
     //var arr2 = await validate(arr, pos) 
@@ -1865,11 +2596,9 @@ function isValid(arr) {
         } else {
             arr2.push(c1)
         }
-        //checks if piece can take another piece
         var c2 = tchck(pos, npos, type, color, sw)
         //checks if piece is pinned to king by another piece
         //arr3.push(pchck(pos, color, sw))
-        //checks if piece can take another piece
     }
     for(var i = 0; i < arr2.length; i++) {
         arr3.push(arr2[i]) 
@@ -1879,6 +2608,17 @@ function isValid(arr) {
 }
 
 function draw(arr, arr2) {
+    var arr3 = []
+    console.log(arr2)
+    for(var i = 0; i < arr.length; i++) {
+        for(var k = 0; k < arr2.length; k++) {
+            if(Number.parseInt(arr[i]) == arr2[k][0]) {
+                arr3.push(arr2[k])
+            }
+        }
+    }
+    arr2 = arr3
+    console.log(arr, arr2)
     for(var i = 0; i < arr.length; i++) {
         var take = arr2[i][3]
         if(take == "green") {
@@ -2222,7 +2962,7 @@ function cmove(pos, npos, move, type, color, sw) {
                 if(sw == "white" && color == "white") {
                     var sq1 = document.getElementById(pos - 8)
                     if(sq1.children.length == 1) {
-                        if(cchck(sq1.children[0].src) == color) {} else {
+                        if(cchck(sq1.children[0].src) != color) {
                             arr.push(npos)
                         }
                     } else {
@@ -2395,18 +3135,17 @@ function cmove(pos, npos, move, type, color, sw) {
                 //rookMove4 is move up 4
                 if(sw == "white" && color == "white") {
                     var sq1 = document.getElementById(pos - 8)
-                    if(sq1.children.length == 1) {} else {
+                    if(sq1.children.length != 1) {
                         var sq2 = document.getElementById(pos - 16)
-                        if(sq2.children.length == 1) {} else {
+                        if(sq2.children.length != 1) {
                             var sq3 = document.getElementById(pos - 24)
-                            if(sq3.children.length == 1) {} else {
+                            if(sq3.children.length != 1) {
                                 var sq4 = document.getElementById(pos - 32)
                                 if(sq4.children.length == 1) {
-                                    if(cchck(sq4.children[0].src) == color) {} else {
+                                    if(cchck(sq4.children[0].src) != color) {
                                         arr.push(npos)
                                     }
                                 } else { 
-                                    //no piece is there push to arr
                                     arr.push(npos)
                                 }
                             }
@@ -3352,10 +4091,10 @@ function cmove(pos, npos, move, type, color, sw) {
                 //rookMove16 is move 2 right
                 if(sw == "white" && color == "white") {
                     var sq1 = document.getElementById(pos + 1)
-                    if(sq1.children.length == 1) {} else {
+                    if(sq1.children.length != 1) {
                         var sq2 = document.getElementById(pos + 2)
                         if(sq2.children.length == 1) {
-                            if(cchck(sq2.children[0].src) == color) {} else {
+                            if(cchck(sq2.children[0].src) != color) {
                                 arr.push(npos)
                             }
                         } else {
@@ -3628,18 +4367,18 @@ function cmove(pos, npos, move, type, color, sw) {
                 //rookMove20 is move 6 right
                 if(sw == "white" && color == "white") {
                     var sq1 = document.getElementById(pos + 1)
-                    if(sq1.children.length == 1) {} else {
+                    if(sq1.children.length != 1) {
                         var sq2 = document.getElementById(pos + 2) 
-                        if(sq2.children.length == 1) {} else {
+                        if(sq2.children.length != 1) {
                             var sq3 = document.getElementById(pos + 3) 
-                            if(sq3.children.length == 1) {} else {
+                            if(sq3.children.length != 1) {
                                 var sq4 = document.getElementById(pos + 4)
-                                if(sq4.children.length == 1) {} else {
+                                if(sq4.children.length != 1) {
                                     var sq5 = document.getElementById(pos + 5)
-                                    if(sq5.children.length == 1) {} else {
+                                    if(sq5.children.length != 1) {
                                         var sq6 = document.getElementById(pos + 6)
                                         if(sq6.children.length == 1) {
-                                            if(cchck(sq6.children[0].src) == color) {} else {
+                                            if(cchck(sq6.children[0].src) != color) {
                                                 arr.push(npos)
                                             }
                                         } else {
@@ -3838,7 +4577,6 @@ function cmove(pos, npos, move, type, color, sw) {
                 //rookMove22 is move 1 left
                 if(sw == "white" && color == "white") {
                     var sq1 = document.getElementById(pos - 1)
-                    console.log(sq1)
                     if(sq1.children.length == 1) {
                         if(cchck(sq1.children[0].src) == color) {} else {
                             arr.push(npos)
@@ -3848,7 +4586,6 @@ function cmove(pos, npos, move, type, color, sw) {
                     }
                 } else if(sw == "white" && color == "black") {
                     var sq1 = document.getElementById(pos - 1)
-                    console.log(sq1)
                     if(sq1.children.length == 1) {
                         if(cchck(sq1.children[0].src) == color) {} else {
                             arr.push(npos)
@@ -5942,154 +6679,5185 @@ function cmove(pos, npos, move, type, color, sw) {
                 }
             } else if(move == "bishopMove15") {
                 if(sw == "white" && color == "white") {
-                
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
                 }
             } else if(move == "bishopMove16") {
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
                 }
             } else if(move == "bishopMove17") {
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
                 }
             } else if(move == "bishopMove18") {
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }   
                 }
             } else if(move == "bishopMove19") {
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             } else if(move == "bishopMove20") {
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1) 
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                } 
+                            }
+                        }
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1) 
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                } 
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) + 1) 
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                } 
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) + 1) 
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                } 
+                            }
+                        }
+                    }
                 }
             } else if(move == "bishopMove21") {
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementsById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementsById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementsById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             } else if(move == "bishopMove22") {
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
                 }
             } else if(move == "bishopMove23") {
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }  
                 }
             } else if(move == "bishopMove24") {
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
                 }
             } else if(move == "bishopMove25") {
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
                 }
             } else if(move == "bishopMove26") {
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    } 
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-            } else if(move == "bishopMove27") {
+            } else if(move == "bishopMove27") { 
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getAnimations((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    } 
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getAnimations((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    } 
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getAnimations((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    } 
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getAnimations((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    } 
+                                }
+                            }
+                        }
+                    } 
                 }
             } else if(move == "bishopMove28") {
                 if(sw == "white" && color == "white") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "white" && color == "black") {
-
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "white") {
-                     
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 } else if(sw == "black" && color == "black") {
-                    
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         break; 
         case "queen":
-
+            if(move == "queenMove1") {
+                if(sw == "white" && color == "white") { 
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                }
+            } else if(move == "queenMove2") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2) 
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2) 
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2) 
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2) 
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                }
+            } else if(move == "queenMove3") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    } 
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    } 
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    } 
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    } 
+                }
+            } else if(move == "queenMove4") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove5") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length != 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length != 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length != 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length != 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove6") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            } 
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            } 
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            } 
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            } 
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove7") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove8") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                }
+            } else if(move == "queenMove9") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2) 
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2) 
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2) 
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2) 
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                }
+            } else if(move == "queenMove10") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }    
+                }
+            } else if(move == "queenMove11") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove12") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove13") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1) 
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1) 
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1) 
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1) 
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove14") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1) 
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1) 
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 1) 
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 1) 
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove15") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                }
+            } else if(move == "queenMove16") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                }
+            } else if(move == "queenMove17") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove18") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4= document.getElementById(pos + 32)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4= document.getElementById(pos + 32)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4= document.getElementById(pos + 32)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4= document.getElementById(pos + 32)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove19") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 40)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 40)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 40)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 40)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove20") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 48)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 48)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 48)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 48)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove21") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 48)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos + 56)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 48)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos + 56)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 48)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos + 56)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos + 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos + 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos + 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos + 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos + 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos + 48)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos + 56)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                }
+            } else if(move == "queenMove22") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                }
+            } else if(move == "queenMove23") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                }
+            } else if(move == "queenMove24") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        } 
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        } 
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        } 
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        } 
+                    }
+                }
+            } else if(move == "queenMove25") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }   
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        } 
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }   
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        } 
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }   
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        } 
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }   
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        } 
+                    } 
+                }
+            } else if(move == "queenMove26") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 40)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 40)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 40)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 40)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                }
+            } else if(move == "queenMove27") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 48)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 48)
+                                        if(sq6.children.length != 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 48)
+                                        if(sq6.children.length != 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 48)
+                                        if(sq6.children.length != 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                }
+            } else if(move == "queenMove28") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 48)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos - 56)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 48)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos - 56)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 48)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos - 56)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById(pos - 8)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById(pos - 16)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById(pos - 24)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById(pos - 32)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById(pos - 40)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById(pos - 48)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById(pos - 56)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                }
+            } else if(move == "queenMove29") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                }
+            } else if(move == "queenMove30") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                }
+            } else if(move == "queenMove31") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove32") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove33") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }   
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }   
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }   
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }   
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove34") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove35") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) + 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove36") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq6.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq6.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq6.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq6.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                }
+            } else if(move == "queenMove37") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                }
+            } else if(move == "queenMove38") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove39") {
+                if(sw == "white" && color == "white") { 
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }   
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }   
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }   
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }   
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove40") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove41") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove42") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos + 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos + 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos + 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) + 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) + 2) 
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) + 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) + 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) + 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos + 56) + 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove43") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                }
+            } else if(move == "queenMove44") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                }
+            } else if(move == "queenMove45") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)
+                            if(sq3.children.length == 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove46") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove47") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove48") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove49") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos + 56) - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos + 56) - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos + 56) - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos + 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos + 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos + 24) - 3)  
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos + 32) + 4) 
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos + 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos + 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos + 56) - 7)
+                                            if(sq7.children.length == 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove50") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length == 1) {
+                        if(cchck(sq1.children[0].src) != color) {
+                            arr.push(npos)
+                        }
+                    } else {
+                        arr.push(npos)
+                    }
+                }
+            } else if(move == "queenMove51") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length == 1) {
+                            if(cchck(sq2.children[0].src) != color) {
+                                arr.push(npos)
+                            }
+                        } else {
+                            arr.push(npos)
+                        }
+                    }   
+                }
+            } else if(move == "queenMove52") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                if(cchck(sq3.children[0].src) != color) {
+                                    arr.push(npos)
+                                }
+                            } else {
+                                arr.push(npos)
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove53") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length == 1) {
+                                    if(cchck(sq4.children[0].src) != color) {
+                                        arr.push(npos)
+                                    }
+                                } else {
+                                    arr.push(npos)
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove54") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length == 1) {
+                                        if(cchck(sq5.children[0].src) != color) {
+                                            arr.push(npos)
+                                        }
+                                    } else {
+                                        arr.push(npos)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove55") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }   
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }   
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }   
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length == 1) {
+                                            if(cchck(sq6.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }   
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if(move == "queenMove56") {
+                if(sw == "white" && color == "white") {
+                    var sq1 = document.getElementById((pos - 8) - 1)
+                    if(sq1.children.length != 1) {
+                        var sq2 = document.getElementById((pos - 16) - 2)
+                        if(sq2.children.length != 1) {
+                            var sq3 = document.getElementById((pos - 24) - 3)
+                            if(sq3.children.length != 1) {
+                                var sq4 = document.getElementById((pos - 32) - 4)
+                                if(sq4.children.length != 1) {
+                                    var sq5 = document.getElementById((pos - 40) - 5)
+                                    if(sq5.children.length != 1) {
+                                        var sq6 = document.getElementById((pos - 48) - 6)
+                                        if(sq6.children.length != 1) {
+                                            var sq7 = document.getElementById((pos - 56) - 7)
+                                            if(sq7.children.length != 1) {
+                                                if(cchck(sq7.children[0].src) != color) {
+                                                    arr.push(npos)
+                                                }
+                                            } else {
+                                                arr.push(npos)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "white" && color == "black") {
+                    var sq2 = document.getElementById((pos - 16) - 2)
+                    if(sq2.children.length != 1) {
+                        var sq3 = document.getElementById((pos - 24) - 3)
+                        if(sq3.children.length != 1) {
+                            var sq4 = document.getElementById((pos - 32) - 4)
+                            if(sq4.children.length != 1) {
+                                var sq5 = document.getElementById((pos - 40) - 5)
+                                if(sq5.children.length != 1) {
+                                    var sq6 = document.getElementById((pos - 48) - 6)
+                                    if(sq6.children.length != 1) {
+                                        var sq7 = document.getElementById((pos - 56) - 7)
+                                        if(sq7.children.length != 1) {
+                                            if(cchck(sq7.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "white") {
+                    var sq2 = document.getElementById((pos - 16) - 2)
+                    if(sq2.children.length != 1) {
+                        var sq3 = document.getElementById((pos - 24) - 3)
+                        if(sq3.children.length != 1) {
+                            var sq4 = document.getElementById((pos - 32) - 4)
+                            if(sq4.children.length != 1) {
+                                var sq5 = document.getElementById((pos - 40) - 5)
+                                if(sq5.children.length != 1) {
+                                    var sq6 = document.getElementById((pos - 48) - 6)
+                                    if(sq6.children.length != 1) {
+                                        var sq7 = document.getElementById((pos - 56) - 7)
+                                        if(sq7.children.length != 1) {
+                                            if(cchck(sq7.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else if(sw == "black" && color == "black") {
+                    var sq2 = document.getElementById((pos - 16) - 2)
+                    if(sq2.children.length != 1) {
+                        var sq3 = document.getElementById((pos - 24) - 3)
+                        if(sq3.children.length != 1) {
+                            var sq4 = document.getElementById((pos - 32) - 4)
+                            if(sq4.children.length != 1) {
+                                var sq5 = document.getElementById((pos - 40) - 5)
+                                if(sq5.children.length != 1) {
+                                    var sq6 = document.getElementById((pos - 48) - 6)
+                                    if(sq6.children.length != 1) {
+                                        var sq7 = document.getElementById((pos - 56) - 7)
+                                        if(sq7.children.length != 1) {
+                                            if(cchck(sq7.children[0].src) != color) {
+                                                arr.push(npos)
+                                            }
+                                        } else {
+                                            arr.push(npos)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         break;
     }
     //console.log(arr)
     return arr.toString()
 }
-
+ 
 function pchck(pos, color, sw) {
 
 } 
