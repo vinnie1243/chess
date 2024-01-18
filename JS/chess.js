@@ -1,5 +1,6 @@
 function make() {
     var s = window.innerHeight / 8
+    window.sessionStorage.setItem("s", s)
     var off 
     off = s * 8
     off = window.innerWidth - off
@@ -12,27 +13,33 @@ function make() {
     if(s2 == "white") {
         pieces = [
             ["", "", "", "", "", "", "", ""], 
-            ["", "", "", "", "", "", "", ""],  
-            ["", "", "", "", "", "pawnBlack", "", "pawnBlack"], 
-            ["", "", "", "", "", "", "pawnWhite", ""], 
             ["", "", "", "", "", "", "", ""], 
-            ["", "", "", "pawnWhite", "", "", "", ""], 
-            ["pawnWhite", "", "", "", "", "", "", ""], 
+            ["", "", "", "queenWhite", "", "", "", ""], 
+            ["", "", "", "", "", "", "", ""], 
+            ["", "", "kingBlack", "", "", "", "", ""], 
+            ["", "", "", "", "", "", "", ""], 
+            ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
         ]
     } else if(s2 == "black") {
         pieces = [
             ["rookWhite", "knightWhite", "bishopWhite", "queenWhite", "kingWhite", "bishopWhite", "knightWhite", "rookWhite"], 
-            ["pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite"], 
+            ["pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite"],  
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
-            ["", "", "", "", "", "", "", ""],
+            ["", "", "", "", "", "", "", ""], 
             ["pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack"], 
-            ["rookBlack", "knightBlack", "bishopBlack", "queenBlack", "kingBlack", "bishopBlack", "knightBlack", "rookBlack"],    
+            ["rookBlack", "knightBlack", "bishopBlack", "queenBlack", "kingBlack", "bishopBlack", "knightBlack", "rookBlack"], 
         ]
     }
     window.sessionStorage.setItem("parr", JSON.stringify(pieces))
+    genboard(pieces, s)
+    var c = document.getElementById("con")
+    c.style.gridTemplateColumns = `${s}px ${s}px ${s}px ${s}px ${s}px ${s}px ${s}px ${s}px`
+}  
+
+function genboard(pieces, s) {
     var num = 1
     for(var j = 0; j < 8; j++) {
         for(var i = 0; i < 8; i++) {
@@ -78,9 +85,7 @@ function make() {
             num++
         }
     }
-    var c = document.getElementById("con")
-    c.style.gridTemplateColumns = `${s}px ${s}px ${s}px ${s}px ${s}px ${s}px ${s}px ${s}px`
-}  
+}
 
 function kingchck() {
     var pieces = JSON.parse(window.sessionStorage.getItem("parr"))
@@ -131,84 +136,89 @@ function black() {
 }
 
 function clic(e) {
+    //regen()
     del(e)
     var el = e.target
     var color = cchck(el.src)
-    var pos = e.target.parentElement.id
     var s = window.localStorage.getItem("switch")
-    var arr = gen(el.src, e.target.parentElement.id, color)
+    try {
+        var arr = gen(el.src, e.target.parentElement.id, color)
+    } catch (error) {
+        
+    }
 
+    
 }
 
 async function move(e) {
     var ele = e.target.parentElement
-    //console.log(ele, ele.parentElement)
     var c = 0
     while (c == 0) {
-        if(ele.parentElement.id != "con") {
-            ele = ele.parentElement
-        } else {
-            c = 1
-        }
+        try {
+            if(ele.parentElement.id != "con") {
+                ele = ele.parentElement
+            } else {
+                c = 1
+            }
+        } catch (error) {c = 1}
     }
-    //console.log(ele)
     var sp = window.sessionStorage.getItem('sp')
     sp = document.getElementById(sp)
-    //console.log(sp)
-    if(ele.children.length != 0) {
-        ele.children[0].remove()
+    if(ele.children[0] != document.head){
+        if(ele.children.length != 0) {
+            ele.children[0].remove()
+        } 
     }
     ele.appendChild(sp)
+    //console.log(sp)
+    //kingchck()
     uparr()
-    kingchck()
-    fix()
 }
-
+ 
 function uparr() {
+    //first move array
     var arr = JSON.parse(window.sessionStorage.getItem("arr2"))
+    //piece array
     var pieces = JSON.parse(window.sessionStorage.getItem("parr"))
-    //console.log(pieces)
-    //console.log(arr)
+    //old position
     var opos = arr[0][6]
+    //new position array
     var npa = []
+    //gets all new positions and pushes them to the new position array
     for(var i = 0; i < arr.length; i++) {
         var np = arr[i][0]
         npa.push(np)
     }
-    //console.log(opos)
-    //console.log(npa)
+    //new position variable
     var npos 
+    //piece variable
     var piece = arr[0][4]
+    //color variables
     var color = arr[0][1]
-    //console.log(color, piece)
     var color2
+    //capitalieses color
     if(color == "white") {
         color2 = "White"
     } else {
         color2 = "Black"
     }
-    //get move used
+    //
     for(var i = 0; i < npa.length; i++) {
+        //gets one of the squares from new position array
         var t = document.getElementById(npa[i])
-        //console.log(t)
+        //checks if that square has children
         if(t.children.length == 1) {
-            //console.log(t.id)
             if(cchck(t.children[0].src) == color) {
                 var npi = pichck(t.children[0].src, piece)
-                //console.log(piece, npi)
                 if(npi == piece) {
                     npos = t.id
                 }
             }
         }
     }
-    //console.log(npos)
-    //console.log(opos)
     var old = fig(opos)
     npos = Number.parseInt(npos)
-    //console.log(npos)
     var ne = fig(npos)
-    //console.log(ne, old)
     var o = []
     o.push(old.substring(0, 1))
     o.push(old.substring(2))
@@ -225,8 +235,9 @@ function uparr() {
     n2 = Number.parseInt(n2)  
     pieces[o1][o2] = ""
     pieces[n1][n2] = piece + color2
-    //console.log(pieces)
     window.sessionStorage.setItem("parr", JSON.stringify(pieces))
+    //console.log(pieces)
+    //regen()
 }
 
 function r() {
@@ -452,5 +463,15 @@ function fix() {
         arr[i].removeEventListener("click", addeve, true)
         arr[i].classList.remove("take")
     }
-    //console.log(arr)
+}
+
+function regen() {
+    var con = document.getElementById("con")
+    while(con.children.length > 0) {
+        con.children[0].remove()
+    }
+    var parr = JSON.parse(window.sessionStorage.getItem("parr"))
+    var s = window.sessionStorage.getItem("s")
+    console.log(parr)
+    genboard(parr, s)
 }

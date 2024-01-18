@@ -1,7 +1,13 @@
-function genMove() {
-    
-}
+function pick(input) {
+    switch(input) {
+        case "easy":
+            startE()
+        break;
+        case "medium":
 
-function pickMove() {
+        break;
+        case "hard":
 
+        break
+    }
 }
