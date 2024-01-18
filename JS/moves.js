@@ -8125,7 +8125,7 @@ function cmove(pos, npos, move, type, color, sw) {
                                 var sq4 = document.getElementById(pos - 4)
                                 if(sq4.children.length != 1) {
                                     var sq5 = document.getElementById(pos - 5)
-                                    if(sq5.children.length != 1) {
+                                    if(sq5.children.length == 1) {
                                         if(cchck(sq5.children[0].src) != color) {
                                             arr.push(npos)
                                         }
@@ -12223,7 +12223,8 @@ function addeve(e) {
     }
     for(var i = 0; i < len2; i++) {
         el2[0].parentElement.removeEventListener("click", moveEvent, true)
-        el2[0].remove()
+        el2[0].parentElement.remove()
+        regen()
     }
 }
 

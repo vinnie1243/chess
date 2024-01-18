@@ -12,14 +12,14 @@ function make() {
     var pieces = []
     if(s2 == "white") {
         pieces = [
-            ["", "", "", "", "", "", "", ""], 
-            ["", "", "", "", "", "", "", ""], 
-            ["", "", "", "queenWhite", "", "", "", ""], 
-            ["", "", "", "", "", "", "", ""], 
-            ["", "", "kingBlack", "", "", "", "", ""], 
+            ["rookBlack", "knightBlack", "bishopBlack", "queenBlack", "kingBlack", "bishopBlack", "knightBlack", "rookBlack"], 
+            ["pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack"], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
+            ["", "", "", "", "", "", "", ""], 
+            ["pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite"], 
+            ["rookWhite", "knightWhite", "bishopWhite", "queenWhite", "kingWhite", "bishopWhite", "knightWhite", "rookWhite"], 
         ]
     } else if(s2 == "black") {
         pieces = [
@@ -31,6 +31,17 @@ function make() {
             ["", "", "", "", "", "", "", ""], 
             ["pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack"], 
             ["rookBlack", "knightBlack", "bishopBlack", "queenBlack", "kingBlack", "bishopBlack", "knightBlack", "rookBlack"], 
+        ]
+    } else if(s2 == "dev") {
+        pieces = [
+            ["", "", "", "", "", "", "", ""], 
+            ["", "", "", "", "", "", "", ""], 
+            ["", "", "", "", "", "", "", ""], 
+            ["", "", "", "", "", "", "", ""], 
+            ["", "", "", "", "", "", "", ""], 
+            ["", "", "", "", "", "", "", ""], 
+            ["", "", "", "", "", "", "", ""], 
+            ["", "", "", "", "", "", "", ""], 
         ]
     }
     window.sessionStorage.setItem("parr", JSON.stringify(pieces))
