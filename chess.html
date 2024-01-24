@@ -18,7 +18,7 @@
                 <br>
                 <h1 class="gold">Navigation</h1>
                 <hr>
-                <a href="../index.html" class="gold">Home Page</a>
+                <a href="../index.html" class="gold Black">Home Page</a>
             </nav>
             <div id="con">
 
@@ -27,6 +27,16 @@
                 <button onclick="white()">Play As White</button>
                 <button onclick="black()">Play As Black</button>
                 <button onclick="r()">reset</button>
+                <button onclick="disFen()">copy Fen</button>
+                <div>
+                    <p class="gold Bblack">load fen</p>
+                    <form class="Bblack">
+                        <input class="Bblack gold nBor" type="text" id="load">
+                        <br>
+                        <label for="loadFEN" class="Bblack">Load</label>
+                        <input type="button" onclick="fenDe()" style="width: 12%; height: 15%; background-color: gold;" id="loadFEN">
+                    </form>
+                </div>
             </aside>
         </main>
         <div class="invis">

@@ -1,7 +1,3 @@
 function startE() {
     
 }
-
-function genMove() {
-
-}

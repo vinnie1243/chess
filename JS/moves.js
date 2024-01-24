@@ -823,95 +823,95 @@ async function gen(piece, pos, color) {
         case "knight":
             //up 2 left 1
             var knightMove1
-            if(s == "white" && color == "white" && ((pos - 16) - 1) < 65 && ((pos - 16) - 1) > 0) {
+            if(s == "white" && color == "white" && ((pos - 16) - 1) < 65 && ((pos - 16) - 1) > 0 && p8 != 1) {
                 var npos = (pos - 16) - 1
                 knightMove1 = [npos, color, s, takec(npos, color), "knight", "knightMove1", pos, "t"]
                 arr.push(knightMove1)
-            } else if(s == "white" && color == "black" && ((pos - 16) - 1) < 65 && ((pos - 16) - 1) > 0) {
+            } else if(s == "white" && color == "black" && ((pos - 16) - 1) < 65 && ((pos - 16) - 1) > 0 && p8 != 1) {
                 var npos = (pos - 16) - 1
                 knightMove1 = [npos, color, s, takec(npos, color), "knight", "knightMove1", pos, "t"]
                 arr.push(knightMove1)
-            } else if(s == "black" && color == "white" && ((pos - 16) - 1) < 65 && ((pos - 16) - 1) > 0) {
+            } else if(s == "black" && color == "white" && ((pos - 16) - 1) < 65 && ((pos - 16) - 1) > 0 && p8 != 1) {
                 var npos = (pos - 16) - 1
                 knightMove1 = [npos, color, s, takec(npos, color), "knight", "knightMove1", pos, "t"]
                 arr.push(knightMove1)
-            } else if(s == "black" && color == "black" && ((pos - 16) - 1) < 65 && ((pos - 16) - 1) > 0) {
+            } else if(s == "black" && color == "black" && ((pos - 16) - 1) < 65 && ((pos - 16) - 1) > 0 && p8 != 1) {
                 var npos = (pos - 16) - 1
                 knightMove1 = [npos, color, s, takec(npos, color), "knight", "knightMove1", pos, "t"]
                 arr.push(knightMove1)
             }
             //move up 2 right 1
             var knightMove2
-            if(s == "white" && color == "white" && ((pos - 16) + 1) < 65 && ((pos - 16) + 1) > 0) {
+            if(s == "white" && color == "white" && ((pos - 16) + 1) < 65 && ((pos - 16) + 1) > 0 && p8 != 0) {
                 var npos = (pos - 16) + 1
                 knightMove2 = [npos, color, s, takec(npos, color), "knight", "knightMove2", pos, "t"]
                 arr.push(knightMove2) 
-            } else if(s == "white" && color == "black" && ((pos - 16) + 1) < 65 && ((pos - 16) + 1) > 0) {
+            } else if(s == "white" && color == "black" && ((pos - 16) + 1) < 65 && ((pos - 16) + 1) > 0 && p8 != 0) {
                 var npos = (pos - 16) + 1
                 knightMove2 = [npos, color, s, takec(npos, color), "knight", "knightMove2", pos, "t"]
                 arr.push(knightMove2)
-            } else if(s == "black" && color == "white" && ((pos - 16) + 1) < 65 && ((pos - 16) + 1) > 0) {
+            } else if(s == "black" && color == "white" && ((pos - 16) + 1) < 65 && ((pos - 16) + 1) > 0 && p8 != 0) {
                 var npos = (pos - 16) + 1
                 knightMove2 = [npos, color, s, takec(npos, color), "knight", "knightMove2", pos, "t"]
                 arr.push(knightMove2)
-            } else if(s == "black" && color == "black" && ((pos - 16) + 1) < 65 && ((pos - 16) + 1) > 0) {
+            } else if(s == "black" && color == "black" && ((pos - 16) + 1) < 65 && ((pos - 16) + 1) > 0 && p8 != 0) {
                 var npos = (pos - 16) + 1
                 knightMove2 = [npos, color, s, takec(npos, color), "knight", "knightMove2", pos, "t"]
                 arr.push(knightMove2)
             }
             //move right 2 up 1
             var knightMove3
-            if(s == "white" && color == "white" && ((pos - 8) + 2) < 65 && ((pos - 8) + 2) > 0) {
+            if(s == "white" && color == "white" && ((pos - 8) + 2) < 65 && ((pos - 8) + 2) > 0 && p8 != 0 && p8 != 7) {
                 var npos = (pos - 8) + 2 
                 knightMove3 = [npos, color, s, takec(npos, color), "knight", "knightMove3", pos, "t"]
                 arr.push(knightMove3)
-            } else if(s == "white" && color == "black" && ((pos - 8) + 2) < 65 && ((pos - 8) + 2) > 0) {
+            } else if(s == "white" && color == "black" && ((pos - 8) + 2) < 65 && ((pos - 8) + 2) > 0 && p8 != -0 && p8 != 7) {
                 var npos = (pos - 8) + 2
                 knightMove3 = [npos, color, s, takec(npos, color), "knight", "knightMove3", pos, "t"]
                 arr.push(knightMove3)
-            } else if(s == "black" && color == "white" && ((pos - 8) + 2) < 65 && ((pos - 8) + 2) > 0) {
+            } else if(s == "black" && color == "white" && ((pos - 8) + 2) < 65 && ((pos - 8) + 2) > 0 && p8 != -0 && p8 != 7) {
                 var npos = (pos - 8) + 2
                 knightMove3 = [npos, color, s, takec(npos, color), "knight", "knightMove3", pos, "t"]
                 arr.push(knightMove3)
-            } else if(s == "black" && color == "black" && ((pos - 8) + 2) < 65 && ((pos - 8) + 2) > 0) {
+            } else if(s == "black" && color == "black" && ((pos - 8) + 2) < 65 && ((pos - 8) + 2) > 0 && p8 != -0 && p8 != 7) {
                 var npos = (pos - 8) + 2
                 knightMove3 = [npos, color, s, takec(npos, color), "knight", "knightMove3", pos, "t"]
                 arr.push(knightMove3)
-            }
+            } 
             //move right 2 down 1
             var knightMove4
-            if(s == "white" && color == "white" && ((pos + 8) + 2) < 65 && ((pos + 8) + 2) > 0) {
-                var npos = (pos + 8) + 2
-                knightMove4 = [npos, color, s, takec(npos, color), "knight", "knightMove4", pos, "t"]
-                //arr.push(knightMove4)
-            } else if(s == "white" && color == "black" && ((pos + 8) + 2) < 65 && ((pos + 8) + 2) > 0) {
+            if(s == "white" && color == "white" && ((pos + 8) + 2) < 65 && ((pos + 8) + 2) > 0 && p8 != 0 && p8 != 7) {
                 var npos = (pos + 8) + 2
                 knightMove4 = [npos, color, s, takec(npos, color), "knight", "knightMove4", pos, "t"]
                 arr.push(knightMove4)
-            } else if(s == "black" && color == "white" && ((pos + 8) + 2) < 65 && ((pos + 8) + 2) > 0) {
+            } else if(s == "white" && color == "black" && ((pos + 8) + 2) < 65 && ((pos + 8) + 2) > 0 && p8 != 0 && p8 != 7) {
                 var npos = (pos + 8) + 2
                 knightMove4 = [npos, color, s, takec(npos, color), "knight", "knightMove4", pos, "t"]
                 arr.push(knightMove4)
-            } else if(s == "black" && color == "black" && ((pos + 8) + 2) < 65 && ((pos + 8) + 2) > 0) {
+            } else if(s == "black" && color == "white" && ((pos + 8) + 2) < 65 && ((pos + 8) + 2) > 0 && p8 != 0 && p8 != 7) {
+                var npos = (pos + 8) + 2
+                knightMove4 = [npos, color, s, takec(npos, color), "knight", "knightMove4", pos, "t"]
+                arr.push(knightMove4)
+            } else if(s == "black" && color == "black" && ((pos + 8) + 2) < 65 && ((pos + 8) + 2) > 0 && p8 != 0 && p8 != 7) {
                 var npos = (pos + 8) + 2
                 knightMove4 = [npos, color, s, takec(npos, color), "knight", "knightMove4", pos, "t"]
                 arr.push(knightMove4)
             }
             //move down 2 right 1
             var knightMove5
-            if(s == "white" && color == "white" && ((pos + 16) + 1) < 65 && ((pos + 16) + 1) > 0) {
+            if(s == "white" && color == "white" && ((pos + 16) + 1) < 65 && ((pos + 16) + 1) > 0 && p8 != 0) {
                 var npos = (pos + 16) + 1
                 knightMove5 = [npos, color, s, takec(npos, color), "knight", "knightMove5", pos, "t"]
                 arr.push(knightMove5)
-            } else if(s == "white" && color == "black" && ((pos + 16) + 1) < 65 && ((pos + 16) + 1) > 0) {
+            } else if(s == "white" && color == "black" && ((pos + 16) + 1) < 65 && ((pos + 16) + 1) > 0 && p8 != 0) {
                 var npos = (pos + 16) + 1
                 knightMove5 = [npos, color, s, takec(npos, color), "knight", "knightMove5", pos, "t"]
                 arr.push(knightMove5)
-            } else if(s == "black" && color == "white" && ((pos + 16) + 1) < 65 && ((pos + 16) + 1) > 0) {
+            } else if(s == "black" && color == "white" && ((pos + 16) + 1) < 65 && ((pos + 16) + 1) > 0 && p8 != 0) {
                 var npos = (pos + 16) + 1
                 knightMove5 = [npos, color, s, takec(npos, color), "knight", "knightMove5", pos, "t"]
                 arr.push(knightMove5)
-            } else if(s == "black" && color == "black" && ((pos + 16) + 1) < 65 && ((pos + 16) + 1) > 0) {
+            } else if(s == "black" && color == "black" && ((pos + 16) + 1) < 65 && ((pos + 16) + 1) > 0 && p8 != 0) {
                 var npos = (pos + 16) + 1
                 knightMove5 = [npos, color, s, takec(npos, color), "knight", "knightMove5", pos, "t"]
                 arr.push(knightMove5)
@@ -2663,6 +2663,7 @@ function draw(arr, arr2) {
 }
 
 function del() {
+    console.log("del")
     var el = document.getElementsByClassName("dot")
     var len = el.length
     //console.log(len)
@@ -2670,6 +2671,7 @@ function del() {
         el[i].parentElement.classList.remove("mouse")
     }
     for(var i = 0; i < len; i++) {
+        console.log(el[0])
         el[0].remove()
     }   
     var e = document.getElementsByClassName("red")
@@ -3033,25 +3035,15 @@ function cmove(pos, npos, move, type, color, sw) {
                     }
                 }
             } else if(move == "rookMove2") {
-                //rookMove2 is move up 2
                 if(sw == "white" && color == "white") {
-                    //check 1 square above for piece
                     var sq1 = document.getElementById(pos - 8)
-                    if(sq1.children.length == 1) {
-                        //piece is in way dont push to arr
-                    } else {
-                        //no piece in way check for friendly piece 2 squares above
+                    if(sq1.children.length != 1) {
                         var sq2 = document.getElementById(pos - 16)
                         if(sq2.children.length == 1) {
-                            //piece is in 2nd square check if piece is freindly
-                            if(cchck(sq2.children[0].src) == color) {
-                                //piece is freindly dont push to arr
-                            } else {
-                                //piece is not friendly we can take so push to arr
+                            if(cchck(sq2.children[0].src) != color) {
                                 arr.push(npos)
                             }
                         } else {
-                            //no piece in second square push to arr
                             arr.push(npos)
                         }
                     }
@@ -4276,13 +4268,13 @@ function cmove(pos, npos, move, type, color, sw) {
                         }
                     }
                 } else if(sw == "black" && color == "white") {
-                    var sq1 = document.getElementById(pos - 1)
+                    var sq1 = document.getElementById(pos + 1)
                     if(sq1.children.length == 1) {} else {
-                        var sq2 = document.getElementById(pos - 2)
+                        var sq2 = document.getElementById(pos + 2)
                         if(sq2.children.length == 1) {} else {
-                            var sq3 = document.getElementById(pos - 3)
+                            var sq3 = document.getElementById(pos + 3)
                             if(sq3.children.length == 1) {} else {
-                                var sq4 = document.getElementById(pos - 4)
+                                var sq4 = document.getElementById(pos + 4)
                                 if(sq4.children.length == 1) {
                                     if(cchck(sq4.children[0].src) == color) {} else {
                                         arr.push(npos)
@@ -5524,7 +5516,7 @@ function cmove(pos, npos, move, type, color, sw) {
                 if(sw == "white" && color == "white") {
                     var sq1 = document.getElementById((pos - 8) + 2)
                     if(sq1.children.length == 1) {
-                        if(cchck(sq1.children[0].src) == color) {
+                        if(cchck(sq1.children[0].src) != color) {
                             arr.push(npos)
                         }
                     } else {
@@ -5533,7 +5525,7 @@ function cmove(pos, npos, move, type, color, sw) {
                 } else if(sw == "white" && color == "black") {
                     var sq1 = document.getElementById((pos - 8) + 2)
                     if(sq1.children.length == 1) {
-                        if(cchck(sq1.children[0].src) == color) {
+                        if(cchck(sq1.children[0].src) != color) {
                             arr.push(npos)
                         }
                     } else {
@@ -5542,7 +5534,7 @@ function cmove(pos, npos, move, type, color, sw) {
                 } else if(sw == "black" && color == "white") {
                     var sq1 = document.getElementById((pos - 8) + 2)
                     if(sq1.children.length == 1) {
-                        if(cchck(sq1.children[0].src) == color) {
+                        if(cchck(sq1.children[0].src) != color) {
                             arr.push(npos)
                         }
                     } else {
@@ -5551,7 +5543,7 @@ function cmove(pos, npos, move, type, color, sw) {
                 } else if(sw == "black" && color == "black") {
                     var sq1 = document.getElementById((pos - 8) + 2)
                     if(sq1.children.length == 1) {
-                        if(cchck(sq1.children[0].src) == color) {
+                        if(cchck(sq1.children[0].src) != color) {
                             arr.push(npos)
                         }
                     } else {
@@ -12200,31 +12192,25 @@ function enpchckL() {
 
 }
 
-function addeve(e) {
+async function addeve(e) { 
     move(e)
-    var e = document.getElementsByClassName("red")
-    var len2 = e.length
+
+    var el2 = document.getElementsByClassName("dot")
+    for(var i = 0; i < el2.length; i++) {
+        console.log(el2)
+        el2[0].remove()
+    }
+    var e2 = document.getElementsByClassName("red")
+    var len2 = e2.length
     for(var i = 0; i < len2; i++) {
         try {
-            var num = e[i].id
+            var num = e2[i].id
         } catch (error) {
             
         }
-        //console.log(num)
         var elem = document.getElementById(num)
-        elem.style.backgroundColor = sqc(num)
-        elem.removeEventListener("click", moveEvent, true)
-        elem.classList.remove("red")
-    }
-    var el2 = document.getElementsByClassName("dot")
-    var len2 = el2.length   
-    for(var i = 0; i < len2; i++) {
-        var ele = document.getElementById(i + "!")
-    }
-    for(var i = 0; i < len2; i++) {
-        el2[0].parentElement.removeEventListener("click", moveEvent, true)
-        el2[0].parentElement.remove()
-        regen()
+        console.log(elem)
+        elem.remove()
     }
 }
 
@@ -12247,25 +12233,4 @@ function prochck(pos, s, color) {
             return true
         }
     }
-}
-
-function moveEvent(e) {
-    move(e)
-    var el = document.getElementsByClassName("dot")
-    var len = el.length   
-    for(var i = 0; i < len; i++) {
-        var ele = document.getElementById(i + "!")
-    }
-    for(var i = 0; i < len; i++) {
-        el[0].remove()
-    }
-    var e2 = document.getElementsByClassName("red")
-    var len2 = e2.length
-    for(var i = 0; i < len2; i++) {
-        var num = e2[i].id
-        var elem = document.getElementById(num)
-        elem.style.backgroundColor = sqc(num)   
-        elem.removeEventListener("click", addeve, true)
-        elem.classList.remove("red")
-    }     
 }

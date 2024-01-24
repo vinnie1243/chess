@@ -91,3 +91,7 @@ button {
 .red {
     background-color: red;
 }
+
+.nBor {
+    border: 1px solid gold;
+}
