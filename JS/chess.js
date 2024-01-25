@@ -21,24 +21,24 @@ function make() {
     if(s2 == "white") {
         pieces = [
             ["rookBlack", "knightBlack", "bishopBlack", "queenBlack", "kingBlack", "bishopBlack", "knightBlack", "rookBlack"], 
-            ["pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack"], 
+            ["pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack"],            
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
-            ["pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite"], 
+            ["pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite"],
             ["rookWhite", "knightWhite", "bishopWhite", "queenWhite", "kingWhite", "bishopWhite", "knightWhite", "rookWhite"], 
         ]
     } else if(s2 == "black") {
         pieces = [
-            ["rookWhite", "knightWhite", "bishopWhite", "queenWhite", "kingWhite", "bishopWhite", "knightWhite", "rookWhite"], 
+            ["rookWhite", "knightWhite", "bishopWhite", "kingWhite", "queenWhite", "bishopWhite", "knightWhite", "rookWhite"], 
             ["pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite"],  
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack"], 
-            ["rookBlack", "knightBlack", "bishopBlack", "queenBlack", "kingBlack", "bishopBlack", "knightBlack", "rookBlack"], 
+            ["rookBlack", "knightBlack", "bishopBlack", "kingBlack", "queenBlack", "bishopBlack", "knightBlack", "rookBlack"], 
         ]
     }
     window.sessionStorage.setItem("parr", JSON.stringify(pieces))
@@ -203,7 +203,7 @@ async function move(e) {
         window.sessionStorage.setItem("ep", "-")
     }
     var ele = e.target.parentElement
-    //movement code is completley redundant
+    console.log(ele)
     var c = 0
     while (c == 0) {
         if(ele.parentElement.id != "con") {
@@ -216,12 +216,10 @@ async function move(e) {
     sp = document.getElementById(sp)
     if(ele.children[0] != document.head){
         if(ele.children.length != 0) {
-            console.log(ele)
-            ele.children[0].remove()
+            //ele.children[0].remove()
         } 
     }
     ele.appendChild(sp)
-    console.log(sp)
     change()
     kingchck()
     castle()
@@ -230,16 +228,14 @@ async function move(e) {
 }
  
 function uparr(ele) {
-    console.log("Uparr")
     //first move array
     var arr = JSON.parse(window.sessionStorage.getItem("arr2"))
-    console.log(arr)
     //piece array
     var pieces = JSON.parse(window.sessionStorage.getItem("parr"))
-    console.log(pieces)
+    var oldId = arr[0][8]
+    console.log(oldId)
     //old position
     var opos = arr[0][6]
-    console.log(opos)
     //new position array
     var npa = []
     //gets all new positions and pushes them to the new position array
@@ -260,6 +256,7 @@ function uparr(ele) {
     } else {
         color2 = "Black"
     }
+    console.table(npa)
     for(var i = 0; i < npa.length; i++) {
         //gets one of the squares from new position array
         var t = document.getElementById(npa[i])
@@ -272,15 +269,20 @@ function uparr(ele) {
                 //checks if it matches
                 if(npi == piece) {
                     // sets the new position to the squares id
-                    var holder = document.getElementById(opos)
-                    if(holder.children.length == 1) {
-                        holder = holder.children[0].id
+                    var oldPos = document.getElementById(opos)
+                    console.log(oldPos)
+                    if(oldPos.children.length != 0) {
+                        if(oldPos.children.length == 2) {
+                            oldPos = oldPos.children[1].id
+                        } else {
+                            oldPos = oldPos.children[0].id
+                        }
                     } else {
-                        holder = holder.id
+                        oldPos = oldPos.id
                     }
-                    console.log(t.children[0], holder)
-                    if(t.children[0].id == holder.id) {
+                    if(oldId == oldPos) {
                         npos = t.id
+                        console.log(npos)
                     }
                 }
             } else if(cchck(t.children[0].src) == "green") {
@@ -293,7 +295,7 @@ function uparr(ele) {
     //converts number to coordinate
     var old = fig(opos)
     //turns new position from string to number
-    console.log(npos)
+    console.log
     npos = Number.parseInt(npos)
     //turns new position to a coordinate
     console.log(npos)
@@ -306,8 +308,12 @@ function uparr(ele) {
     //new array
     var n = []
     //splits coords up
-    n.push(ne.substring(0, 1))
-    n.push(ne.substring(2))
+    try {
+        n.push(ne.substring(0, 1))
+        n.push(ne.substring(2))        
+    } catch (error) {
+        console.error(error)
+    }
     //old 1
     var o1 = o[0]
     //converts old 1 to number 
@@ -327,9 +333,7 @@ function uparr(ele) {
     //goes to old piece index to reset it
     pieces[o1][o2] = ""
     //puts piece in new position
-    console.log(piece)
     pieces[n1][n2] = piece + color2
-    console.log(pieces[n1][n2], n1, n2)
     //saves to session storage
     window.sessionStorage.setItem("parr", JSON.stringify(pieces))
 }
