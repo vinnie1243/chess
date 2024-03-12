@@ -249,7 +249,8 @@ async function move(e) {
     regen()
 }
  
-function uparr(ele) {
+async function uparr(ele) {
+    var promo = 0
     //first move array
     var arr = JSON.parse(window.sessionStorage.getItem("arr2"))
     //piece array
@@ -261,6 +262,9 @@ function uparr(ele) {
     var npa = []
     //gets all new positions and pushes them to the new position array
     for(var i = 0; i < arr.length; i++) {
+        if(arr[i][5] == "pawnMove7") {
+            promo = 1
+        }
         var np = arr[i][0]
         npa.push(np)
     }
@@ -277,8 +281,6 @@ function uparr(ele) {
     } else {
         color2 = "Black"
     }
-    //console.log(arr, pieces, oldId, opos, npa, piece, color, color2)
-    /////////////ERROR caused when dot gets deleted to fast/////////////////
     for(var i = 0; i < npa.length; i++) {
         //gets one of the squares from new position array
         var t = document.getElementById(npa[i])
@@ -291,6 +293,7 @@ function uparr(ele) {
                 //checks if it matches
                 if(npi == piece) {
                     // sets the new position to the squares id
+                    console.log(arr[i][5])
                     var oldPos = document.getElementById(opos)
                     if(oldPos.children.length != 0) {
                         if(oldPos.children.length == 2) {
@@ -300,8 +303,8 @@ function uparr(ele) {
                         }
                     } else {
                         oldPos = oldPos.id
-                        npos = ele.id
                     }
+                    npos = ele.id
                 }
             } else if(cchck(t.children[0].src) == "green") {
                 npos = ele.id
@@ -318,6 +321,7 @@ function uparr(ele) {
     //turns new position to a coordinate
     if(npos == NaN) {
         uparr(ele)
+        console.console.warn("rerun");
         return
     }
     var ne = fig(npos)
@@ -350,6 +354,10 @@ function uparr(ele) {
     //goes to old piece index to reset it
     pieces[o1][o2] = ""
     //puts piece in new position
+    if(promo == 1) {
+        var prop = window.prompt("what piece do you want to promote to q for queen r for rook b for bishop k for knight", "q")
+        piece = promote(prop)
+    }
     pieces[n1][n2] = piece + color2
     //saves to session storage
     window.sessionStorage.setItem("parr", JSON.stringify(pieces))

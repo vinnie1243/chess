@@ -58,39 +58,39 @@ async function gen(piece, pos, color) {
             }
             //move 3 take diagonally right
             var pawnMove3   
-            if(s == "white" && color == "white" && ptchckR(pos, color, s) == true) {
+            if(s == "white" && color == "white" && ptchckR(pos, color, s) == true && p8 != 1) {
                 var npos = pos - 7
                 pawnMove3 = [npos, color, s, "red", "pawn", "pawnMove3", pos, "t"]
                 arr.push(pawnMove3)
-            } else if(s == "white" && color == "black" && ptchckR(pos, color, s) == true) {
+            } else if(s == "white" && color == "black" && ptchckR(pos, color, s) == true && p8 != 1) {
                 var npos = pos + 9
                 pawnMove3 = [npos, color, s, "red", "pawn", "pawnMove3", pos, "t"]
                 arr.push(pawnMove3)
-            } else if(s == "black" && color == "white" && ptchckR(pos, color, s) == true) {
+            } else if(s == "black" && color == "white" && ptchckR(pos, color, s) == true && p8 != 1) {
                 var npos = pos + 9
                 pawnMove3 = [npos, color, s, "red", "pawn", "pawnMove3", pos, "t"] 
                 arr.push(pawnMove3)
-            } else if(s == "black" && color == "black" && ptchckR(pos, color, s) == true) {
+            } else if(s == "black" && color == "black" && ptchckR(pos, color, s) == true && p8 != 1) {
                 var npos = pos - 7
                 pawnMove3 = [npos, color, s, "red", "pawn", "pawnMove3", pos, "t"]
                 arr.push(pawnMove3)
             }
             //move4 take diagonally left
             var pawnMove4
-            if(s == "white" && color == "white" && ptchckL(pos, color, s) == true) {
+            if(s == "white" && color == "white" && ptchckL(pos, color, s) == true && p8 != 1) {
                 var npos = pos - 9
                 pawnMove4 = [npos, color, s, "red", "pawn", "pawnMove4", pos, "t"]
                 arr.push(pawnMove4)
-            } else if(s == "white" && color == "black" &&  ptchckL(pos, color, s) == true) {
+            } else if(s == "white" && color == "black" &&  ptchckL(pos, color, s) == true && p8 != 1) {
                 var npos = pos + 7
                 pawnMove4 = [npos, color, s, "red", "pawn", "pawnMove4", pos, "t"]
                 arr.push(pawnMove4)
-            } else if(s == "black" && color == "white" &&  ptchckL(pos, color, s) == true) {
+            } else if(s == "black" && color == "white" &&  ptchckL(pos, color, s) == true && p8 != 1) {
                 console.log("test")
                 var npos = pos + 7
                 pawnMove4 = [npos, color, s, "red", "pawn", "pawnMove4", pos, "t"]
                 arr.push(pawnMove4)
-            } else if(s == "black" && color == "black" &&  ptchckL(pos, color, s) == true) {
+            } else if(s == "black" && color == "black" &&  ptchckL(pos, color, s) == true && p8 != 1) {
                 var npos = pos - 9
                 pawnMove4 = [npos, color, s, "red", "pawn", "pawnMove4", pos, "t"]
                 arr.push(pawnMove4)
@@ -107,8 +107,8 @@ async function gen(piece, pos, color) {
             }
             //move 7 is promotion
             var pawnMove7
-            if(s == "white" && color == "white" && prochck(pos - 8, pos, s, color) == true) {
-                var npos = pos - 8
+            if(s == "white" && color == "white" && prochck(pos, s, color) == true) {
+                var npos = pos
                 pawnMove7 = [npos, color, s, "green", "pawn", "pawnMove7", pos, "t"]
                 arr.push(pawnMove7)
             } else if(s == "white" && color == "black" && prochck(pos - 8, pos, s, color) == true) {
@@ -2587,10 +2587,7 @@ async function gen(piece, pos, color) {
             }
         break;
     }
-    //var arr2 = await validate(arr, pos) 
-    //console.log(arr)
     var arr3 = isValid(arr)
-    //console.log(arr3)
     draw(arr3, arr)
     window.sessionStorage.setItem("arr", JSON.stringify(arr3))
     window.sessionStorage.setItem("arr2", JSON.stringify(arr))
@@ -2683,7 +2680,7 @@ function del() {
 }
 
 function ptchckL(pos, color, s) {
-    if(s == "white" && color == "white") {
+    if(s == "white" && color == "white" && document.getElementById(pos - 9) != undefined) {
         var npos = pos - 9
         var e = document.getElementById(npos)
         try {
@@ -2976,27 +2973,7 @@ function cmove(pos, npos, move, type, color, sw) {
             } else if(move == "pawnMove6") {
 
             } else if(move == "pawnMove7") {
-                if(sw == "white" && color == "white") {
-                    var sq1 = document.getElementById(pos - 8)
-                    if(sq1.children.length != 1) {
-                        arr.push(npos)
-                    }
-                } else if(sw == "white" && color == "black") {
-                    var sq1 = document.getElementById(pos - 8)
-                    if(sq1.children.length != 1) {
-                        arr.push(npos)
-                    }
-                } else if(sw == "black" && color == "white") {
-                    var sq1 = document.getElementById(pos - 8)
-                    if(sq1.children.length != 1) {
-                        arr.push(npos)
-                    }
-                } else if(sw == "black" && color == "black") {
-                    var sq1 = document.getElementById(pos - 8)
-                    if(sq1.children.length != 1) {
-                        arr.push(npos)
-                    }
-                }
+                arr.push(npos)
             }
         break;  
         case "rook":
@@ -12205,22 +12182,21 @@ async function addeve(e) {
 }
 
 function prochck(pos, s, color) {
-    console.log("test")
     var pd8 = Math.floor(pos / 8)
     if(s == "white" && color == "white") {
-        if(pd8 == 2) {
+        if(pd8 == 1) {
             return true
         }
     } else if(s == "white" && color == "black") {
-        if(pd8 == 6) {
+        if(pd8 == 7) {
             return true
         }
     } else if(s == "black" && color == "white") {
-        if(pd8 == 6) {
+        if(pd8 == 7) {
             return true
         }
     } else if(s == "black" && color == "black") {
-        if(pd8 == 2) {
+        if(pd8 == 1) {
             return true
         }
     }
@@ -12229,4 +12205,16 @@ function prochck(pos, s, color) {
 function ig(pos) {
     var el = document.getElementById(pos)
     return el.children[0].id
+}
+
+function promote(type) {
+    if(type == "k") {
+        return "knight"
+    } else if(type == "q") {
+        return "queen"
+    } else if(type == "b") {
+        return "bishop"
+    } else if(type == "r") {
+        return "rook"
+    }
 }
