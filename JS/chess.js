@@ -21,24 +21,24 @@ function make() {
     if(s2 == "white") {
         pieces = [
             ["rookBlack", "knightBlack", "bishopBlack", "queenBlack", "kingBlack", "bishopBlack", "knightBlack", "rookBlack"], 
-            ["pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack"], 
+            ["pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack"],            
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
-            ["pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite"], 
+            ["pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite"],
             ["rookWhite", "knightWhite", "bishopWhite", "queenWhite", "kingWhite", "bishopWhite", "knightWhite", "rookWhite"], 
         ]
     } else if(s2 == "black") {
         pieces = [
-            ["rookWhite", "knightWhite", "bishopWhite", "queenWhite", "kingWhite", "bishopWhite", "knightWhite", "rookWhite"], 
+            ["rookWhite", "knightWhite", "bishopWhite", "kingWhite", "queenWhite", "bishopWhite", "knightWhite", "rookWhite"], 
             ["pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite", "pawnWhite"],  
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["", "", "", "", "", "", "", ""], 
             ["pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack", "pawnBlack"], 
-            ["rookBlack", "knightBlack", "bishopBlack", "queenBlack", "kingBlack", "bishopBlack", "knightBlack", "rookBlack"], 
+            ["rookBlack", "knightBlack", "bishopBlack", "kingBlack", "queenBlack", "bishopBlack", "knightBlack", "rookBlack"], 
         ]
     }
     window.sessionStorage.setItem("parr", JSON.stringify(pieces))
@@ -147,12 +147,33 @@ function black() {
 }
 
 function clic(e) {
+    var cl = classgrab(e.target)
+    if(brckChck(e, cl) == 1) {
+        stop()
+        return
+    }
     //regen()
-    del(e)
+    del()
     var el = e.target
     var color = cchck(el.src)
     var s = window.localStorage.getItem("switch")
     var arr = gen(el.src, e.target.parentElement.id, color)
+}
+
+function brckChck(e, cl) {
+    e = document.getElementById(e.target.id)
+    if(cl != classgrab(e)) {
+        return 1
+    }
+    return 0
+}
+
+function classgrab(tar) {
+    if(tar.classList.contains("white")) {
+        return "white"
+    } else {
+        return "black"
+    }
 }
 
 async function move(e) {
@@ -173,6 +194,7 @@ async function move(e) {
     var check = 0
     var arr2 = JSON.parse(window.sessionStorage.getItem("arr2"))
     for(var i = 0; i < arr2.length; i++) {
+        console.log(arr2[i][5])
         if(arr2[i][5] == "pawnMove2") {
             var color = arr2[i][1]
             var sw = arr2[i][2]
@@ -203,7 +225,6 @@ async function move(e) {
         window.sessionStorage.setItem("ep", "-")
     }
     var ele = e.target.parentElement
-    //movement code is completley redundant
     var c = 0
     while (c == 0) {
         if(ele.parentElement.id != "con") {
@@ -216,12 +237,11 @@ async function move(e) {
     sp = document.getElementById(sp)
     if(ele.children[0] != document.head){
         if(ele.children.length != 0) {
-            console.log(ele)
             ele.children[0].remove()
         } 
     }
+    ele = document.getElementById(ele.id)
     ele.appendChild(sp)
-    console.log(sp)
     change()
     kingchck()
     castle()
@@ -230,16 +250,13 @@ async function move(e) {
 }
  
 function uparr(ele) {
-    console.log("Uparr")
     //first move array
     var arr = JSON.parse(window.sessionStorage.getItem("arr2"))
-    console.log(arr)
     //piece array
     var pieces = JSON.parse(window.sessionStorage.getItem("parr"))
-    console.log(pieces)
+    //var oldId = arr[0][6]
     //old position
     var opos = arr[0][6]
-    console.log(opos)
     //new position array
     var npa = []
     //gets all new positions and pushes them to the new position array
@@ -248,7 +265,7 @@ function uparr(ele) {
         npa.push(np)
     }
     //new position variable
-    var npos = undefined
+    var npos
     //piece variable
     var piece = arr[0][4]
     //color variables
@@ -260,6 +277,8 @@ function uparr(ele) {
     } else {
         color2 = "Black"
     }
+    //console.log(arr, pieces, oldId, opos, npa, piece, color, color2)
+    /////////////ERROR caused when dot gets deleted to fast/////////////////
     for(var i = 0; i < npa.length; i++) {
         //gets one of the squares from new position array
         var t = document.getElementById(npa[i])
@@ -272,31 +291,35 @@ function uparr(ele) {
                 //checks if it matches
                 if(npi == piece) {
                     // sets the new position to the squares id
-                    var holder = document.getElementById(opos)
-                    if(holder.children.length == 1) {
-                        holder = holder.children[0].id
+                    var oldPos = document.getElementById(opos)
+                    if(oldPos.children.length != 0) {
+                        if(oldPos.children.length == 2) {
+                            oldPos = oldPos.children[1].id
+                        } else {
+                            oldPos = oldPos.children[0].id
+                        }
                     } else {
-                        holder = holder.id
-                    }
-                    console.log(t.children[0], holder)
-                    if(t.children[0].id == holder.id) {
-                        npos = t.id
+                        oldPos = oldPos.id
+                        npos = ele.id
                     }
                 }
             } else if(cchck(t.children[0].src) == "green") {
                 npos = ele.id
-                console.log(npos)
             }
+        } else {
+            npos = ele.id
         }
-        console.log(npos)
     }
+
     //converts number to coordinate
     var old = fig(opos)
     //turns new position from string to number
-    console.log(npos)
     npos = Number.parseInt(npos)
     //turns new position to a coordinate
-    console.log(npos)
+    if(npos == NaN) {
+        uparr(ele)
+        return
+    }
     var ne = fig(npos)
     //old array
     var o = []
@@ -307,10 +330,10 @@ function uparr(ele) {
     var n = []
     //splits coords up
     n.push(ne.substring(0, 1))
-    n.push(ne.substring(2))
+    n.push(ne.substring(2))        
     //old 1
     var o1 = o[0]
-    //converts old 1 to number 
+    //converts old 1 to number  
     o1 = Number.parseInt(o1)
     // old 2
     var o2 = o[1]
@@ -327,9 +350,7 @@ function uparr(ele) {
     //goes to old piece index to reset it
     pieces[o1][o2] = ""
     //puts piece in new position
-    console.log(piece)
     pieces[n1][n2] = piece + color2
-    console.log(pieces[n1][n2], n1, n2)
     //saves to session storage
     window.sessionStorage.setItem("parr", JSON.stringify(pieces))
 }
@@ -717,7 +738,6 @@ function castleChck() {
     var rB = window.sessionStorage.getItem("rB")
     var lW = window.sessionStorage.getItem("lW")
     var rW = window.sessionStorage.getItem("rW")
-    console.log(lB, rB, lW, rW)
     if(rW == 1) {
         c = c + "K"
     }
@@ -1061,7 +1081,6 @@ function disFen() {
 }
 
 function decode(pa) {
-    console.log(pa)
     var arr = [
         [],
         [],
@@ -1155,7 +1174,5 @@ function decode(pa) {
             }
         }
     }
-
-    console.log(arr)
     return arr
 }
